@@ -43,7 +43,7 @@ open class Coordinator {
     private var parentCoordinator: Coordinator?
 
     /// The view controller to be presented from. Can be a UINavigationViewController.
-    internal let presentingViewController: UIViewController
+    public let presentingViewController: UIViewController
 
     /// The current main view controller of the coordinator. Can be a UINavigationViewController.
     open var mainViewController: UIViewController? { return nil }
@@ -52,7 +52,7 @@ open class Coordinator {
     private var disappearClosure: (() -> Void)?
 
     /// This can be used on didDisappear to assume a screen pan swipe or back button press.
-    var finishCalled = false
+    public var finishCalled = false
 
 
     // MARK: - Computed Instance Properties
