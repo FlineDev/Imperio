@@ -9,7 +9,7 @@
 import UIKit
 
 /// This class is a coordinator for screen flows starting on app start / using windows.
-public class AppCoordinator: Coordinator {
+open class AppCoordinator: Coordinator {
     // MARK: - Stored Instance Properties
 
     public let window = UIWindow(frame: UIScreen.main.bounds)
