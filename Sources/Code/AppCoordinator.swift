@@ -26,4 +26,16 @@ open class AppCoordinator: Coordinator {
     override init(presentingViewController: UIViewController) {
         preconditionFailure("illegal init call – use init() instead")
     }
+
+
+    // MARK: - Instance Methods
+
+    /// Presents the initial view controllers as the windows root view.
+    ///
+    /// - Parameters:
+    ///   - viewController: The view controller to be presented.
+    public func presentInitialViewController(_ viewController: UIViewController) {
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+    }
 }
