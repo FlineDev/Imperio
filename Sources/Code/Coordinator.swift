@@ -20,6 +20,15 @@ public enum PresentationStyle {
     case push
 }
 
+/// A protocol to conform to in view controllers.
+public protocol Coordinatable {
+    /// Action enum with all action cases to coordinate.
+    associatedtype Action
+
+    /// Set this in coordinators to react to actions.
+    var coordinate: ((Action) -> Void)! { get set }
+}
+
 /// The base coordinator class helping to use the coordinator concept. A coordinators task is to control
 /// the screen flow of views and controllers that belong together or are presented in a specific order
 /// even if there is logic behind it. Simply put: Thanks to coordinators controllers responsibility now
@@ -60,10 +69,10 @@ open class Coordinator {
     /// Returns the presenting navigation controller if available. Extracts the navigation controller
     /// from a UIViewController or directly returns a UINavigationController if such presenting.
     private var presentingNavigationController: UINavigationController? {
-        if let presentingNavCtrl = self.presentingViewController as? UINavigationController {
+        if let presentingNavCtrl = presentingViewController as? UINavigationController {
             return presentingNavCtrl
         }
-        return self.presentingViewController.navigationController
+        return presentingViewController.navigationController
     }
 
 
@@ -90,7 +99,7 @@ open class Coordinator {
     ///   - subCoordinator: The sub coordinator to be started and added to the child coordinators.
     /// - Returns: The child coordinator object for consecutive callback definitions (like `onFinish`).
     public func start(subCoordinator childCoordinator: Coordinator) -> Coordinator {
-        self.childCoordinators.append(childCoordinator)
+        childCoordinators.append(childCoordinator)
         childCoordinator.parentCoordinator = self
         childCoordinator.start()
         return childCoordinator
@@ -101,7 +110,7 @@ open class Coordinator {
     /// - Parameters:
     ///    - closure: The callback to be called on finish.
     public func onFinish(_ closure: @escaping () -> Void) {
-        self.finishClosure = closure
+        finishClosure = closure
     }
 
     /// Callback to be called when the coordinators main view controller has disappeared.
@@ -109,7 +118,7 @@ open class Coordinator {
     /// - Parameters:
     ///   - closure: The callback to be called on disappear.
     public func onDisappear(_ closure: @escaping () -> Void) {
-        self.disappearClosure = closure
+        disappearClosure = closure
     }
 
     /// Finishes a sub coordinator and removes it from its parent coordinators child coordinators (if any).
@@ -120,14 +129,14 @@ open class Coordinator {
     public func finish(alreadyDisappeared: Bool = false) {
         finishCalled = true
 
-        if let parentCoordinator = self.parentCoordinator {
+        if let parentCoordinator = parentCoordinator {
             let foundChildIndex = parentCoordinator.childCoordinators.index { $0 === self }
             if let childIndex = foundChildIndex {
                 parentCoordinator.childCoordinators.remove(at: childIndex)
             }
         }
 
-        if let finishClosure = self.finishClosure {
+        if let finishClosure = finishClosure {
             finishClosure()
         }
 
@@ -169,18 +178,18 @@ open class Coordinator {
         switch presentationStyle {
         case .modal(let completion):
             if let navigationCtrl = viewCtrl as? UINavigationController ?? viewCtrl.navigationController {
-                self.presentingViewController.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController.present(navigationCtrl, animated: true, completion: completion)
             } else if !navigation {
                 // a view controller without navigation stack is passed, .modal style is chosen but navigation is false
-                self.presentingViewController.present(viewCtrl, animated: true, completion: completion)
+                presentingViewController.present(viewCtrl, animated: true, completion: completion)
             } else {
                 // a view controller without navigation stack is passed, .modal style is chosen and navigation is true
                 let navigationCtrl = UINavigationController(rootViewController: viewCtrl)
-                self.presentingViewController.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController.present(navigationCtrl, animated: true, completion: completion)
             }
 
         case .push:
-            self.presentingNavigationController?.pushViewController(viewCtrl, animated: true)
+            presentingNavigationController?.pushViewController(viewCtrl, animated: true)
         }
     }
 
@@ -197,7 +206,7 @@ open class Coordinator {
     // MARK: - Helpers Methods
 
     private func automaticPresentationStyle(forViewController viewController: UIViewController) -> PresentationStyle {
-        if self.presentingNavigationController == nil || viewController is UINavigationController || viewController.navigationController != nil {
+        if presentingNavigationController == nil || viewController is UINavigationController || viewController.navigationController != nil {
             return .modal(completion: nil)
         }
 
