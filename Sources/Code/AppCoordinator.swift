@@ -34,8 +34,8 @@ open class AppCoordinator: Coordinator {
     ///
     /// - Parameters:
     ///   - viewController: The view controller to be presented.
-    public func presentInitialViewController(_ viewController: UIViewController) {
-        window.rootViewController = viewController
+    public func present(initialViewController: UIViewController) {
+        window.rootViewController = initialViewController
         window.makeKeyAndVisible()
     }
 }
