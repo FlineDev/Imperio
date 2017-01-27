@@ -49,10 +49,10 @@ open class Coordinator {
     private var childCoordinators: [Coordinator] = []
 
     /// The coordinator who started this coordinator.
-    private var parentCoordinator: Coordinator?
+    private weak var parentCoordinator: Coordinator?
 
     /// The view controller to be presented from. Can be a UINavigationViewController.
-    public let presentingViewController: UIViewController
+    public weak let presentingViewController: UIViewController
 
     /// The current main view controller of the coordinator. Can be a UINavigationViewController.
     open var mainViewController: UIViewController? { return nil }
@@ -124,20 +124,21 @@ open class Coordinator {
     /// Finishes a sub coordinator and removes it from its parent coordinators child coordinators (if any).
     ///
     /// - Parameters:
-    ///   - viewCtrl: The view controller to be finished.
-    ///   - makeDisappear: Dismisses or pops the view controller if set to `true`.
+    ///   - alreadyDisappeared: Dismisses or pops the view controller if set to `false`.
     public func finish(alreadyDisappeared: Bool = false) {
         finishCalled = true
 
-        if let parentCoordinator = parentCoordinator {
-            let foundChildIndex = parentCoordinator.childCoordinators.index { $0 === self }
-            if let childIndex = foundChildIndex {
-                parentCoordinator.childCoordinators.remove(at: childIndex)
-            }
-        }
+        let finishClosure = self.finishClosure
+        self.finishClosure = nil
+
+        let disappearClosure = self.disappearClosure
+        self.disappearClosure = nil
+
+        parentCoordinator?.childCoordinators = parentCoordinator!.childCoordinators.filter { $0 !== self }
 
         if let finishClosure = finishClosure {
             finishClosure()
+            self.finishClosure = nil
         }
 
         guard !alreadyDisappeared else { return }
@@ -161,6 +162,8 @@ open class Coordinator {
                 presentingViewController.dismiss(animated: true, completion: disappearClosure)
             }
         }
+
+        self.disappearClosure = nil
     }
 
     /// Presents a view controller given the specified presentation style.
