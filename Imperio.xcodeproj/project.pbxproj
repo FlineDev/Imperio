@@ -721,6 +721,7 @@
 				A14E0B351E1F9ECC00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E0B361E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +730,7 @@
 				A14E0B381E1F9ECC00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E0B4F1E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -737,6 +739,7 @@
 				A14E0B511E1F9EDE00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E0B521E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -745,6 +748,7 @@
 				A14E0B541E1F9EDE00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

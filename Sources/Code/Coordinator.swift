@@ -52,7 +52,7 @@ open class Coordinator {
     private weak var parentCoordinator: Coordinator?
 
     /// The view controller to be presented from. Can be a UINavigationViewController.
-    public weak let presentingViewController: UIViewController
+    public weak var presentingViewController: UIViewController?
 
     /// The current main view controller of the coordinator. Can be a UINavigationViewController.
     open var mainViewController: UIViewController? { return nil }
@@ -72,7 +72,7 @@ open class Coordinator {
         if let presentingNavCtrl = presentingViewController as? UINavigationController {
             return presentingNavCtrl
         }
-        return presentingViewController.navigationController
+        return presentingViewController?.navigationController
     }
 
 
@@ -159,7 +159,7 @@ open class Coordinator {
                     }
                 }
             } else {
-                presentingViewController.dismiss(animated: true, completion: disappearClosure)
+                presentingViewController?.dismiss(animated: true, completion: disappearClosure)
             }
         }
 
@@ -181,14 +181,14 @@ open class Coordinator {
         switch presentationStyle {
         case .modal(let completion):
             if let navigationCtrl = viewCtrl as? UINavigationController ?? viewCtrl.navigationController {
-                presentingViewController.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController?.present(navigationCtrl, animated: true, completion: completion)
             } else if !navigation {
                 // a view controller without navigation stack is passed, .modal style is chosen but navigation is false
-                presentingViewController.present(viewCtrl, animated: true, completion: completion)
+                presentingViewController?.present(viewCtrl, animated: true, completion: completion)
             } else {
                 // a view controller without navigation stack is passed, .modal style is chosen and navigation is true
                 let navigationCtrl = UINavigationController(rootViewController: viewCtrl)
-                presentingViewController.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController?.present(navigationCtrl, animated: true, completion: completion)
             }
 
         case .push:
