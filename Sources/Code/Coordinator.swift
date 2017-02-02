@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HandySwift
 
 typealias ActionClosure = () -> ()
 
@@ -155,7 +154,8 @@ open class Coordinator {
                 } else {
                     navigationCtrl.popViewController(animated: true)
                     if let disappearClosure = disappearClosure {
-                        delay(bySeconds: 0.3, closure: disappearClosure)
+                        let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(300)
+                        DispatchQueue.main.asyncAfter(deadline: deadline, execute: disappearClosure)
                     }
                 }
             } else {
