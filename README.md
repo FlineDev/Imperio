@@ -87,7 +87,7 @@ Once you've got an initial list of screen flows (or the first), name it and writ
 ``` Swift
 import Imperio
 
-class SettingsCoordinator: Coordinator {
+class TutorialCoordinator: Coordinator {
     // TODO: not yet implemented
 }
 ```
@@ -236,14 +236,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 To start a different screen flow from within a screen flow you need to call the `start(subCoordinator:)` method:
 
 ``` Swift
-let dashboardCoordinator = DashboardCoordinator() 
-start(subCoordinator: dashboardCoordinator)
+let tutorialCoordinator = TutorialCoordinator() 
+start(subCoordinator: tutorialCoordinator)
 ```
 
 Note that this will automatically finish the current screen flow. If you want to get notified when the sub coordinator is finished or disappeared, simply chain `onFinish` or `onDisappear` callbacks to the start method:
 
 ``` Swift
-start(subCoordinator: dashboardCoordinator).onFinish {
+start(subCoordinator: tutorialCoordinator).onFinish {
     myTableViewController.reloadData()
 }
 ```
