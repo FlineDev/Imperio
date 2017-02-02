@@ -164,7 +164,7 @@ Now we can make our view controller comply to `Coordinatable`:
 ``` Swift
 class TutorialPage1ViewController: Coordinatable {
     typealias Action = TutorialPage1Action
-    var coordinate: ((PrayerAction) -> Void)!
+    var coordinate: ((TutorialPage1Action) -> Void)!
 }
 ```
 
@@ -174,7 +174,7 @@ That's it on the controller side. This enables us to complete our coordinators `
 override func start() {
     // ...
     
-    weak var weakSelf = self // prevent memory issues through retatin cycles
+    weak var weakSelf = self // prevent memory issues through retain cycles
     page1Ctrl.coordinate = { action in
         switch action {
         case .nextButtonPressed:
@@ -190,7 +190,7 @@ override func start() {
 }
 ```
 
-The `coordinate` closure is the place the coordinator gets notified about any actions the user made in view controller. So, make sure to call it when user actions are perceived, for example:
+The `coordinate` closure is the place the coordinator gets notified about any actions the user made in view controller. So, make sure to call it when user actions are perceived in your view controller, for example:
 
 ``` Swift
 @IBAction func nextButtonPressed() { coordinate(.nextButtonPressed) }
@@ -202,12 +202,34 @@ Also note that the `finish` method (called on when the skip button is pressed) w
 
 ### App Coordinator
 
-To keep the AppDelegate clean (it often has the same problem as view controllers), create a subclass of `AppCoordinator` instead of `Coordinator`. Basically it works just like a coordinator (in fact it's a subclass of `Coordinator`). Actually, you can make any of your coordinators the app coordinator through two simple steps:
+To keep the AppDelegate clean, create a subclass of `AppCoordinator` instead of `Coordinator`. It works just like a coordinator (in fact it's a subclass of `Coordinator`), only that it can be presented from the App Delegate. Actually, you can make any of your coordinators the app coordinator through two simple steps:
 
 - Subclass `AppCoordinator` instead of `Coordinator`
-- Call `present(initialViewController: homeViewCtrl)` instead of `present(homeViewCtrl)`
+- Call `present(initialViewController: homeViewCtrl)` instead of `present(homeViewCtrl)` in your start method
 
 Note that you can't `finish` the screen flow of an app coordinator. Imperio will simply do nothing if you call it.
+
+Now in your AppDelegate can look something like this:
+
+``` Swift
+import UIKit
+import Imperio
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var appCoordinator: AppCoordinator?
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        appCoordinator = DashboardCoordinator()
+        appCoordinator?.start()
+        window = appCoordinator?.window
+
+        return true
+    }
+}
+```
 
 ### Sub Coordinators
 
