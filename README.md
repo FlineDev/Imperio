@@ -4,26 +4,26 @@ width=600 height=167>
 </p>
 
 <p align="center">
-<a href="https://www.bitrise.io/app/810d996d77fb0abf">
-<img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
-alt="Build Status">
-</a>
-<a href="https://codebeat.co/projects/github-com-flinesoft-imperio">
-<img src="https://codebeat.co/badges/283e545d-02e9-4fcf-aabc-40cacfbfe26c"
-alt="codebeat badge">
-</a>
-<a href="https://github.com/Flinesoft/Imperio/releases">
-<img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"
-alt="Version: 1.0.0">
-</a>
-<img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
-alt="Swift: 3.0">
-<img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-FF69B4.svg"
-alt="Platforms: iOS | tvOS">
-<a href="https://github.com/Flinesoft/Imperio/blob/stable/LICENSE.md">
-<img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
-alt="License: MIT">
-</a>
+  <a href="https://www.bitrise.io/app/2f9c88bb42720cb1">
+  <img src="https://www.bitrise.io/app/2f9c88bb42720cb1.svg?token=dZVzs771PljV_kKatagpJg&branch=stable"
+     alt="Build Status">
+  </a>
+  <a href="https://codebeat.co/projects/github-com-flinesoft-imperio">
+  <img src="https://codebeat.co/badges/cb963269-61e6-40c9-85b7-c57a73dde3ee"
+     alt="codebeat badge">
+  </a>
+  <a href="https://github.com/Flinesoft/Imperio/releases">
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"
+     alt="Version: 1.0.0">
+  </a>
+  <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
+     alt="Swift: 3.0">
+  <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-FF69B4.svg"
+     alt="Platforms: iOS | tvOS">
+  <a href="https://github.com/Flinesoft/Imperio/blob/stable/LICENSE.md">
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
+     alt="License: MIT">
+  </a>
 </p>
 
 <p align="center">
