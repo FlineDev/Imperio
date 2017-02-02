@@ -276,7 +276,6 @@
 				TargetAttributes = {
 					A14E0B1E1E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 767S6EFMJ8;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B271E1F9ECC00DFC788 = {
@@ -286,7 +285,6 @@
 					};
 					A14E0B3D1E1F9EDD00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 767S6EFMJ8;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B451E1F9EDE00DFC788 = {
@@ -519,7 +517,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -543,7 +541,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -593,7 +591,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -619,7 +617,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
