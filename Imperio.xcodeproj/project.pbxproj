@@ -15,8 +15,6 @@
 		A14E0B801E1F9F5200DFC788 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B741E1F9F5200DFC788 /* Coordinator.swift */; };
 		A14E0B8B1E1F9F5C00DFC788 /* ImperioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */; };
 		A14E0B8C1E1F9F5D00DFC788 /* ImperioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */; };
-		A14E0B9B1E1FA13100DFC788 /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B9A1E1FA13100DFC788 /* HandySwift.framework */; };
-		A14E0B9F1E1FA14700DFC788 /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B9E1E1FA14700DFC788 /* HandySwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		82C76D091E4215480027B35F /* Imperio.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Imperio.podspec; sourceTree = "<group>"; };
+		82C76D0A1E4221FD0027B35F /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		82C76D0B1E4222220027B35F /* .swift_version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swift_version; sourceTree = "<group>"; };
 		A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,11 +50,6 @@
 		A14E0B761E1F9F5200DFC788 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImperioTests.swift; sourceTree = "<group>"; };
 		A14E0B7B1E1F9F5200DFC788 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14E0B8F1E1F9FEB00DFC788 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		A14E0B931E1FA04000DFC788 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		A14E0B9A1E1FA13100DFC788 /* HandySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandySwift.framework; path = Carthage/Build/iOS/HandySwift.framework; sourceTree = "<group>"; };
-		A14E0B9C1E1FA14100DFC788 /* HandySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandySwift.framework; path = Carthage/Build/Mac/HandySwift.framework; sourceTree = "<group>"; };
-		A14E0B9E1E1FA14700DFC788 /* HandySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandySwift.framework; path = Carthage/Build/tvOS/HandySwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14E0B9B1E1FA13100DFC788 /* HandySwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14E0B9F1E1FA14700DFC788 /* HandySwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +92,6 @@
 				A14E0B8E1E1F9FD400DFC788 /* Root Files */,
 				A14E0B711E1F9F5200DFC788 /* Sources */,
 				A14E0B771E1F9F5200DFC788 /* Tests */,
-				A14E0B941E1FA04B00DFC788 /* Carthage */,
 				A14E0B201E1F9ECC00DFC788 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,60 +161,14 @@
 		A14E0B8E1E1F9FD400DFC788 /* Root Files */ = {
 			isa = PBXGroup;
 			children = (
-				A14E0B8F1E1F9FEB00DFC788 /* Cartfile */,
-				A14E0B931E1FA04000DFC788 /* Cartfile.resolved */,
+				82C76D061E4214C60027B35F /* README.md */,
+				82C76D071E4215110027B35F /* .swiftlint.yml */,
+				82C76D081E4215240027B35F /* Package.swift */,
+				82C76D091E4215480027B35F /* Imperio.podspec */,
+				82C76D0B1E4222220027B35F /* .swift_version */,
+				82C76D0A1E4221FD0027B35F /* LICENSE.md */,
 			);
 			name = "Root Files";
-			sourceTree = "<group>";
-		};
-		A14E0B941E1FA04B00DFC788 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B951E1FA06600DFC788 /* Framework */,
-				A14E0B961E1FA06B00DFC788 /* Tests */,
-			);
-			name = Carthage;
-			sourceTree = "<group>";
-		};
-		A14E0B951E1FA06600DFC788 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B971E1FA08000DFC788 /* iOS */,
-				A14E0B981E1FA08500DFC788 /* tvOS */,
-				A14E0B991E1FA08900DFC788 /* macOS */,
-			);
-			name = Framework;
-			sourceTree = "<group>";
-		};
-		A14E0B961E1FA06B00DFC788 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
-		A14E0B971E1FA08000DFC788 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B9A1E1FA13100DFC788 /* HandySwift.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		A14E0B981E1FA08500DFC788 /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B9E1E1FA14700DFC788 /* HandySwift.framework */,
-			);
-			name = tvOS;
-			sourceTree = "<group>";
-		};
-		A14E0B991E1FA08900DFC788 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B9C1E1FA14100DFC788 /* HandySwift.framework */,
-			);
-			name = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +199,7 @@
 				A14E0B1B1E1F9ECC00DFC788 /* Frameworks */,
 				A14E0B1C1E1F9ECC00DFC788 /* Headers */,
 				A14E0B1D1E1F9ECC00DFC788 /* Resources */,
+				82C76D0C1E4222300027B35F /* Run Swift Linter */,
 			);
 			buildRules = (
 			);
@@ -325,7 +276,6 @@
 				TargetAttributes = {
 					A14E0B1E1E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 767S6EFMJ8;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B271E1F9ECC00DFC788 = {
@@ -335,7 +285,6 @@
 					};
 					A14E0B3D1E1F9EDD00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 767S6EFMJ8;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B451E1F9EDE00DFC788 = {
@@ -395,6 +344,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82C76D0C1E4222300027B35F /* Run Swift Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swift Linter";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\nswiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A14E0B1A1E1F9ECC00DFC788 /* Sources */ = {
@@ -551,7 +517,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -575,7 +541,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -625,7 +591,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -636,7 +602,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -651,7 +617,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -662,7 +628,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
@@ -721,6 +687,7 @@
 				A14E0B351E1F9ECC00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E0B361E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +696,7 @@
 				A14E0B381E1F9ECC00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E0B4F1E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -737,6 +705,7 @@
 				A14E0B511E1F9EDE00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14E0B521E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -745,6 +714,7 @@
 				A14E0B541E1F9EDE00DFC788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
