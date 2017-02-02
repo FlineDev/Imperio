@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
     The goal of this library is to keep view controllers lean by getting screen flow and data handling logic out of them.
     Instead coordinators are used to handle screen flow and trigger data handling.
-    This idea is explored in detail by Soroush Khanlou in this great post. Go ahead and read it now if you haven't already!
+    This idea is explored in detail by Soroush Khanlou in his great posts. Go ahead and read it now if you haven't already!
                    DESC
 
   s.homepage     = "https://github.com/Flinesoft/Imperio"
