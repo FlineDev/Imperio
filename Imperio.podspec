@@ -5,12 +5,12 @@ Pod::Spec.new do |s|
   s.summary      = "Keep the screen flow and data handling logic out of your view controllers."
 
   s.description  = <<-DESC
-    The goal of this library is to provide handy features that didn't make it to the Swift standard library (yet)
-    due to many different reasons. Those could be that the Swift community wants to keep the standard library clean
-    and manageable or simply hasn't finished discussion on a specific feature yet.
+    The goal of this library is to keep view controllers lean by getting screen flow and data handling logic out of them.
+    Instead coordinators are used to handle screen flow and trigger data handling.
+    This idea is explored in detail by Soroush Khanlou in this great post. Go ahead and read it now if you haven't already!
                    DESC
 
-  s.homepage     = "https://github.com/Flinesoft/HandySwift"
+  s.homepage     = "https://github.com/Flinesoft/Imperio"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
   s.author             = { "Cihat Gündüz" => "CihatGuenduez@posteo.de" }
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.10"
   s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/Flinesoft/HandySwift.git", :tag => "2.0.0" }
+  s.source       = { :git => "https://github.com/Flinesoft/Imperio.git", :tag => "1.0.0" }
   s.source_files = "Sources", "Sources/**/*.swift"
   s.framework    = "Foundation"
 
