@@ -174,15 +174,14 @@ That's it on the controller side. This enables us to complete our coordinators `
 override func start() {
     // ...
     
-    weak var weakSelf = self // prevent memory issues through retain cycles
-    page1Ctrl.coordinate = { action in
+    page1Ctrl.coordinate = { [unowned self] action in
         switch action {
         case .nextButtonPressed:
-            weakSelf?.showNextScreen() // present next view controller using the present method
+            self.showNextScreen() // present next view controller using the present method
         case .didEnterName(let name):
-            weakSelf?.changeName(to: name) // update your data based on input
+            self.changeName(to: name) // update your data based on input
         case .skipButtonPressed:
-            weakSelf?.finish() // finish the current screen flow
+            self.finish() // finish the current screen flow
     }
 
 
