@@ -247,6 +247,18 @@ start(subCoordinator: tutorialCoordinator).onFinish {
 }
 ```
 
+If you ever need to pass data into a coordinator on creation, simply write a new `init` method with all the data needed to be passed like this:
+
+``` Swift
+class TutorialCoordinator {
+    private let name: String
+    init(presentingViewController: UIViewController, name: String) {
+        self.name = name
+        super.init(presentingViewController: presentingViewController)
+    }
+}
+```
+
 ### The Navigation Controller Issue
 
 One problem that arises in navigation controllers is that there is implicit screen flow logic supported by iOS by default: The back button press and the swipe gesture to navigate between view controllers in the navigation stack. To solve this, you should add a `didDisappear` case to the view controllers possible actions and call `coordinate(.didDisappear)` in the view controllers `viewDidDisappear`:
