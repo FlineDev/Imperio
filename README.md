@@ -173,7 +173,6 @@ That's it on the controller side. This enables us to complete our coordinators `
 ``` Swift
 override func start() {
     // ...
-    
     page1Ctrl.coordinate = { [unowned self] action in
         switch action {
         case .nextButtonPressed:
@@ -183,8 +182,6 @@ override func start() {
         case .skipButtonPressed:
             self.finish() // finish the current screen flow
     }
-
-
     // ...
 }
 ```
