@@ -173,19 +173,15 @@ That's it on the controller side. This enables us to complete our coordinators `
 ``` Swift
 override func start() {
     // ...
-    
-    weak var weakSelf = self // prevent memory issues through retain cycles
-    page1Ctrl.coordinate = { action in
+    page1Ctrl.coordinate = { [unowned self] action in
         switch action {
         case .nextButtonPressed:
-            weakSelf?.showNextScreen() // present next view controller using the present method
+            self.showNextScreen() // present next view controller using the present method
         case .didEnterName(let name):
-            weakSelf?.changeName(to: name) // update your data based on input
+            self.changeName(to: name) // update your data based on input
         case .skipButtonPressed:
-            weakSelf?.finish() // finish the current screen flow
+            self.finish() // finish the current screen flow
     }
-
-
     // ...
 }
 ```
@@ -245,6 +241,18 @@ Note that this will automatically finish the current screen flow. If you want to
 ``` Swift
 start(subCoordinator: tutorialCoordinator).onFinish {
     myTableViewController.reloadData()
+}
+```
+
+If you ever need to pass data into a coordinator on creation, simply write a new `init` method with all the data needed to be passed like this:
+
+``` Swift
+class TutorialCoordinator {
+    private let name: String
+    init(presentingViewController: UIViewController, name: String) {
+        self.name = name
+        super.init(presentingViewController: presentingViewController)
+    }
 }
 ```
 
