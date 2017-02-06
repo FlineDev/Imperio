@@ -44,7 +44,7 @@ The goal of this library is to **keep view controllers lean** by getting screen 
 
 Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage).
 [Cocoapods](https://github.com/CocoaPods/CocoaPods) is supported, too.
-[Swift Package Manager](https://github.com/apple/swift-package-manager) was targeted but didn't work in my tests.
+[Swift Package Manager](https://github.com/apple/swift-package-manager) might work, too (not tested).
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
