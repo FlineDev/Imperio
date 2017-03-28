@@ -180,8 +180,10 @@ override func start() {
         switch action {
         case .nextButtonPressed:
             self.showNextScreen() // present next view controller using the present method
+            
         case .didEnterName(let name):
             self.changeName(to: name) // update your data based on input
+            
         case .skipButtonPressed:
             self.finish() // finish the current screen flow
     }
@@ -192,7 +194,9 @@ override func start() {
 The `coordinate` closure is the place the coordinator gets notified about any actions the user made in view controller. So, make sure to call it when user actions are perceived in your view controller, for example:
 
 ``` Swift
-@IBAction func nextButtonPressed() { coordinate(.nextButtonPressed) }
+@IBAction func nextButtonPressed() {
+    coordinate(.nextButtonPressed)
+}
 
 ```
 
@@ -208,7 +212,7 @@ To keep the AppDelegate clean, create a subclass of `AppCoordinator` instead of 
 
 Note that you can't `finish` the screen flow of an app coordinator. Imperio will simply do nothing if you call it.
 
-Now in your AppDelegate can look something like this:
+Now your AppDelegate can look something like this:
 
 ``` Swift
 import UIKit
@@ -220,7 +224,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         appCoordinator = DashboardCoordinator()
         appCoordinator?.start()
         window = appCoordinator?.window
@@ -239,7 +242,7 @@ let tutorialCoordinator = TutorialCoordinator()
 start(subCoordinator: tutorialCoordinator)
 ```
 
-Note that this will automatically finish the current screen flow. If you want to get notified when the sub coordinator is finished or disappeared, simply chain `onFinish` or `onDisappear` callbacks to the start method:
+If you want to get notified when the sub coordinator is finished or disappeared, simply chain `onFinish` or `onDisappear` callbacks to the start method:
 
 ``` Swift
 start(subCoordinator: tutorialCoordinator).onFinish {
