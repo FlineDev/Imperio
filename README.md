@@ -147,24 +147,27 @@ Note that for the `.modal` presentation style you can set a completion closure w
 
 ### Coordinatable
 
-In order for the coordinator to get notified of any actions of the user, the view controller needs to comply to `Coordinatable`. Before doing that though, you should create an enum with some actions that can be done by the user in the view controller:
+In order for the coordinator to get notified of any actions of the user, the view controller needs to comply to `Coordinatable`. In order to do that, you should first create an enum with some actions that can be done by the user within the view controller and name it `Action`:
 
-```
-enum TutorialPage1Action {
-    case nextButtonPressed
-    case didEnterName(String)
-    case skipButtonPressed
+``` Swift
+class TutorialPage1ViewController: Coordinatable {
+    enum Action {
+      case nextButtonPressed
+      case didEnterName(String)
+      case skipButtonPressed
+    }
+    // TODO: not yet completed
 }
 ```
 
 Note that the actions names should not contain any semantics: Always use `nextButtonPressed` which is what the user really did instead of `showNextScreen` which already includes semantics and probably is what the user intended. It is up to the coordinator to decide the intention of the user, not the view controllers!
 
-Now we can make our view controller comply to `Coordinatable`:
+Now we can complete making our view controller comply to `Coordinatable` (note that when you simply type `coordinate` Xcode will auto-complete the rest of the code here):
 
 ``` Swift
 class TutorialPage1ViewController: Coordinatable {
-    typealias Action = TutorialPage1Action
-    var coordinate: ((TutorialPage1Action) -> Void)!
+    // the `Action` enum code is here
+    var coordinate: ((TutorialPage1ViewController.Action) -> Void)!
 }
 ```
 
