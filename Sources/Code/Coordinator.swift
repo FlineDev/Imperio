@@ -97,6 +97,7 @@ open class Coordinator {
     /// - Parameters:
     ///   - subCoordinator: The sub coordinator to be started and added to the child coordinators.
     /// - Returns: The child coordinator object for consecutive callback definitions (like `onFinish`).
+    @discardableResult
     public func start(subCoordinator childCoordinator: Coordinator) -> Coordinator {
         childCoordinators.append(childCoordinator)
         childCoordinator.parentCoordinator = self
