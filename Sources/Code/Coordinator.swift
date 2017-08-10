@@ -125,7 +125,8 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - alreadyDisappeared: Dismisses or pops the view controller if set to `false`.
-    public func finish(alreadyDisappeared: Bool = false) {
+    ///   - animated: Animates the disabling of viewController
+    public func finish(alreadyDisappeared: Bool = false, animated: Bool = true) {
         finishCalled = true
 
         let finishClosure = self.finishClosure
@@ -147,20 +148,20 @@ open class Coordinator {
             if let navigationCtrl = viewCtrl.navigationController {
                 if navigationCtrl.viewControllers.first == viewCtrl {
                     if let presentingViewCtrl = navigationCtrl.presentingViewController {
-                        presentingViewCtrl.dismiss(animated: true, completion: disappearClosure)
+                        presentingViewCtrl.dismiss(animated: animated, completion: disappearClosure)
                     } else {
                         // TODO: this case needed?
-                        navigationCtrl.dismiss(animated: true, completion: disappearClosure)
+                        navigationCtrl.dismiss(animated: animated, completion: disappearClosure)
                     }
                 } else {
-                    navigationCtrl.popViewController(animated: true)
+                    navigationCtrl.popViewController(animated: animated)
                     if let disappearClosure = disappearClosure {
                         let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(300)
                         DispatchQueue.main.asyncAfter(deadline: deadline, execute: disappearClosure)
                     }
                 }
             } else {
-                presentingViewController?.dismiss(animated: true, completion: disappearClosure)
+                presentingViewController?.dismiss(animated: animated, completion: disappearClosure)
             }
         }
 
@@ -175,25 +176,26 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - viewController: The view controller to be presented.
+    ///   - animate: Animate presentation of viewController
     ///   - style: The expected presentation style. Defaults to automatic detection.
-    public func present(_ viewCtrl: UIViewController, style: PresentationStyle? = nil, navigation: Bool = true) {
+    public func present(_ viewCtrl: UIViewController, animated: Bool = true, style: PresentationStyle? = nil, navigation: Bool = true) {
         let presentationStyle = style ?? automaticPresentationStyle(forViewController: viewCtrl)
 
         switch presentationStyle {
         case .modal(let completion):
             if let navigationCtrl = viewCtrl as? UINavigationController ?? viewCtrl.navigationController {
-                presentingViewController?.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController?.present(navigationCtrl, animated: animated, completion: completion)
             } else if !navigation {
                 // a view controller without navigation stack is passed, .modal style is chosen but navigation is false
-                presentingViewController?.present(viewCtrl, animated: true, completion: completion)
+                presentingViewController?.present(viewCtrl, animated: animated, completion: completion)
             } else {
                 // a view controller without navigation stack is passed, .modal style is chosen and navigation is true
                 let navigationCtrl = UINavigationController(rootViewController: viewCtrl)
-                presentingViewController?.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController?.present(navigationCtrl, animated: animated, completion: completion)
             }
 
         case .push:
-            presentingNavigationController?.pushViewController(viewCtrl, animated: true)
+            presentingNavigationController?.pushViewController(viewCtrl, animated: animated)
         }
     }
 
