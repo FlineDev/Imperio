@@ -27,7 +27,7 @@ extension UIViewController {
         } else if let viewController = viewController.presentedViewController {
             return viewController
         } else if !viewController.childViewControllers.isEmpty {
-            return viewController.childViewControllers[0]
+            return viewController.childViewControllers.first!
         } else {
             return viewController
         }

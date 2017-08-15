@@ -125,7 +125,7 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - alreadyDisappeared: Dismisses or pops the view controller if set to `false`.
-    ///   - animated: Animates the disabling of viewController
+    ///   - animated: Animates the disappearance of the view controller.
     public func finish(alreadyDisappeared: Bool = false, animated: Bool = true) {
         finishCalled = true
 
@@ -176,7 +176,7 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - viewController: The view controller to be presented.
-    ///   - animate: Animate presentation of viewController
+    ///   - animate: Animate presentation of the view controller.
     ///   - style: The expected presentation style. Defaults to automatic detection.
     public func present(_ viewCtrl: UIViewController, animated: Bool = true, style: PresentationStyle? = nil, navigation: Bool = true) {
         let presentationStyle = style ?? automaticPresentationStyle(forViewController: viewCtrl)
