@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C4A3F9A1F42C4E700E40E86 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIViewController+Extension.swift */; };
+		5C4A3F9B1F42C4EE00E40E86 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIViewController+Extension.swift */; };
 		A14E0B291E1F9ECC00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		A14E0B471E1F9EDE00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */; };
 		A14E0B7C1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C4A3F991F42C4E700E40E86 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 			children = (
 				A14E0B741E1F9F5200DFC788 /* Coordinator.swift */,
 				A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */,
+				5C4A3F991F42C4E700E40E86 /* UIViewController+Extension.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -271,16 +275,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Flinesoft;
 				TargetAttributes = {
 					A14E0B1E1E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B271E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 767S6EFMJ8;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B3D1E1F9EDD00DFC788 = {
@@ -367,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4A3F9A1F42C4E700E40E86 /* UIViewController+Extension.swift in Sources */,
 				A14E0B7F1E1F9F5200DFC788 /* Coordinator.swift in Sources */,
 				A14E0B7C1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */,
 			);
@@ -384,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4A3F9B1F42C4EE00E40E86 /* UIViewController+Extension.swift in Sources */,
 				A14E0B801E1F9F5200DFC788 /* Coordinator.swift in Sources */,
 				A14E0B7D1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */,
 			);
@@ -422,7 +430,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -430,7 +440,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -475,7 +489,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -483,7 +499,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -532,7 +552,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -556,7 +577,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -569,7 +591,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -582,7 +605,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ActionClosure = () -> ()
+typealias ActionClosure = () -> Void
 
 /// The different presentation options.
 ///
@@ -81,7 +81,7 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - presentingViewController: The view controller (or the navigation controller) presenting the new coordinator.
-    public init(presentingViewController: UIViewController) {
+    public init(presentingViewController: UIViewController? = nil) {
         self.presentingViewController = presentingViewController
     }
 
@@ -180,6 +180,8 @@ open class Coordinator {
     ///   - style: The expected presentation style. Defaults to automatic detection.
     public func present(_ viewCtrl: UIViewController, animated: Bool = true, style: PresentationStyle? = nil, navigation: Bool = true) {
         let presentationStyle = style ?? automaticPresentationStyle(forViewController: viewCtrl)
+
+        let presentingViewController = self.presentingViewController ?? UIViewController.currentViewController()
 
         switch presentationStyle {
         case .modal(let completion):

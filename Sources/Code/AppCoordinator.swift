@@ -23,7 +23,7 @@ open class AppCoordinator: Coordinator {
         super.init(presentingViewController: pseudoViewController)
     }
 
-    override init(presentingViewController: UIViewController) {
+    override init(presentingViewController: UIViewController? = nil) {
         preconditionFailure("illegal init call – use init() instead")
     }
 
