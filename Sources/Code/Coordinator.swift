@@ -1,14 +1,12 @@
 //
 //  Coordinator.swift
-//  Cruciverber
+//  Imperio
 //
 //  Created by Cihat Gündüz on 12.03.16.
 //  Copyright © 2016 Flinesoft. All rights reserved.
 //
 
 import UIKit
-
-typealias ActionClosure = () -> ()
 
 /// The different presentation options.
 ///
@@ -43,7 +41,6 @@ public protocol Coordinatable {
 ///   - start()
 open class Coordinator {
     // MARK: - Stored Instance Properties
-
     /// The coordinators started from this coordinator.
     private var childCoordinators: [Coordinator] = []
 
@@ -62,35 +59,31 @@ open class Coordinator {
     /// This can be used on didDisappear to assume a screen pan swipe or back button press.
     public var finishCalled = false
 
-
     // MARK: - Computed Instance Properties
-
     /// Returns the presenting navigation controller if available. Extracts the navigation controller
     /// from a UIViewController or directly returns a UINavigationController if such presenting.
     private var presentingNavigationController: UINavigationController? {
-        if let presentingNavCtrl = presentingViewController as? UINavigationController {
-            return presentingNavCtrl
+        guard let presentingNavCtrl = presentingViewController as? UINavigationController else {
+            return presentingViewController?.navigationController
         }
-        return presentingViewController?.navigationController
+
+        return presentingNavCtrl
     }
 
-
     // MARK: - Initializers
-
     /// Initialize a new coordinator object.
     ///
     /// - Parameters:
     ///   - presentingViewController: The view controller (or the navigation controller) presenting the new coordinator.
-    public init(presentingViewController: UIViewController) {
+    public init(presentingViewController: UIViewController? = nil) {
         self.presentingViewController = presentingViewController
     }
 
-
     // MARK: - Instance Methods
-
     /// Starts the screen flow represented by this coordinator. Subclasses should put their screen flow logic in here.
     open func start() {}
 
+    @discardableResult
     /// Starts a sub coordinator from within this coordinator – no need to call `start()` on the coordinator manually.
     /// This ensures the sub coordinator is correctly added to the child coordinators array.
     ///
@@ -124,7 +117,8 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - alreadyDisappeared: Dismisses or pops the view controller if set to `false`.
-    public func finish(alreadyDisappeared: Bool = false) {
+    ///   - animated: Animates the disappearance of the view controller.
+    public func finish(alreadyDisappeared: Bool = false, animated: Bool = true) {
         finishCalled = true
 
         let finishClosure = self.finishClosure
@@ -146,20 +140,20 @@ open class Coordinator {
             if let navigationCtrl = viewCtrl.navigationController {
                 if navigationCtrl.viewControllers.first == viewCtrl {
                     if let presentingViewCtrl = navigationCtrl.presentingViewController {
-                        presentingViewCtrl.dismiss(animated: true, completion: disappearClosure)
+                        presentingViewCtrl.dismiss(animated: animated, completion: disappearClosure)
                     } else {
                         // TODO: this case needed?
-                        navigationCtrl.dismiss(animated: true, completion: disappearClosure)
+                        navigationCtrl.dismiss(animated: animated, completion: disappearClosure)
                     }
                 } else {
-                    navigationCtrl.popViewController(animated: true)
+                    navigationCtrl.popViewController(animated: animated)
                     if let disappearClosure = disappearClosure {
                         let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(300)
                         DispatchQueue.main.asyncAfter(deadline: deadline, execute: disappearClosure)
                     }
                 }
             } else {
-                presentingViewController?.dismiss(animated: true, completion: disappearClosure)
+                presentingViewController?.dismiss(animated: animated, completion: disappearClosure)
             }
         }
 
@@ -174,25 +168,28 @@ open class Coordinator {
     ///
     /// - Parameters:
     ///   - viewController: The view controller to be presented.
+    ///   - animate: Animate presentation of the view controller.
     ///   - style: The expected presentation style. Defaults to automatic detection.
-    public func present(_ viewCtrl: UIViewController, style: PresentationStyle? = nil, navigation: Bool = true) {
+    public func present(_ viewCtrl: UIViewController, animated: Bool = true, style: PresentationStyle? = nil, navigation: Bool = true) {
         let presentationStyle = style ?? automaticPresentationStyle(forViewController: viewCtrl)
+
+        let presentingViewController = self.presentingViewController ?? UIWindow.visibleViewController(from: viewCtrl)
 
         switch presentationStyle {
         case .modal(let completion):
             if let navigationCtrl = viewCtrl as? UINavigationController ?? viewCtrl.navigationController {
-                presentingViewController?.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController?.present(navigationCtrl, animated: animated, completion: completion)
             } else if !navigation {
                 // a view controller without navigation stack is passed, .modal style is chosen but navigation is false
-                presentingViewController?.present(viewCtrl, animated: true, completion: completion)
+                presentingViewController?.present(viewCtrl, animated: animated, completion: completion)
             } else {
                 // a view controller without navigation stack is passed, .modal style is chosen and navigation is true
                 let navigationCtrl = UINavigationController(rootViewController: viewCtrl)
-                presentingViewController?.present(navigationCtrl, animated: true, completion: completion)
+                presentingViewController?.present(navigationCtrl, animated: animated, completion: completion)
             }
 
         case .push:
-            presentingNavigationController?.pushViewController(viewCtrl, animated: true)
+            presentingNavigationController?.pushViewController(viewCtrl, animated: animated)
         }
     }
 
@@ -205,11 +202,9 @@ open class Coordinator {
         if !finishCalled { finish(alreadyDisappeared: true) }
     }
 
-
     // MARK: - Helpers Methods
-
     private func automaticPresentationStyle(forViewController viewController: UIViewController) -> PresentationStyle {
-        if presentingNavigationController == nil || viewController is UINavigationController || viewController.navigationController != nil {
+        guard presentingNavigationController != nil && !(viewController is UINavigationController) && viewController.navigationController == nil else {
             return .modal(completion: nil)
         }
 

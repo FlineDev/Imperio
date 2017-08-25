@@ -13,8 +13,8 @@ width=600 height=167>
      alt="codebeat badge">
   </a>
   <a href="https://github.com/Flinesoft/Imperio/releases">
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"
-     alt="Version: 1.0.0">
+  <img src="https://img.shields.io/badge/Version-1.0.1-blue.svg"
+     alt="Version: 1.0.1">
   </a>
   <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
      alt="Swift: 3.0">
@@ -44,7 +44,7 @@ The goal of this library is to **keep view controllers lean** by getting screen 
 
 Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage).
 [Cocoapods](https://github.com/CocoaPods/CocoaPods) is supported, too.
-[Swift Package Manager](https://github.com/apple/swift-package-manager) was targeted but didn't work in my tests.
+[Swift Package Manager](https://github.com/apple/swift-package-manager) might work, too (not tested).
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
@@ -147,24 +147,27 @@ Note that for the `.modal` presentation style you can set a completion closure w
 
 ### Coordinatable
 
-In order for the coordinator to get notified of any actions of the user, the view controller needs to comply to `Coordinatable`. Before doing that though, you should create an enum with some actions that can be done by the user in the view controller:
+In order for the coordinator to get notified of any actions of the user, the view controller needs to comply to `Coordinatable`. In order to do that, you should first create an enum with some actions that can be done by the user within the view controller and name it `Action`:
 
-```
-enum TutorialPage1Action {
-    case nextButtonPressed
-    case didEnterName(String)
-    case skipButtonPressed
+``` Swift
+class TutorialPage1ViewController: Coordinatable {
+    enum Action {
+      case nextButtonPressed
+      case didEnterName(String)
+      case skipButtonPressed
+    }
+    // TODO: not yet completed
 }
 ```
 
 Note that the actions names should not contain any semantics: Always use `nextButtonPressed` which is what the user really did instead of `showNextScreen` which already includes semantics and probably is what the user intended. It is up to the coordinator to decide the intention of the user, not the view controllers!
 
-Now we can make our view controller comply to `Coordinatable`:
+Now we can complete making our view controller comply to `Coordinatable` (note that when you simply type `coordinate` Xcode will auto-complete the rest of the code here):
 
 ``` Swift
 class TutorialPage1ViewController: Coordinatable {
-    typealias Action = TutorialPage1Action
-    var coordinate: ((TutorialPage1Action) -> Void)!
+    // the `Action` enum code is here
+    var coordinate: ((TutorialPage1ViewController.Action) -> Void)!
 }
 ```
 
@@ -173,19 +176,17 @@ That's it on the controller side. This enables us to complete our coordinators `
 ``` Swift
 override func start() {
     // ...
-    
-    weak var weakSelf = self // prevent memory issues through retain cycles
-    page1Ctrl.coordinate = { action in
+    page1Ctrl.coordinate = { [unowned self] action in
         switch action {
         case .nextButtonPressed:
-            weakSelf?.showNextScreen() // present next view controller using the present method
+            self.showNextScreen() // present next view controller using the present method
+            
         case .didEnterName(let name):
-            weakSelf?.changeName(to: name) // update your data based on input
+            self.changeName(to: name) // update your data based on input
+            
         case .skipButtonPressed:
-            weakSelf?.finish() // finish the current screen flow
+            self.finish() // finish the current screen flow
     }
-
-
     // ...
 }
 ```
@@ -193,7 +194,9 @@ override func start() {
 The `coordinate` closure is the place the coordinator gets notified about any actions the user made in view controller. So, make sure to call it when user actions are perceived in your view controller, for example:
 
 ``` Swift
-@IBAction func nextButtonPressed() { coordinate(.nextButtonPressed) }
+@IBAction func nextButtonPressed() {
+    coordinate(.nextButtonPressed)
+}
 
 ```
 
@@ -209,7 +212,7 @@ To keep the AppDelegate clean, create a subclass of `AppCoordinator` instead of 
 
 Note that you can't `finish` the screen flow of an app coordinator. Imperio will simply do nothing if you call it.
 
-Now in your AppDelegate can look something like this:
+Now your AppDelegate can look something like this:
 
 ``` Swift
 import UIKit
@@ -221,7 +224,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         appCoordinator = DashboardCoordinator()
         appCoordinator?.start()
         window = appCoordinator?.window
@@ -240,11 +242,23 @@ let tutorialCoordinator = TutorialCoordinator()
 start(subCoordinator: tutorialCoordinator)
 ```
 
-Note that this will automatically finish the current screen flow. If you want to get notified when the sub coordinator is finished or disappeared, simply chain `onFinish` or `onDisappear` callbacks to the start method:
+If you want to get notified when the sub coordinator is finished or disappeared, simply chain `onFinish` or `onDisappear` callbacks to the start method:
 
 ``` Swift
 start(subCoordinator: tutorialCoordinator).onFinish {
     myTableViewController.reloadData()
+}
+```
+
+If you ever need to pass data into a coordinator on creation, simply write a new `init` method with all the data needed to be passed like this:
+
+``` Swift
+class TutorialCoordinator {
+    private let name: String
+    init(presentingViewController: UIViewController, name: String) {
+        self.name = name
+        super.init(presentingViewController: presentingViewController)
+    }
 }
 ```
 
