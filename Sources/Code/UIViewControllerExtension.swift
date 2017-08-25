@@ -1,6 +1,6 @@
 //
 //  UIViewController+Extension.swift
-//  Imperio-iOS
+//  Imperio
 //
 //  Created by Anh Dung Pham on 15.08.17.
 //  Copyright © 2017 Flinesoft. All rights reserved.

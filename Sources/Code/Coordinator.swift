@@ -1,14 +1,12 @@
 //
 //  Coordinator.swift
-//  Cruciverber
+//  Imperio
 //
 //  Created by Cihat Gündüz on 12.03.16.
 //  Copyright © 2016 Flinesoft. All rights reserved.
 //
 
 import UIKit
-
-typealias ActionClosure = () -> Void
 
 /// The different presentation options.
 ///
@@ -43,7 +41,6 @@ public protocol Coordinatable {
 ///   - start()
 open class Coordinator {
     // MARK: - Stored Instance Properties
-
     /// The coordinators started from this coordinator.
     private var childCoordinators: [Coordinator] = []
 
@@ -62,21 +59,18 @@ open class Coordinator {
     /// This can be used on didDisappear to assume a screen pan swipe or back button press.
     public var finishCalled = false
 
-
     // MARK: - Computed Instance Properties
-
     /// Returns the presenting navigation controller if available. Extracts the navigation controller
     /// from a UIViewController or directly returns a UINavigationController if such presenting.
     private var presentingNavigationController: UINavigationController? {
-        if let presentingNavCtrl = presentingViewController as? UINavigationController {
-            return presentingNavCtrl
+        guard let presentingNavCtrl = presentingViewController as? UINavigationController else {
+            return presentingViewController?.navigationController
         }
-        return presentingViewController?.navigationController
+
+        return presentingNavCtrl
     }
 
-
     // MARK: - Initializers
-
     /// Initialize a new coordinator object.
     ///
     /// - Parameters:
@@ -85,19 +79,17 @@ open class Coordinator {
         self.presentingViewController = presentingViewController
     }
 
-
     // MARK: - Instance Methods
-
     /// Starts the screen flow represented by this coordinator. Subclasses should put their screen flow logic in here.
     open func start() {}
 
+    @discardableResult
     /// Starts a sub coordinator from within this coordinator – no need to call `start()` on the coordinator manually.
     /// This ensures the sub coordinator is correctly added to the child coordinators array.
     ///
     /// - Parameters:
     ///   - subCoordinator: The sub coordinator to be started and added to the child coordinators.
     /// - Returns: The child coordinator object for consecutive callback definitions (like `onFinish`).
-    @discardableResult
     public func start(subCoordinator childCoordinator: Coordinator) -> Coordinator {
         childCoordinators.append(childCoordinator)
         childCoordinator.parentCoordinator = self
@@ -210,11 +202,9 @@ open class Coordinator {
         if !finishCalled { finish(alreadyDisappeared: true) }
     }
 
-
     // MARK: - Helpers Methods
-
     private func automaticPresentationStyle(forViewController viewController: UIViewController) -> PresentationStyle {
-        if presentingNavigationController == nil || viewController is UINavigationController || viewController.navigationController != nil {
+        guard presentingNavigationController != nil && !(viewController is UINavigationController) && viewController.navigationController == nil else {
             return .modal(completion: nil)
         }
 
