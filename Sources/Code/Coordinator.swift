@@ -173,7 +173,7 @@ open class Coordinator {
     public func present(_ viewCtrl: UIViewController, animated: Bool = true, style: PresentationStyle? = nil, navigation: Bool = true) {
         let presentationStyle = style ?? automaticPresentationStyle(forViewController: viewCtrl)
 
-        let presentingViewController = self.presentingViewController ?? UIViewController.currentViewController()
+        let presentingViewController = self.presentingViewController ?? UIWindow.visibleViewController(from: viewCtrl)
 
         switch presentationStyle {
         case .modal(let completion):

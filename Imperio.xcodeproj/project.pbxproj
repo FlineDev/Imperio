@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C4A3F9A1F42C4E700E40E86 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIViewControllerExtension.swift */; };
-		5C4A3F9B1F42C4EE00E40E86 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIViewControllerExtension.swift */; };
+		5C4A3F9A1F42C4E700E40E86 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */; };
+		5C4A3F9B1F42C4EE00E40E86 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */; };
 		A14E0B291E1F9ECC00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		A14E0B471E1F9EDE00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */; };
 		A14E0B7C1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C4A3F991F42C4E700E40E86 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
 		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			children = (
 				A14E0B741E1F9F5200DFC788 /* Coordinator.swift */,
 				A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */,
-				5C4A3F991F42C4E700E40E86 /* UIViewControllerExtension.swift */,
+				5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -369,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4A3F9A1F42C4E700E40E86 /* UIViewControllerExtension.swift in Sources */,
+				5C4A3F9A1F42C4E700E40E86 /* UIWindowExtension.swift in Sources */,
 				A14E0B7F1E1F9F5200DFC788 /* Coordinator.swift in Sources */,
 				A14E0B7C1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */,
 			);
@@ -387,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4A3F9B1F42C4EE00E40E86 /* UIViewControllerExtension.swift in Sources */,
+				5C4A3F9B1F42C4EE00E40E86 /* UIWindowExtension.swift in Sources */,
 				A14E0B801E1F9F5200DFC788 /* Coordinator.swift in Sources */,
 				A14E0B7D1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */,
 			);
