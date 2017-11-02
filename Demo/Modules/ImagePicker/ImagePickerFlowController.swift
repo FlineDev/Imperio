@@ -9,6 +9,10 @@
 import Imperio
 import UIKit
 
+// NOTE: In this flow controller example the entire flow is handled right within the flow controller without creating any additional class.
+// The reason for this is that UIImagePickerController and UIAlertController both already encapsulate the logic for rendering, animating etc.
+// Therefore there is no need to create additional types like view controllers or view models to handle this flow.
+
 class ImagePickerFlowController: FlowController {
     typealias ResultClosure = (UIImage) -> Void
 

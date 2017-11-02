@@ -1,6 +1,6 @@
 //
 //  Page3ViewController.swift
-//  Imperio-Demo
+//  Imperio
 //
 //  Created by Cihat Gündüz on 01.11.17.
 //  Copyright © 2017 Flinesoft. All rights reserved.
@@ -13,9 +13,7 @@ protocol Page3FlowDelegate: class {
     func completeButtonPressed()
 }
 
-class Page3ViewController: UIViewController, Flowable {
-    typealias FlowDelegate = Page3FlowDelegate
-
+class Page3ViewController: UIViewController {
     weak var flowDelegate: Page3FlowDelegate?
 
     @IBAction func completeButtonPressed() {

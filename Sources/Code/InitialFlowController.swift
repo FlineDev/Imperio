@@ -9,7 +9,7 @@
 import UIKit
 
 /// A class to be subclassed by the flow controller which is opened first from the app delegate.
-open class InitialFlowController: BaseFlowController {
+open class InitialFlowController: FlowController {
     /// Starts a flow controller as initial flow from the given window.
     ///
     /// - Paramters:

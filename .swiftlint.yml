@@ -44,7 +44,7 @@ file_header:
                     \/\/  Imperio
                     \/\/
                     \/\/  Created by [^\(\)\d\n]+ on \S{6,10}\.
-                    \/\/  Copyright © Flinesoft. All rights reserved\.
+                    \/\/  Copyright © 20\d{2} Flinesoft. All rights reserved\.
                     \/\/
 custom_rules:
   closing_brace_whitespace:

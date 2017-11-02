@@ -9,6 +9,9 @@
 import Imperio
 import UIKit
 
+// NOTE: In this case we have multiple view controllers to be navigated between using the flow controller. Please note that we are using the built-in
+// back navigation functionality from the navigation controller and are not explicitly implementing this ourselves. Let's keep things simple.
+
 class TutorialFlowController: FlowController {
     var navigationCtrl: UINavigationController?
 

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F751FAB638D00D8F2FA /* Bond.framework */; };
+		00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F761FAB638D00D8F2FA /* Differ.framework */; };
+		00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */; };
+		00580CE31FAB6A0200BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
+		00580CE41FAB6A0200BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
+		00580CE51FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
+		00580CE61FAB6A0200BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
+		00580CE71FAB6A0200BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
+		00580CE81FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
 		0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		0086C0CF1FAA70CC0089BBE1 /* Imperio.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0086C0D41FAA70F00089BBE1 /* ImagePickerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0D31FAA70F00089BBE1 /* ImagePickerFlowController.swift */; };
@@ -25,12 +34,9 @@
 		0086C0F21FAA82EE0089BBE1 /* Page2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0F01FAA82EE0089BBE1 /* Page2ViewController.xib */; };
 		0086C0F51FAA82FB0089BBE1 /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0F31FAA82FB0089BBE1 /* Page3ViewController.swift */; };
 		0086C0F61FAA82FB0089BBE1 /* Page3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0F41FAA82FB0089BBE1 /* Page3ViewController.xib */; };
-		0086C0F81FAA84410089BBE1 /* BaseFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0F71FAA84410089BBE1 /* BaseFlowController.swift */; };
-		0086C0F91FAA84410089BBE1 /* BaseFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0F71FAA84410089BBE1 /* BaseFlowController.swift */; };
+		008D0D701FAB4C6B00D8F2FA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */; };
 		009267921FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
 		009267931FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
-		009267951FAA6B5D00C7602D /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267941FAA6B5D00C7602D /* Flowable.swift */; };
-		009267961FAA6B5D00C7602D /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267941FAA6B5D00C7602D /* Flowable.swift */; };
 		A14E0B291E1F9ECC00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		A14E0B471E1F9EDE00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */; };
 /* End PBXBuildFile section */
@@ -91,11 +97,18 @@
 		0086C0F01FAA82EE0089BBE1 /* Page2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page2ViewController.xib; sourceTree = "<group>"; };
 		0086C0F31FAA82FB0089BBE1 /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 		0086C0F41FAA82FB0089BBE1 /* Page3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page3ViewController.xib; sourceTree = "<group>"; };
-		0086C0F71FAA84410089BBE1 /* BaseFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlowController.swift; sourceTree = "<group>"; };
+		008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		008D0D741FAB5E6500D8F2FA /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		008D0D751FAB60F600D8F2FA /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		008D0F711FAB638100D8F2FA /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
+		008D0F721FAB638100D8F2FA /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
+		008D0F731FAB638100D8F2FA /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/iOS/ReactiveKit.framework; sourceTree = "<group>"; };
+		008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/tvOS/ReactiveKit.framework; sourceTree = "<group>"; };
+		008D0F751FAB638D00D8F2FA /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/tvOS/Bond.framework; sourceTree = "<group>"; };
+		008D0F761FAB638D00D8F2FA /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/tvOS/Differ.framework; sourceTree = "<group>"; };
 		0092678D1FAA67B600C7602D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0092678F1FAA68F700C7602D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		009267911FAA699800C7602D /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
-		009267941FAA6B5D00C7602D /* Flowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flowable.swift; sourceTree = "<group>"; };
 		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -112,7 +125,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00580CE81FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */,
 				0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */,
+				00580CE71FAB6A0200BA4382 /* Differ.framework in Frameworks */,
+				00580CE61FAB6A0200BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00580CE41FAB6A0200BA4382 /* Differ.framework in Frameworks */,
+				00580CE51FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */,
+				00580CE31FAB6A0200BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */,
+				00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */,
+				00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +177,6 @@
 				0086C0CA1FAA70550089BBE1 /* AppDelegate.swift */,
 				0086C0C61FAA70550089BBE1 /* LaunchScreen.storyboard */,
 				0086C0C51FAA70550089BBE1 /* Assets.xcassets */,
-				0086C0E21FAA72D10089BBE1 /* Main */,
 				0086C0C41FAA70550089BBE1 /* Modules */,
 				0086C0C81FAA70550089BBE1 /* SupportingFiles */,
 			);
@@ -165,6 +186,7 @@
 		0086C0C41FAA70550089BBE1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0086C0E21FAA72D10089BBE1 /* Main */,
 				0086C0CC1FAA709A0089BBE1 /* ImagePicker */,
 				0086C0CB1FAA70920089BBE1 /* Tutorial */,
 			);
@@ -205,10 +227,40 @@
 			isa = PBXGroup;
 			children = (
 				0086C0E31FAA73CB0089BBE1 /* MainFlowController.swift */,
+				008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */,
 				0086C0E01FAA72700089BBE1 /* MainViewController.swift */,
 				0086C0DE1FAA725E0089BBE1 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		008D0F6E1FAB635800D8F2FA /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				008D0F6F1FAB636800D8F2FA /* iOS */,
+				008D0F701FAB636F00D8F2FA /* tvOS */,
+			);
+			name = Carthage;
+			sourceTree = "<group>";
+		};
+		008D0F6F1FAB636800D8F2FA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				008D0F711FAB638100D8F2FA /* Bond.framework */,
+				008D0F721FAB638100D8F2FA /* Differ.framework */,
+				008D0F731FAB638100D8F2FA /* ReactiveKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		008D0F701FAB636F00D8F2FA /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				008D0F751FAB638D00D8F2FA /* Bond.framework */,
+				008D0F761FAB638D00D8F2FA /* Differ.framework */,
+				008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */,
+			);
+			name = tvOS;
 			sourceTree = "<group>";
 		};
 		0092678A1FAA67B600C7602D /* Sources */ = {
@@ -247,10 +299,8 @@
 		009267901FAA697E00C7602D /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				0086C0F71FAA84410089BBE1 /* BaseFlowController.swift */,
 				009267911FAA699800C7602D /* FlowController.swift */,
 				0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */,
-				009267941FAA6B5D00C7602D /* Flowable.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -263,6 +313,7 @@
 				0092678A1FAA67B600C7602D /* Sources */,
 				0092678B1FAA67B600C7602D /* Tests */,
 				A14E0B201E1F9ECC00DFC788 /* Products */,
+				008D0F6E1FAB635800D8F2FA /* Carthage */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				82C76D071E4215110027B35F /* .swiftlint.yml */,
+				008D0D741FAB5E6500D8F2FA /* Cartfile */,
+				008D0D751FAB60F600D8F2FA /* Cartfile.resolved */,
 				82C76D091E4215480027B35F /* Imperio.podspec */,
 				82C76D0A1E4221FD0027B35F /* LICENSE.md */,
 				82C76D081E4215240027B35F /* Package.swift */,
@@ -318,6 +371,8 @@
 				0086C0AC1FAA6F920089BBE1 /* Frameworks */,
 				0086C0AD1FAA6F920089BBE1 /* Resources */,
 				0086C0D21FAA70CD0089BBE1 /* Embed Frameworks */,
+				008D0F771FAB65F200D8F2FA /* SwiftLint */,
+				008D0D781FAB615A00D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -337,7 +392,8 @@
 				A14E0B1B1E1F9ECC00DFC788 /* Frameworks */,
 				A14E0B1C1E1F9ECC00DFC788 /* Headers */,
 				A14E0B1D1E1F9ECC00DFC788 /* Resources */,
-				82C76D0C1E4222300027B35F /* Run Swift Linter */,
+				82C76D0C1E4222300027B35F /* SwiftLint */,
+				008D0D761FAB611400D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -374,6 +430,8 @@
 				A14E0B3A1E1F9EDD00DFC788 /* Frameworks */,
 				A14E0B3B1E1F9EDD00DFC788 /* Headers */,
 				A14E0B3C1E1F9EDD00DFC788 /* Resources */,
+				008D0D791FAB61A700D8F2FA /* SwiftLint */,
+				008D0D771FAB614600D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -508,19 +566,107 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82C76D0C1E4222300027B35F /* Run Swift Linter */ = {
+		008D0D761FAB611400D8F2FA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		008D0D771FAB614600D8F2FA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Differ.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/ReactiveKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		008D0D781FAB615A00D8F2FA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		008D0D791FAB61A700D8F2FA /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Swift Linter";
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\nswiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi";
+		};
+		008D0F771FAB65F200D8F2FA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		82C76D0C1E4222300027B35F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -537,6 +683,7 @@
 				0086C0E41FAA73CB0089BBE1 /* MainFlowController.swift in Sources */,
 				0086C0D61FAA71300089BBE1 /* TutorialFlowController.swift in Sources */,
 				0086C0F11FAA82EE0089BBE1 /* Page2ViewController.swift in Sources */,
+				008D0D701FAB4C6B00D8F2FA /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,8 +693,6 @@
 			files = (
 				0086C0E91FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
 				009267921FAA699800C7602D /* FlowController.swift in Sources */,
-				0086C0F81FAA84410089BBE1 /* BaseFlowController.swift in Sources */,
-				009267951FAA6B5D00C7602D /* Flowable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,8 +709,6 @@
 			files = (
 				0086C0EA1FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
 				009267931FAA699800C7602D /* FlowController.swift in Sources */,
-				0086C0F91FAA84410089BBE1 /* BaseFlowController.swift in Sources */,
-				009267961FAA6B5D00C7602D /* Flowable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +769,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Demo/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -655,6 +802,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Demo/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

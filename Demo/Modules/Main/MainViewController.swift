@@ -9,18 +9,25 @@
 import Imperio
 import UIKit
 
-protocol MainFlowableDelegate: class {
+protocol MainFlowDelegate: class {
     func tutorialStartButtonPressed()
     func imagePickerStartButtonPressed()
 }
 
-class MainViewController: UIViewController, Flowable {
-    // MARK: - Flowable Protocol Implementation
-    typealias FlowDelegate = MainFlowableDelegate
-    weak var flowDelegate: MainFlowableDelegate?
+class MainViewController: UIViewController {
+    weak var flowDelegate: MainFlowDelegate?
+    var viewModel: MainViewModel?
 
     // MARK: - Stored Instance Properties
-    @IBOutlet var pickedImageView: UIImageView!
+    @IBOutlet private var pickedImageView: UIImageView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        _ = viewModel?.pickedImage.observeNext { [unowned self] pickedImage in
+            self.pickedImageView.image = pickedImage
+        }
+    }
 
     // MARK: - Action Methods
     @IBAction func tutorialStartButtonPressed() {

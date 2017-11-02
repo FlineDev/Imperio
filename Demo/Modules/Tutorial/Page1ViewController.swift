@@ -1,6 +1,6 @@
 //
 //  Page1ViewController.swift
-//  Imperio-Demo
+//  Imperio
 //
 //  Created by Cihat Gündüz on 01.11.17.
 //  Copyright © 2017 Flinesoft. All rights reserved.
@@ -13,9 +13,7 @@ protocol Page1FlowDelegate: class {
     func nextToPage2ButtonPressed()
 }
 
-class Page1ViewController: UIViewController, Flowable {
-    typealias FlowDelegate = Page1FlowDelegate
-
+class Page1ViewController: UIViewController {
     weak var flowDelegate: Page1FlowDelegate?
 
     @IBAction func nextButtonPressed() {

@@ -13,9 +13,7 @@ protocol Page2FlowDelegate: class {
     func nextToPage3ButtonPressed()
 }
 
-class Page2ViewController: UIViewController, Flowable {
-    typealias FlowDelegate = Page2FlowDelegate
-
+class Page2ViewController: UIViewController {
     weak var flowDelegate: Page2FlowDelegate?
 
     @IBAction func nextButtonPressed() {
