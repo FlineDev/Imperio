@@ -26,6 +26,7 @@ disabled_rules:
 - todo
 
 included:
+- Demo
 - Sources
 - Tests
 

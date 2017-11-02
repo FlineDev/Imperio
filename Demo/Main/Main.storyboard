@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0te-oF-Ouy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="18F-bV-oZ0">
+            <objects>
+                <viewController id="0te-oF-Ouy" customClass="MainViewController" customModule="Imperio_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4jN-no-JQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4L-Vz-8e8">
+                                <rect key="frame" x="16" y="20" width="343" height="100"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0Je-bh-GVE"/>
+                                </constraints>
+                                <state key="normal" title="Start Tutorial Flow"/>
+                                <connections>
+                                    <action selector="tutorialStartButtonPressed" destination="0te-oF-Ouy" eventType="primaryActionTriggered" id="RiS-dx-Avf"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oKl-Cr-pcw">
+                                <rect key="frame" x="16" y="236" width="343" height="411"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-Kl-Zgk">
+                                <rect key="frame" x="16" y="128" width="343" height="100"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="f4x-eC-GMx"/>
+                                </constraints>
+                                <state key="normal" title="Start Image Picker Flow"/>
+                                <connections>
+                                    <action selector="imagePickerStartButtonPressed" destination="0te-oF-Ouy" eventType="primaryActionTriggered" id="llC-n0-sN3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fkK-yj-Unv" firstAttribute="trailing" secondItem="oKl-Cr-pcw" secondAttribute="trailing" constant="16" id="3iK-pF-cgU"/>
+                            <constraint firstItem="Asa-Kl-Zgk" firstAttribute="leading" secondItem="fkK-yj-Unv" secondAttribute="leading" constant="16" id="MXo-eV-IAw"/>
+                            <constraint firstItem="oKl-Cr-pcw" firstAttribute="leading" secondItem="fkK-yj-Unv" secondAttribute="leading" constant="16" id="QDY-OM-U1V"/>
+                            <constraint firstItem="b4L-Vz-8e8" firstAttribute="top" secondItem="fkK-yj-Unv" secondAttribute="top" id="TwP-6n-zca"/>
+                            <constraint firstItem="fkK-yj-Unv" firstAttribute="trailing" secondItem="Asa-Kl-Zgk" secondAttribute="trailing" constant="16" id="XtT-RT-Wny"/>
+                            <constraint firstItem="fkK-yj-Unv" firstAttribute="trailing" secondItem="b4L-Vz-8e8" secondAttribute="trailing" constant="16" id="bo3-zI-Pvm"/>
+                            <constraint firstItem="b4L-Vz-8e8" firstAttribute="leading" secondItem="fkK-yj-Unv" secondAttribute="leading" constant="16" id="fta-T7-oju"/>
+                            <constraint firstItem="Asa-Kl-Zgk" firstAttribute="top" secondItem="b4L-Vz-8e8" secondAttribute="bottom" constant="8" id="o40-KV-J5S"/>
+                            <constraint firstItem="oKl-Cr-pcw" firstAttribute="top" secondItem="Asa-Kl-Zgk" secondAttribute="bottom" constant="8" id="v6Y-uZ-iNP"/>
+                            <constraint firstItem="fkK-yj-Unv" firstAttribute="bottom" secondItem="oKl-Cr-pcw" secondAttribute="bottom" constant="20" id="yg9-Az-OL3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fkK-yj-Unv"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickedImageView" destination="oKl-Cr-pcw" id="Ynk-Dh-ceB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHy-Vk-hbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349.60000000000002" y="211.84407796101951"/>
+        </scene>
+    </scenes>
+</document>
