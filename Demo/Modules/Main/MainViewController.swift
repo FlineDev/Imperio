@@ -27,7 +27,6 @@ class MainViewController: UIViewController {
         view.backgroundColor = viewModel?.backgroundColor
 
         _ = viewModel?.pickedImage.observeNext { [unowned self] pickedImage in
-            print("picked image is: \(pickedImage)")
             self.pickedImageView.image = pickedImage
         }
     }
