@@ -1,2 +1,2 @@
 # A Swift binding framework
-github "ReactiveKit/Bond"
+github "ReactiveKit/Bond" ~> 6.5
