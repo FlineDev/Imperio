@@ -7,19 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C4A3F9A1F42C4E700E40E86 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */; };
-		5C4A3F9B1F42C4EE00E40E86 /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */; };
+		003771991FB34E1300DAB797 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */; };
+		0037719B1FB34E2300DAB797 /* FBSnapshotTestCase.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0037719F1FB34E9700DAB797 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */; };
+		003771A01FB3501900DAB797 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
+		003771A11FB3502500DAB797 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
+		003771A21FB3502800DAB797 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
+		003771A31FB3502C00DAB797 /* Bond.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		003771A41FB3502C00DAB797 /* Differ.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		003771A51FB3502C00DAB797 /* ReactiveKit.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		003771AC1FB3580800DAB797 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003771AB1FB3580800DAB797 /* Media.xcassets */; };
+		00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F751FAB638D00D8F2FA /* Bond.framework */; };
+		00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F761FAB638D00D8F2FA /* Differ.framework */; };
+		00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */; };
+		00580CE31FAB6A0200BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
+		00580CE41FAB6A0200BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
+		00580CE51FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
+		00580CE61FAB6A0200BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
+		00580CE71FAB6A0200BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
+		00580CE81FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
+		0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
+		0086C0CF1FAA70CC0089BBE1 /* Imperio.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0086C0D41FAA70F00089BBE1 /* ImagePickerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0D31FAA70F00089BBE1 /* ImagePickerFlowController.swift */; };
+		0086C0D61FAA71300089BBE1 /* TutorialFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0D51FAA71300089BBE1 /* TutorialFlowController.swift */; };
+		0086C0DF1FAA725E0089BBE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0DE1FAA725E0089BBE1 /* Main.storyboard */; };
+		0086C0E11FAA72700089BBE1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0E01FAA72700089BBE1 /* MainViewController.swift */; };
+		0086C0E41FAA73CB0089BBE1 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0E31FAA73CB0089BBE1 /* MainFlowController.swift */; };
+		0086C0E51FAA74360089BBE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0CA1FAA70550089BBE1 /* AppDelegate.swift */; };
+		0086C0E61FAA743D0089BBE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0C61FAA70550089BBE1 /* LaunchScreen.storyboard */; };
+		0086C0E71FAA74490089BBE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0C51FAA70550089BBE1 /* Assets.xcassets */; };
+		0086C0E91FAA7C770089BBE1 /* InitialFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */; };
+		0086C0EA1FAA7C770089BBE1 /* InitialFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */; };
+		0086C0ED1FAA82DE0089BBE1 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0EB1FAA82DE0089BBE1 /* Page1ViewController.swift */; };
+		0086C0EE1FAA82DE0089BBE1 /* Page1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0EC1FAA82DE0089BBE1 /* Page1ViewController.xib */; };
+		0086C0F11FAA82EE0089BBE1 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0EF1FAA82EE0089BBE1 /* Page2ViewController.swift */; };
+		0086C0F21FAA82EE0089BBE1 /* Page2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0F01FAA82EE0089BBE1 /* Page2ViewController.xib */; };
+		0086C0F51FAA82FB0089BBE1 /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0F31FAA82FB0089BBE1 /* Page3ViewController.swift */; };
+		0086C0F61FAA82FB0089BBE1 /* Page3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0086C0F41FAA82FB0089BBE1 /* Page3ViewController.xib */; };
+		008D0D701FAB4C6B00D8F2FA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */; };
+		009267921FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
+		009267931FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
 		A14E0B291E1F9ECC00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		A14E0B471E1F9EDE00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */; };
-		A14E0B7C1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */; };
-		A14E0B7D1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */; };
-		A14E0B7F1E1F9F5200DFC788 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B741E1F9F5200DFC788 /* Coordinator.swift */; };
-		A14E0B801E1F9F5200DFC788 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B741E1F9F5200DFC788 /* Coordinator.swift */; };
-		A14E0B8B1E1F9F5C00DFC788 /* ImperioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */; };
-		A14E0B8C1E1F9F5D00DFC788 /* ImperioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		003771911FB34D8700DAB797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0086C0AE1FAA6F920089BBE1;
+			remoteInfo = "Imperio-Demo";
+		};
+		0086C0D01FAA70CC0089BBE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A14E0B1E1E1F9ECC00DFC788;
+			remoteInfo = "Imperio-iOS";
+		};
 		A14E0B2A1E1F9ECC00DFC788 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
@@ -36,8 +82,69 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0037719A1FB34E1B00DAB797 /* Carthage */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0037719B1FB34E2300DAB797 /* FBSnapshotTestCase.framework in Carthage */,
+				003771A31FB3502C00DAB797 /* Bond.framework in Carthage */,
+				003771A41FB3502C00DAB797 /* Differ.framework in Carthage */,
+				003771A51FB3502C00DAB797 /* ReactiveKit.framework in Carthage */,
+			);
+			name = Carthage;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0086C0D21FAA70CD0089BBE1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0086C0CF1FAA70CC0089BBE1 /* Imperio.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
+		003771871FB348D200DAB797 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-Demo Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		003771AB1FB3580800DAB797 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Imperio-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0086C0C51FAA70550089BBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0086C0C71FAA70550089BBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0086C0C91FAA70550089BBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0086C0CA1FAA70550089BBE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0086C0D31FAA70F00089BBE1 /* ImagePickerFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerFlowController.swift; sourceTree = "<group>"; };
+		0086C0D51FAA71300089BBE1 /* TutorialFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialFlowController.swift; sourceTree = "<group>"; };
+		0086C0DE1FAA725E0089BBE1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0086C0E01FAA72700089BBE1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0086C0E31FAA73CB0089BBE1 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFlowController.swift; sourceTree = "<group>"; };
+		0086C0EB1FAA82DE0089BBE1 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		0086C0EC1FAA82DE0089BBE1 /* Page1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page1ViewController.xib; sourceTree = "<group>"; };
+		0086C0EF1FAA82EE0089BBE1 /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
+		0086C0F01FAA82EE0089BBE1 /* Page2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page2ViewController.xib; sourceTree = "<group>"; };
+		0086C0F31FAA82FB0089BBE1 /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
+		0086C0F41FAA82FB0089BBE1 /* Page3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page3ViewController.xib; sourceTree = "<group>"; };
+		008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		008D0D741FAB5E6500D8F2FA /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		008D0D751FAB60F600D8F2FA /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		008D0F711FAB638100D8F2FA /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
+		008D0F721FAB638100D8F2FA /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
+		008D0F731FAB638100D8F2FA /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/iOS/ReactiveKit.framework; sourceTree = "<group>"; };
+		008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/tvOS/ReactiveKit.framework; sourceTree = "<group>"; };
+		008D0F751FAB638D00D8F2FA /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/tvOS/Bond.framework; sourceTree = "<group>"; };
+		008D0F761FAB638D00D8F2FA /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/tvOS/Differ.framework; sourceTree = "<group>"; };
+		0092678D1FAA67B600C7602D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0092678F1FAA68F700C7602D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		009267911FAA699800C7602D /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -47,18 +154,38 @@
 		A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B461E1F9EDE00DFC788 /* Imperio-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		A14E0B741E1F9F5200DFC788 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		A14E0B761E1F9F5200DFC788 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImperioTests.swift; sourceTree = "<group>"; };
-		A14E0B7B1E1F9F5200DFC788 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		003771891FB34D8700DAB797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003771A21FB3502800DAB797 /* ReactiveKit.framework in Frameworks */,
+				003771991FB34E1300DAB797 /* FBSnapshotTestCase.framework in Frameworks */,
+				003771A11FB3502500DAB797 /* Differ.framework in Frameworks */,
+				003771A01FB3501900DAB797 /* Bond.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0086C0AC1FAA6F920089BBE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00580CE81FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */,
+				0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */,
+				00580CE71FAB6A0200BA4382 /* Differ.framework in Frameworks */,
+				00580CE61FAB6A0200BA4382 /* Bond.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A14E0B1B1E1F9ECC00DFC788 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00580CE41FAB6A0200BA4382 /* Differ.framework in Frameworks */,
+				00580CE51FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */,
+				00580CE31FAB6A0200BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +201,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */,
+				00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */,
+				00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,13 +218,184 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003771961FB34DBF00DAB797 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0037719C1FB34E4600DAB797 /* Modules */,
+				003771AB1FB3580800DAB797 /* Media.xcassets */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		003771971FB34DEF00DAB797 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		0037719C1FB34E4600DAB797 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0037719D1FB34E4B00DAB797 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0037719D1FB34E4B00DAB797 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0086C0C31FAA70550089BBE1 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0086C0CA1FAA70550089BBE1 /* AppDelegate.swift */,
+				0086C0C61FAA70550089BBE1 /* LaunchScreen.storyboard */,
+				0086C0C51FAA70550089BBE1 /* Assets.xcassets */,
+				0086C0C41FAA70550089BBE1 /* Modules */,
+				0086C0C81FAA70550089BBE1 /* SupportingFiles */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		0086C0C41FAA70550089BBE1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0086C0E21FAA72D10089BBE1 /* Main */,
+				0086C0CC1FAA709A0089BBE1 /* ImagePicker */,
+				0086C0CB1FAA70920089BBE1 /* Tutorial */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0086C0C81FAA70550089BBE1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0086C0C91FAA70550089BBE1 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0086C0CB1FAA70920089BBE1 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0086C0D51FAA71300089BBE1 /* TutorialFlowController.swift */,
+				0086C0EB1FAA82DE0089BBE1 /* Page1ViewController.swift */,
+				0086C0EC1FAA82DE0089BBE1 /* Page1ViewController.xib */,
+				0086C0EF1FAA82EE0089BBE1 /* Page2ViewController.swift */,
+				0086C0F01FAA82EE0089BBE1 /* Page2ViewController.xib */,
+				0086C0F31FAA82FB0089BBE1 /* Page3ViewController.swift */,
+				0086C0F41FAA82FB0089BBE1 /* Page3ViewController.xib */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		0086C0CC1FAA709A0089BBE1 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				0086C0D31FAA70F00089BBE1 /* ImagePickerFlowController.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		0086C0E21FAA72D10089BBE1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0086C0E31FAA73CB0089BBE1 /* MainFlowController.swift */,
+				008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */,
+				0086C0E01FAA72700089BBE1 /* MainViewController.swift */,
+				0086C0DE1FAA725E0089BBE1 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		008D0F6E1FAB635800D8F2FA /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				008D0F6F1FAB636800D8F2FA /* iOS */,
+				008D0F701FAB636F00D8F2FA /* tvOS */,
+				003771971FB34DEF00DAB797 /* Tests */,
+			);
+			name = Carthage;
+			sourceTree = "<group>";
+		};
+		008D0F6F1FAB636800D8F2FA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				008D0F711FAB638100D8F2FA /* Bond.framework */,
+				008D0F721FAB638100D8F2FA /* Differ.framework */,
+				008D0F731FAB638100D8F2FA /* ReactiveKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		008D0F701FAB636F00D8F2FA /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				008D0F751FAB638D00D8F2FA /* Bond.framework */,
+				008D0F761FAB638D00D8F2FA /* Differ.framework */,
+				008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		0092678A1FAA67B600C7602D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				009267901FAA697E00C7602D /* Code */,
+				0092678E1FAA68F700C7602D /* SupportingFiles */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0092678B1FAA67B600C7602D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				003771961FB34DBF00DAB797 /* Demo */,
+				0092678C1FAA67B600C7602D /* SupportingFiles */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0092678C1FAA67B600C7602D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0092678D1FAA67B600C7602D /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0092678E1FAA68F700C7602D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0092678F1FAA68F700C7602D /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		009267901FAA697E00C7602D /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				009267911FAA699800C7602D /* FlowController.swift */,
+				0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
 		A14E0B151E1F9ECC00DFC788 = {
 			isa = PBXGroup;
 			children = (
 				A14E0B8E1E1F9FD400DFC788 /* Root Files */,
-				A14E0B711E1F9F5200DFC788 /* Sources */,
-				A14E0B771E1F9F5200DFC788 /* Tests */,
+				0086C0C31FAA70550089BBE1 /* Demo */,
+				0092678A1FAA67B600C7602D /* Sources */,
+				0092678B1FAA67B600C7602D /* Tests */,
 				A14E0B201E1F9ECC00DFC788 /* Products */,
+				008D0F6E1FAB635800D8F2FA /* Carthage */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,70 +406,23 @@
 				A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */,
 				A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */,
 				A14E0B461E1F9EDE00DFC788 /* Imperio-tvOS Tests.xctest */,
+				0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */,
+				0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A14E0B711E1F9F5200DFC788 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B721E1F9F5200DFC788 /* Code */,
-				A14E0B751E1F9F5200DFC788 /* Supporting Files */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		A14E0B721E1F9F5200DFC788 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B741E1F9F5200DFC788 /* Coordinator.swift */,
-				A14E0B731E1F9F5200DFC788 /* AppCoordinator.swift */,
-				5C4A3F991F42C4E700E40E86 /* UIWindowExtension.swift */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		A14E0B751E1F9F5200DFC788 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B761E1F9F5200DFC788 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A14E0B771E1F9F5200DFC788 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B781E1F9F5200DFC788 /* Code */,
-				A14E0B7A1E1F9F5200DFC788 /* Tests */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		A14E0B781E1F9F5200DFC788 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B791E1F9F5200DFC788 /* ImperioTests.swift */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		A14E0B7A1E1F9F5200DFC788 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				A14E0B7B1E1F9F5200DFC788 /* Info.plist */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		A14E0B8E1E1F9FD400DFC788 /* Root Files */ = {
 			isa = PBXGroup;
 			children = (
-				82C76D061E4214C60027B35F /* README.md */,
+				82C76D071E4215110027B35F /* .swiftlint.yml */,
+				008D0D741FAB5E6500D8F2FA /* Cartfile */,
+				003771871FB348D200DAB797 /* Cartfile.private */,
+				008D0D751FAB60F600D8F2FA /* Cartfile.resolved */,
+				82C76D091E4215480027B35F /* Imperio.podspec */,
 				82C76D0A1E4221FD0027B35F /* LICENSE.md */,
 				82C76D081E4215240027B35F /* Package.swift */,
-				82C76D091E4215480027B35F /* Imperio.podspec */,
-				82C76D071E4215110027B35F /* .swiftlint.yml */,
+				82C76D061E4214C60027B35F /* README.md */,
 			);
 			name = "Root Files";
 			sourceTree = "<group>";
@@ -193,6 +447,46 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0037718B1FB34D8700DAB797 /* Imperio-Demo Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio-Demo Tests" */;
+			buildPhases = (
+				003771881FB34D8700DAB797 /* Sources */,
+				003771891FB34D8700DAB797 /* Frameworks */,
+				0037718A1FB34D8700DAB797 /* Resources */,
+				0037719A1FB34E1B00DAB797 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003771921FB34D8700DAB797 /* PBXTargetDependency */,
+			);
+			name = "Imperio-Demo Tests";
+			productName = "Imperio-Demo Tests";
+			productReference = 0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio-Demo" */;
+			buildPhases = (
+				0086C0AB1FAA6F920089BBE1 /* Sources */,
+				0086C0AC1FAA6F920089BBE1 /* Frameworks */,
+				0086C0AD1FAA6F920089BBE1 /* Resources */,
+				0086C0D21FAA70CD0089BBE1 /* Embed Frameworks */,
+				008D0F771FAB65F200D8F2FA /* SwiftLint */,
+				008D0D781FAB615A00D8F2FA /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0086C0D11FAA70CC0089BBE1 /* PBXTargetDependency */,
+			);
+			name = "Imperio-Demo";
+			productName = "Imperio-Demo";
+			productReference = 0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14E0B331E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS" */;
@@ -201,7 +495,8 @@
 				A14E0B1B1E1F9ECC00DFC788 /* Frameworks */,
 				A14E0B1C1E1F9ECC00DFC788 /* Headers */,
 				A14E0B1D1E1F9ECC00DFC788 /* Resources */,
-				82C76D0C1E4222300027B35F /* Run Swift Linter */,
+				82C76D0C1E4222300027B35F /* SwiftLint */,
+				008D0D761FAB611400D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -238,6 +533,8 @@
 				A14E0B3A1E1F9EDD00DFC788 /* Frameworks */,
 				A14E0B3B1E1F9EDD00DFC788 /* Headers */,
 				A14E0B3C1E1F9EDD00DFC788 /* Resources */,
+				008D0D791FAB61A700D8F2FA /* SwiftLint */,
+				008D0D771FAB614600D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -272,26 +569,41 @@
 		A14E0B161E1F9ECC00DFC788 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Flinesoft;
 				TargetAttributes = {
+					0037718B1FB34D8700DAB797 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0086C0AE1FAA6F920089BBE1;
+					};
+					0086C0AE1FAA6F920089BBE1 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = DB7EUU9D79;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
 					A14E0B1E1E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = DB7EUU9D79;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B271E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 767S6EFMJ8;
+						DevelopmentTeam = DB7EUU9D79;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B3D1E1F9EDD00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B451E1F9EDE00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 767S6EFMJ8;
+						DevelopmentTeam = DB7EUU9D79;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -302,12 +614,15 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A14E0B151E1F9ECC00DFC788;
 			productRefGroup = A14E0B201E1F9ECC00DFC788 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */,
+				0037718B1FB34D8700DAB797 /* Imperio-Demo Tests */,
 				A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */,
 				A14E0B271E1F9ECC00DFC788 /* Imperio-iOS Tests */,
 				A14E0B3D1E1F9EDD00DFC788 /* Imperio-tvOS */,
@@ -317,6 +632,27 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0037718A1FB34D8700DAB797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003771AC1FB3580800DAB797 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0086C0AD1FAA6F920089BBE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0086C0F21FAA82EE0089BBE1 /* Page2ViewController.xib in Resources */,
+				0086C0DF1FAA725E0089BBE1 /* Main.storyboard in Resources */,
+				0086C0EE1FAA82DE0089BBE1 /* Page1ViewController.xib in Resources */,
+				0086C0F61FAA82FB0089BBE1 /* Page3ViewController.xib in Resources */,
+				0086C0E71FAA74490089BBE1 /* Assets.xcassets in Resources */,
+				0086C0E61FAA743D0089BBE1 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A14E0B1D1E1F9ECC00DFC788 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,30 +684,141 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82C76D0C1E4222300027B35F /* Run Swift Linter */ = {
+		008D0D761FAB611400D8F2FA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		008D0D771FAB614600D8F2FA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Differ.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/ReactiveKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		008D0D781FAB615A00D8F2FA /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		008D0D791FAB61A700D8F2FA /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Swift Linter";
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\nswiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi";
+		};
+		008D0F771FAB65F200D8F2FA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		82C76D0C1E4222300027B35F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		003771881FB34D8700DAB797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0037719F1FB34E9700DAB797 /* MainViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0086C0AB1FAA6F920089BBE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0086C0E51FAA74360089BBE1 /* AppDelegate.swift in Sources */,
+				0086C0D41FAA70F00089BBE1 /* ImagePickerFlowController.swift in Sources */,
+				0086C0E11FAA72700089BBE1 /* MainViewController.swift in Sources */,
+				0086C0F51FAA82FB0089BBE1 /* Page3ViewController.swift in Sources */,
+				0086C0ED1FAA82DE0089BBE1 /* Page1ViewController.swift in Sources */,
+				0086C0E41FAA73CB0089BBE1 /* MainFlowController.swift in Sources */,
+				0086C0D61FAA71300089BBE1 /* TutorialFlowController.swift in Sources */,
+				0086C0F11FAA82EE0089BBE1 /* Page2ViewController.swift in Sources */,
+				008D0D701FAB4C6B00D8F2FA /* MainViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A14E0B1A1E1F9ECC00DFC788 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4A3F9A1F42C4E700E40E86 /* UIWindowExtension.swift in Sources */,
-				A14E0B7F1E1F9F5200DFC788 /* Coordinator.swift in Sources */,
-				A14E0B7C1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */,
+				0086C0E91FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
+				009267921FAA699800C7602D /* FlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +826,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14E0B8B1E1F9F5C00DFC788 /* ImperioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,9 +833,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4A3F9B1F42C4EE00E40E86 /* UIWindowExtension.swift in Sources */,
-				A14E0B801E1F9F5200DFC788 /* Coordinator.swift in Sources */,
-				A14E0B7D1E1F9F5200DFC788 /* AppCoordinator.swift in Sources */,
+				0086C0EA1FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
+				009267931FAA699800C7602D /* FlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,13 +842,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14E0B8C1E1F9F5D00DFC788 /* ImperioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		003771921FB34D8700DAB797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */;
+			targetProxy = 003771911FB34D8700DAB797 /* PBXContainerItemProxy */;
+		};
+		0086C0D11FAA70CC0089BBE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */;
+			targetProxy = 0086C0D01FAA70CC0089BBE1 /* PBXContainerItemProxy */;
+		};
 		A14E0B2B1E1F9ECC00DFC788 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */;
@@ -416,7 +870,136 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0086C0C61FAA70550089BBE1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0086C0C71FAA70550089BBE1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		003771941FB34D8700DAB797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
+			};
+			name = Debug;
+		};
+		003771951FB34D8700DAB797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
+			};
+			name = Release;
+		};
+		0086C0BF1FAA6F920089BBE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DB7EUU9D79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Demo/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0086C0C01FAA6F920089BBE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DB7EUU9D79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Demo/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A14E0B311E1F9ECC00DFC788 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,7 +1009,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -434,7 +1019,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -458,13 +1047,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -479,7 +1070,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -487,7 +1080,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -505,11 +1102,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -519,9 +1118,11 @@
 		A14E0B341E1F9ECC00DFC788 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DB7EUU9D79;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -529,23 +1130,24 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A14E0B351E1F9ECC00DFC788 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DB7EUU9D79;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -553,14 +1155,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -568,12 +1168,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
-				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = DB7EUU9D79;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -581,18 +1180,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
-				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = DB7EUU9D79;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		A14E0B501E1F9EDE00DFC788 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -603,22 +1202,22 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		A14E0B511E1F9EDE00DFC788 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -629,16 +1228,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
 				PRODUCT_NAME = Imperio;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -646,13 +1243,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
-				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = DB7EUU9D79;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -661,13 +1257,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 767S6EFMJ8;
-				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = DB7EUU9D79;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -675,6 +1270,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio-Demo Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003771941FB34D8700DAB797 /* Debug */,
+				003771951FB34D8700DAB797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0086C0BF1FAA6F920089BBE1 /* Debug */,
+				0086C0C01FAA6F920089BBE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A14E0B191E1F9ECC00DFC788 /* Build configuration list for PBXProject "Imperio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

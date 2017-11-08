@@ -8,4 +8,9 @@
 
 import PackageDescription
 
-let package = Package(name: "Imperio")
+let package = Package(
+    name: "Imperio",
+    dependencies: [
+        .package(url: "https://github.com/ReactiveKit/Bond.git", .upToNextMajor(from: "6.5.0"))
+    ]
+)

@@ -1,0 +1,2 @@
+# Snapshot view unit tests for iOS
+github "facebookarchive/ios-snapshot-test-case" ~> 2.1
