@@ -13,11 +13,11 @@ width=600 height=167>
      alt="codebeat badge">
   </a>
   <a href="https://github.com/Flinesoft/Imperio/releases">
-  <img src="https://img.shields.io/badge/Version-1.0.1-blue.svg"
-     alt="Version: 1.0.1">
+  <img src="https://img.shields.io/badge/Version-2.0.0-blue.svg"
+     alt="Version: 2.0.0">
   </a>
-  <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
-     alt="Swift: 3.0">
+  <img src="https://img.shields.io/badge/Swift-4.0-FFAC45.svg"
+     alt="Swift: 4.0">
   <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-FF69B4.svg"
      alt="Platforms: iOS | tvOS">
   <a href="https://github.com/Flinesoft/Imperio/blob/stable/LICENSE.md">
@@ -37,26 +37,20 @@ width=600 height=167>
 
 # Imperio
 
-The goal of this library is to **keep view controllers lean** by getting screen flow and data handling logic out of them. Instead coordinators are used to handle screen flow and trigger data handling. This idea is explored in detail by Soroush Khanlou in [this great post](http://khanlou.com/2015/10/coordinators-redux/). Go ahead and read it now if you haven't already!
+The goal of this library is to **keep view controllers lean & make them easily testable** by getting screen flow and other responsibilities out of them. Instead flow controllers are used to handle screen flow and trigger changes in the view, which the view controller handles. Pattern wise this approach combines ideas from MVC, MVP, MVVM and VIPER.
 
 
 ## Installation
-
-Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage).
-[Cocoapods](https://github.com/CocoaPods/CocoaPods) is supported, too.
-[Swift Package Manager](https://github.com/apple/swift-package-manager) might work, too (not tested).
-
-You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
 ### Carthage
 
 Place the following line to your Cartfile:
 
 ``` Swift
-github "Flinesoft/Imperio"
+github "Flinesoft/Imperio" ~> 2.0
 ```
 
-Now run `carthage update`. Then drag & drop the Imperio.framework in the Carthage/Build folder to your project. Now you can `import Imperio` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
+Now run `carthage update`. Then drag & drop the `Imperio.framework` in the Carthage/Build folder to your project. Do the same with the dependencies `Bond.framework`, `Differ.framework` and `ReactKit.framework`. Now you can `import Imperio` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed instructions.
 
 ### CocoaPods
 
@@ -68,213 +62,404 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyAppTarget' do
-  pod 'Imperio', '~> 1.0'
+  pod 'Imperio', '~> 2.0'
 end
 ```
 
-Now close your project and run `pod install` from the command line. Then open the `.xcworkspace` from within your project folder.
-Build your project once (with `Cmd+B`) to update the frameworks known to Xcode. Now you can `import Imperio` in each class you want to use its features.
-Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructions.
+Now close your project and run `pod install` from the command line. Then open the `.xcworkspace` from within your project folder. Now you can `import Imperio` in each class you want to use its features. Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructions.
 
 ## Usage
 
-### Coordinator
+Below you find a step by step guide on how to use Imperio. There's also a demo project which you can check out to see what it all looks like put together. The example code in the explanations below are all part of the demo project.
 
-The first step when using Imperio is to lean back and **think for a moment about your screen flow**. You don't need to recognize each screen that'll be part of your screen flow, instead you should concentrate on which use cases you have and simply write exactly one coordinator for each use case. For example, the onboarding or tutorial could be one screen flow, although it might consist of one or multiple screens and view controllers.
+### FlowController
 
-Once you've got an initial list of screen flows (or the first), name it and write a subclass using that name. Let's make a coordinator that manages the tutorial on first start of the app. A coordinator needs to be a subclass of `Coordinator`:
+The first step when using Imperio is to lean back and **think for a moment about your screen flow**. You don't need to recognize each screen that'll be part of your screen flow, instead you should concentrate on which use cases you have and simply write exactly one flow controller for each use case. For example, the onboarding or tutorial could be one screen flow, although it might consist of one or multiple screens and view controllers.
+
+Once you've got an initial list of screen flows (or the first), name it and write a subclass using that name. Let's make a flow controller that manages the tutorial on first start of the app. A flow controller needs to be a subclass of `FlowController`:
 
 ``` Swift
 import Imperio
 
-class TutorialCoordinator: Coordinator {
+class TutorialFlowController: FlowController {
     // TODO: not yet implemented
 }
 ```
 
-#### The `start` method
+### The `start(from:)` method
 
-Each coordinator subclass needs to override at least the `start` method which opens the initial screen of the screen flow and the `mainViewController` property, which will be used to dismiss the current screen flow. For example:
+Each coordinator subclass needs to override at least the `start` method which opens the initial view controller of the screen flow. For example:
 
-``` SWift
-private var page1Ctrl: TutorialPage1ViewController!
-override var mainViewController: UIViewController? {
-    return page1Ctrl
-}
+``` Swift
+import Imperio
 
-override func start() {
-    super.start()
-    page1Ctrl = TutorialPage1ViewController()
+class TutorialFlowController: FlowController {
+    private var navigationCtrl: UINavigationController?
 
-    // TODO: setup coordinator actions
-
-    present(page1Ctrl)
+		override func start(from viewController: UIViewController) {
+						let page1ViewCtrl = Page1ViewController()
+		        navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
+		
+						// TODO: set up the flow delegate
+		
+		        viewController.present(navigationCtrl!, animated: true, completion: nil)
+		}
 }
 ```
 
 Please note that within the `start` method you should:
 
-- call `super.start()`
-- initialize your initial view controller
-- setup the coordinator actions (will be explained later)
-- call `present(_ viewCtrl:style:navigation:)` method
+- initialize your first view controller
+- setup the flow delegate (will be explained later)
+- present your first view controller
 
-#### The `present` method
+### Sub Flow Controllers
 
-The `present` method of the Coordinator class is used to present any view controller within the screen flow of the current coordinator. You can call it without any configuration like this:
+Now, whenever you might want to start your screen flow from within another flow controller, you would do this:
 
 ``` Swift
-present(page1Ctrl)
+func tutorialStartButtonPressed() {
+    let tutorialFlowCtrl = TutorialFlowController()
+    add(subFlowController: tutorialFlowCtrl)
+    tutorialFlowCtrl.start(from: someViewController!)
+}
 ```
 
-This will check if the given view controller is part of the current navigation stack (if any) and push it if it finds it, or otherwise present a modal view controller with a auto-generated navigation controller (if the given view isn't a navigation controller itself).
-
-To present a view controller modally **without** a navigation controller, set the `navigation` option to `false`:
+Please note that this works pretty much like adding a subview to a `UIView` with `myView.addSubview(subview)`: You add the sub flow controller and start it. Once you're done with the screen flow, you dismiss your last view controller and remove the sub flow controller from its super flow controller by calling `removeFromSuperFlowController()`. For example:
 
 ``` Swift
-present(page1Ctrl, navigation: false)
-```
-
-To explicityly state the expected presentation style, set the `style` option to either `modal` or `push`:
-
-``` Swift
-present(page1Ctrl, style: .modal(completion: nil))
-// or
-present(page1Ctrl, style: .push)
-```
-
-Note that for the `.modal` presentation style you can set a completion closure which will be called once the presentation has finished.
-
-### Coordinatable
-
-In order for the coordinator to get notified of any actions of the user, the view controller needs to comply to `Coordinatable`. In order to do that, you should first create an enum with some actions that can be done by the user within the view controller and name it `Action`:
-
-``` Swift
-class TutorialPage1ViewController: Coordinatable {
-    enum Action {
-      case nextButtonPressed
-      case didEnterName(String)
-      case skipButtonPressed
+func completeButtonPressed() {
+    navigationCtrl?.dismiss(animated: true) {
+        self.removeFromSuperFlowController()
     }
-    // TODO: not yet completed
 }
 ```
 
-Note that the actions names should not contain any semantics: Always use `nextButtonPressed` which is what the user really did instead of `showNextScreen` which already includes semantics and probably is what the user intended. It is up to the coordinator to decide the intention of the user, not the view controllers!
+### InitialFlowController
 
-Now we can complete making our view controller comply to `Coordinatable` (note that when you simply type `coordinate` Xcode will auto-complete the rest of the code here):
+There's one special case for flow controllers: The initial screen flow to be started on app launch. As there's no view controller to be presented _from_ on app launch, we can't use the above `start(from:)` method which requires a view controller. Instead, if you're defining the initial flow controller, you need to make three small changes:
 
-``` Swift
-class TutorialPage1ViewController: Coordinatable {
-    // the `Action` enum code is here
-    var coordinate: ((TutorialPage1ViewController.Action) -> Void)!
-}
-```
+1. Subclass `InitialFlowController` instead of `FlowController`.
+2. Override `start(from window: UIWindow)` instead of `start(from viewController: UIViewController)`.
+3. Set the `rootViewController` of the `window` instead of presenting the first view controller.
 
-That's it on the controller side. This enables us to complete our coordinators `start` method (the TODO part):
+That's all difference there is. Here's an example of what the above example would look like with these changes:
 
 ``` Swift
-override func start() {
-    // ...
-    page1Ctrl.coordinate = { [unowned self] action in
-        switch action {
-        case .nextButtonPressed:
-            self.showNextScreen() // present next view controller using the present method
-            
-        case .didEnterName(let name):
-            self.changeName(to: name) // update your data based on input
-            
-        case .skipButtonPressed:
-            self.finish() // finish the current screen flow
-    }
-    // ...
-}
-```
-
-The `coordinate` closure is the place the coordinator gets notified about any actions the user made in view controller. So, make sure to call it when user actions are perceived in your view controller, for example:
-
-``` Swift
-@IBAction func nextButtonPressed() {
-    coordinate(.nextButtonPressed)
-}
-
-```
-
-Also note that the `finish` method (called on when the skip button is pressed) will dismiss the main view controller of the coordinator and therefore complete the current screen flow.
-
-
-### App Coordinator
-
-To keep the AppDelegate clean, create a subclass of `AppCoordinator` instead of `Coordinator`. It works just like a coordinator (in fact it's a subclass of `Coordinator`), only that it can be presented from the App Delegate. Actually, you can make any of your coordinators the app coordinator through two simple steps:
-
-- Subclass `AppCoordinator` instead of `Coordinator`
-- Call `present(initialViewController: homeViewCtrl)` instead of `present(homeViewCtrl)` in your start method
-
-Note that you can't `finish` the screen flow of an app coordinator. Imperio will simply do nothing if you call it.
-
-Now your AppDelegate can look something like this:
-
-``` Swift
-import UIKit
 import Imperio
+
+class TutorialFlowController: InitialFlowController {
+    private var navigationCtrl: UINavigationController?
+    
+    override func start(from window: UIWindow) {
+        let page1ViewCtrl = Page1ViewController()
+        navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
+        
+        // TODO: set up the flow delegate
+        
+        window.rootViewController = navigationCtrl
+    }
+}
+```
+
+### Flow Delegate
+
+In order for the flow controller to get notified of any actions of the user, the view controller needs to define a class protocol of the possible actions. This should usually be done right at the top of the view controller classes file. Then in your view controller, you define a `weak var flowDelegate` property with the protocol type. For example:
+
+``` Swift
+protocol Page1FlowDelegate: class {
+    func nextToPage2ButtonPressed()
+}
+
+class Page1ViewController: UIViewController {
+    weak var flowDelegate: Page1FlowDelegate?
+
+    // TODO: action not yet implemented
+}
+```
+
+Note that the actions names should not contain any semantics about the screen flow: Always use `nextToPage2ButtonPressed()` which is what the user really did instead of `showNextScreen` which already includes semantics of what to do next. It is up to the flow controller to decide what to do next, not the view controllers!
+
+Of course, when the interaction is done we need to call our delegate methods in order to coordinate the responsibility of what to do next to the flow controller:
+
+``` Swift
+class Page1ViewController: UIViewController {
+    // ...
+
+    @IBAction func nextButtonPressed() {
+        flowDelegate?.nextToPage2ButtonPressed()
+    }
+}
+```
+
+Last, our flow controller needs to react to those delegate methods. This is a two-step process. First step is to make the flow controller comply to the `Page1FlowDelegate` protocol:
+
+``` Swift
+extension TutorialFlowController: Page1FlowDelegate {
+    func nextToPage2ButtonPressed() {
+        let page2ViewCtrl = Page2ViewController()
+        navigationCtrl?.pushViewController(page2ViewCtrl, animated: true)
+    }
+}
+```
+
+Second step is to set the flow controller as the flow delegate of the view controller. For the initial view controller this needs to be done in the `start(from:)` method. So let's replace the TODO in there like this:
+
+``` Swift
+override func start(from viewController: UIViewController) {
+    // ...
+    
+    page1ViewCtrl.flowDelegate = self
+
+    // ...
+}
+```
+
+That's it. Everything is set up and should work now. The flow controller manages the screen flow!
+
+## FAQ
+
+### How do I start the initial flow controller from my AppDelegate?
+
+Here's an example how this might look like:
+
+``` Swift
+import Imperio
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var appCoordinator: AppCoordinator?
     var window: UIWindow?
+    var initialFlowController: InitialFlowController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        appCoordinator = DashboardCoordinator()
-        appCoordinator?.start()
-        window = appCoordinator?.window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+
+        initialFlowController = MainFlowController()
+        initialFlowController?.start(from: window!)
 
         return true
     }
 }
+
 ```
 
-### Sub Coordinators
+Note that you need to call `makeKeyAndVisible()` on the window. Otherwise you might just see a black screen. Also make sure you are subclassing `InitialFlowController` instead of `FlowController`. Refer to the [`InitialFlowController`](#initialflowcontroller) section above on how to do this.
 
-To start a different screen flow from within a screen flow you need to call the `start(subCoordinator:)` method:
+### How can I pass data between flow controllers?
 
-``` Swift
-let tutorialCoordinator = TutorialCoordinator() 
-start(subCoordinator: tutorialCoordinator)
-```
+There are two different cases here:
+- passing data **into** a flow controller
+- passing data **back** to a super flow controller
 
-If you want to get notified when the sub coordinator is finished or disappeared, simply chain `onFinish` or `onDisappear` callbacks to the start method:
-
-``` Swift
-start(subCoordinator: tutorialCoordinator).onFinish {
-    myTableViewController.reloadData()
-}
-```
-
-If you ever need to pass data into a coordinator on creation, simply write a new `init` method with all the data needed to be passed like this:
+The **first case** is simple: Add a property to the flow controller to pass into and add a parameter to its `init` method. Or in other words: Just use Swift. For example:
 
 ``` Swift
-class TutorialCoordinator {
-    private let name: String
-    init(presentingViewController: UIViewController, name: String) {
-        self.name = name
-        super.init(presentingViewController: presentingViewController)
+class EditProfileFlowController: FlowController {
+    private let profile: Profile
+
+    init(profile: Profile) {
+        self.profile = profile
+        super.init()
     }
 }
 ```
 
-### The Navigation Controller Issue
-
-One problem that arises in navigation controllers is that there is implicit screen flow logic supported by iOS by default: The back button press and the swipe gesture to navigate between view controllers in the navigation stack. To solve this, you should add a `didDisappear` case to the view controllers possible actions and call `coordinate(.didDisappear)` in the view controllers `viewDidDisappear`:
+The **second case** is a little more work. Add a property to the flow controller to pass back from and add a parameter to its `init` method. Or in other words: Do the exact same thing as above. But this time, it's a closure. For example:
 
 ``` Swift
-override func viewDidDisappear(_ animated: Bool) {
-    if navigationController == nil || !navigationController!.viewControllers.contains(self) {
-        coordinate(.didDisappear)
-    }
+class ImagePickerFlowController: FlowController {
+    typealias ResultClosure = (UIImage) -> Void
 
-    super.viewDidDisappear(animated: animated)
+    let resultCompletion: ResultClosure
+
+    init(resultCompletion: @escaping ResultClosure) {
+        self.resultCompletion = resultCompletion
+        super.init()
+    }
+    
+    // ...
 }
 ```
+
+The usage side then would look like this:
+
+``` Swift
+func imagePickerStartButtonPressed() {
+    let imagePickerFlowCtrl = ImagePickerFlowController { [unowned self] pickedImage in
+        // do something with the result
+    }
+
+    add(subFlowController: imagePickerFlowCtrl)
+    imagePickerFlowCtrl.start(from: mainViewController!)
+}
+```
+
+Please don't forget the `[unowned self]` when using `@escaping` closures to prevent memory leaks.
+
+### Why does Imperio has Bond (and others) listed as its dependencies?
+
+Technically you can use Imperio without Bond. Having this said, we highly recommend using Bond the way explained in the answer of the next question. So read on for the complete answer. The other dependencies – namely ReactiveKit and Differ – are sub dependencies of Bond.
+
+### How can I pass data between a flow controller and its view controllers?
+
+There are two different cases here:
+- passing data **into** a view controllers
+- passing data **back** to the flow controller
+
+**For passing data into view controllers** we recommend using structs that represent the view state. We call them `ViewModel`s. Here's a simple view model:
+
+```
+struct MainViewModel {
+    let backgroundColor: UIColor
+    var pickedImage: Observable<UIImage?>
+}
+```
+
+Note that for properties that don't change we are simply using a let and the type directly. For properties that might change over time we are using the `Observable` wrapper. It's part of the dependency "Bond" and allows the view controller to subscribe to any changes of the property and react accordingly. Just put your view model into your view controller like so:
+
+``` Swift
+class MainViewController: UIViewController {
+    // ...
+    var viewModel: MainViewModel?
+    // ...
+}
+```
+
+Now in your `viewDidLoad()` method you can use the constant properties directly and observe the variable ones like so:
+
+``` Swift
+@IBOutlet private var pickedImageView: UIImageView!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    view.backgroundColor = viewModel?.backgroundColor
+
+    _ = viewModel?.pickedImage.observeNext { [unowned self] pickedImage in
+        self.pickedImageView.image = pickedImage
+    }
+}
+```
+
+Again, don't forget the `[unowned self]` on `observeNext`. Whenever you want to change the `pickedImage` property, simply change the `value` property of the `Observable` like so:
+
+``` Swift
+mainViewController.viewModel.pickerImage.value = #imageLiteral(resourceName: "hogwarts")
+```
+
+As for the second case – **passing data back to the flow controller** – simply add parameters to your flow delegate methods. For example:
+
+``` Swift
+protocol AddressListFlowDelegate: class {
+    func didSelectEntry(at index: NSIndexPath)
+    func searchFieldTextChanged(to text: String)
+}
+```
+
+### Now that my view controllers are lean, how do I test them?
+
+If you followed our suggestion and created a view model that defines the view state of your view controller, then here's how:
+
+- Initialize a view controller.
+- Set its `viewModel` property to a state you want to test.
+- Take a snapshot of the view controllers `view` property and verify that it didn't change.
+
+The last step is done using the framework [FBSnapshotTestCase](https://github.com/facebookarchive/ios-snapshot-test-case). Here's a complete example from the demo project:
+
+``` Swift
+import Bond
+import FBSnapshotTestCase
+@testable import Imperio_Demo
+import UIKit
+
+class MainViewControllerTests: FBSnapshotTestCase {
+    override func setUp() {
+        super.setUp()
+        self.recordMode = false
+    }
+
+    func testRedBackgroundWithHogwartsImage() {
+        let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: Observable(#imageLiteral(resourceName: "hogwarts")))
+        FBSnapshotVerifyView(mainViewController!.view)
+    }
+}
+```
+
+### How do I deal with container view controllers like UINavigationController or UITabBarController?
+
+If you happen to come across types which already encapsulate some portion of the screen flow, don't try to force-fit them into the structure suggested here. Also don't create view controllers as wrappers just to get handling their delegates out of the flow controller. It is absolutely valid to deviate from the way of passing data or the separation of responsibilities in some circumstances. For example, this is valid:
+
+``` Swift
+class ImagePickerFlowController: FlowController {
+    override func start(from viewController: UIViewController) {
+        viewController.present(instantiateSourceChooser(from: viewController), animated: true, completion: nil)
+    }
+
+    func instantiateSourceChooser(from viewController: UIViewController) -> UIAlertController {
+        let alertCtrl = UIAlertController(title: "Choose source.", message: "How do you want to choose your image?", preferredStyle: .actionSheet)
+
+        alertCtrl.addAction(UIAlertAction(title: "Camera", style: .default) { [unowned self] _ in
+            self.startCamera(from: viewController)
+        })
+
+        alertCtrl.addAction(UIAlertAction(title: "Albums", style: .default) { [unowned self] _ in
+            self.startImagePicker(from: viewController)
+        })
+
+        alertCtrl.addAction(UIAlertAction(title: "Cancel", style: .cancel) { [unowned self] _ in
+            self.removeFromSuperFlowController()
+        })
+
+        return alertCtrl
+    }
+}
+```
+
+The `UIAlertViewController` class is already one that encapsulates how it is rendered. We are simply passing some data here and can't create a view model for it, as the API of the controller is defined differently (with `addAction` methods). Or another example:
+
+``` Swift
+class ImagePickerFlowController: FlowController {
+    // ...
+
+    func startCamera(from viewController: UIViewController) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+    
+        imagePicker.delegate = self
+        viewController.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func startImagePicker(from viewController: UIViewController) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .savedPhotosAlbum
+    
+        imagePicker.delegate = self
+        viewController.present(imagePicker, animated: true, completion: nil)
+    }
+}
+
+extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true) {
+            self.removeFromSuperFlowController()
+        }
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            resultCompletion(pickedImage)
+            picker.dismiss(animated: true) {
+                self.removeFromSuperFlowController()
+            }
+        }
+    }
+}
+```
+
+We are dealing with the image picker source types and its delegates methods directly in the flow controller. It is not needed to create extra types to get them out of the flow controller. The `UIImagePickerController` is already a well tested view controller, we just need to comply to its interface. The same is true for `UITabBarController`, `UINavigationController` and `UISplitViewController`.
 
 
 ## Contributing
