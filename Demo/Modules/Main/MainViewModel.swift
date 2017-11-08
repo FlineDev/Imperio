@@ -11,5 +11,6 @@ import Imperio
 import UIKit
 
 struct MainViewModel {
+    let backgroundColor: UIColor
     var pickedImage: Observable<UIImage?>
 }

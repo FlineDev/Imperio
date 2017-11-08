@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003771991FB34E1300DAB797 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */; };
+		0037719B1FB34E2300DAB797 /* FBSnapshotTestCase.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0037719F1FB34E9700DAB797 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */; };
+		003771A01FB3501900DAB797 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
+		003771A11FB3502500DAB797 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
+		003771A21FB3502800DAB797 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
+		003771A31FB3502C00DAB797 /* Bond.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		003771A41FB3502C00DAB797 /* Differ.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		003771A51FB3502C00DAB797 /* ReactiveKit.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		003771AC1FB3580800DAB797 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003771AB1FB3580800DAB797 /* Media.xcassets */; };
 		00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F751FAB638D00D8F2FA /* Bond.framework */; };
 		00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F761FAB638D00D8F2FA /* Differ.framework */; };
 		00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */; };
@@ -42,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		003771911FB34D8700DAB797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0086C0AE1FAA6F920089BBE1;
+			remoteInfo = "Imperio-Demo";
+		};
 		0086C0D01FAA70CC0089BBE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
@@ -66,6 +83,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0037719A1FB34E1B00DAB797 /* Carthage */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0037719B1FB34E2300DAB797 /* FBSnapshotTestCase.framework in Carthage */,
+				003771A31FB3502C00DAB797 /* Bond.framework in Carthage */,
+				003771A41FB3502C00DAB797 /* Differ.framework in Carthage */,
+				003771A51FB3502C00DAB797 /* ReactiveKit.framework in Carthage */,
+			);
+			name = Carthage;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0086C0D21FAA70CD0089BBE1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +111,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		003771871FB348D200DAB797 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-Demo Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		003771AB1FB3580800DAB797 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Imperio-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0086C0C51FAA70550089BBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0086C0C71FAA70550089BBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +157,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		003771891FB34D8700DAB797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003771A21FB3502800DAB797 /* ReactiveKit.framework in Frameworks */,
+				003771991FB34E1300DAB797 /* FBSnapshotTestCase.framework in Frameworks */,
+				003771A11FB3502500DAB797 /* Differ.framework in Frameworks */,
+				003771A01FB3501900DAB797 /* Bond.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0086C0AC1FAA6F920089BBE1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +218,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003771961FB34DBF00DAB797 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0037719C1FB34E4600DAB797 /* Modules */,
+				003771AB1FB3580800DAB797 /* Media.xcassets */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		003771971FB34DEF00DAB797 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		0037719C1FB34E4600DAB797 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0037719D1FB34E4B00DAB797 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0037719D1FB34E4B00DAB797 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		0086C0C31FAA70550089BBE1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +319,7 @@
 			children = (
 				008D0F6F1FAB636800D8F2FA /* iOS */,
 				008D0F701FAB636F00D8F2FA /* tvOS */,
+				003771971FB34DEF00DAB797 /* Tests */,
 			);
 			name = Carthage;
 			sourceTree = "<group>";
@@ -275,17 +356,18 @@
 		0092678B1FAA67B600C7602D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0092678C1FAA67B600C7602D /* Supporting Files */,
+				003771961FB34DBF00DAB797 /* Demo */,
+				0092678C1FAA67B600C7602D /* SupportingFiles */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		0092678C1FAA67B600C7602D /* Supporting Files */ = {
+		0092678C1FAA67B600C7602D /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				0092678D1FAA67B600C7602D /* Info.plist */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		0092678E1FAA68F700C7602D /* SupportingFiles */ = {
@@ -325,6 +407,7 @@
 				A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */,
 				A14E0B461E1F9EDE00DFC788 /* Imperio-tvOS Tests.xctest */,
 				0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */,
+				0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +417,7 @@
 			children = (
 				82C76D071E4215110027B35F /* .swiftlint.yml */,
 				008D0D741FAB5E6500D8F2FA /* Cartfile */,
+				003771871FB348D200DAB797 /* Cartfile.private */,
 				008D0D751FAB60F600D8F2FA /* Cartfile.resolved */,
 				82C76D091E4215480027B35F /* Imperio.podspec */,
 				82C76D0A1E4221FD0027B35F /* LICENSE.md */,
@@ -363,6 +447,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0037718B1FB34D8700DAB797 /* Imperio-Demo Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio-Demo Tests" */;
+			buildPhases = (
+				003771881FB34D8700DAB797 /* Sources */,
+				003771891FB34D8700DAB797 /* Frameworks */,
+				0037718A1FB34D8700DAB797 /* Resources */,
+				0037719A1FB34E1B00DAB797 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003771921FB34D8700DAB797 /* PBXTargetDependency */,
+			);
+			name = "Imperio-Demo Tests";
+			productName = "Imperio-Demo Tests";
+			productReference = 0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio-Demo" */;
@@ -466,10 +569,16 @@
 		A14E0B161E1F9ECC00DFC788 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Flinesoft;
 				TargetAttributes = {
+					0037718B1FB34D8700DAB797 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0086C0AE1FAA6F920089BBE1;
+					};
 					0086C0AE1FAA6F920089BBE1 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = DB7EUU9D79;
@@ -513,6 +622,7 @@
 			projectRoot = "";
 			targets = (
 				0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */,
+				0037718B1FB34D8700DAB797 /* Imperio-Demo Tests */,
 				A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */,
 				A14E0B271E1F9ECC00DFC788 /* Imperio-iOS Tests */,
 				A14E0B3D1E1F9EDD00DFC788 /* Imperio-tvOS */,
@@ -522,6 +632,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0037718A1FB34D8700DAB797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003771AC1FB3580800DAB797 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0086C0AD1FAA6F920089BBE1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -671,6 +789,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		003771881FB34D8700DAB797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0037719F1FB34E9700DAB797 /* MainViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0086C0AB1FAA6F920089BBE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,6 +848,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		003771921FB34D8700DAB797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */;
+			targetProxy = 003771911FB34D8700DAB797 /* PBXContainerItemProxy */;
+		};
 		0086C0D11FAA70CC0089BBE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */;
@@ -751,6 +882,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		003771941FB34D8700DAB797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
+			};
+			name = Debug;
+		};
+		003771951FB34D8700DAB797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
+			};
+			name = Release;
+		};
 		0086C0BF1FAA6F920089BBE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1086,6 +1270,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio-Demo Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003771941FB34D8700DAB797 /* Debug */,
+				003771951FB34D8700DAB797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

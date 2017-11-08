@@ -16,7 +16,7 @@ class MainFlowController: InitialFlowController {
     override func start(from window: UIWindow) {
         mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
         mainViewController?.flowDelegate = self
-        mainViewController?.viewModel = MainViewModel(pickedImage: Observable(nil))
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .black, pickedImage: Observable(nil))
         window.rootViewController = mainViewController
     }
 }

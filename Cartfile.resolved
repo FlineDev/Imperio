@@ -1,3 +1,4 @@
 github "ReactiveKit/Bond" "6.5.0"
 github "ReactiveKit/ReactiveKit" "v3.8.0"
+github "facebookarchive/ios-snapshot-test-case" "2.1.4"
 github "tonyarnold/Differ" "1.0.2"
