@@ -95,15 +95,15 @@ import Imperio
 
 class TutorialFlowController: FlowController {
     private var navigationCtrl: UINavigationController?
-
-		override func start(from viewController: UIViewController) {
-						let page1ViewCtrl = Page1ViewController()
-		        navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
-		
-						// TODO: set up the flow delegate
-		
-		        viewController.present(navigationCtrl!, animated: true, completion: nil)
-		}
+    
+    override func start(from viewController: UIViewController) {
+        let page1ViewCtrl = Page1ViewController()
+        navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
+        
+        // TODO: set up the flow delegate
+        
+        viewController.present(navigationCtrl!, animated: true, completion: nil)
+    }
 }
 ```
 
