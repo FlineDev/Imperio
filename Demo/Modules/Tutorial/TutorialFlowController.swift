@@ -15,19 +15,19 @@ import UIKit
 class TutorialFlowController: FlowController {
     var navigationCtrl: UINavigationController?
 
-    override func start(from viewController: UIViewController) {
+    override func start(from presentingViewController: UIViewController) {
         let page1ViewCtrl = Page1ViewController()
         navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
 
         page1ViewCtrl.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(doneButtonPressed))
         page1ViewCtrl.flowDelegate = self
 
-        viewController.present(navigationCtrl!, animated: true, completion: nil)
+        presentingViewController.present(navigationCtrl!, animated: true)
     }
 
     @objc
     func doneButtonPressed() {
-        navigationCtrl?.dismiss(animated: true, completion: nil)
+        navigationCtrl?.dismiss(animated: true)
     }
 }
 

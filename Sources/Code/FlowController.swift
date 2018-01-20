@@ -16,8 +16,8 @@ open class FlowController: NSObject {
     /// Starts the flow from a given view controller.
     ///
     /// - Parameters:
-    ///   - viewController: The view controller to start the flow from.
-    open func start(from viewController: UIViewController) {}
+    ///   - presentingViewController: The view controller to start the flow from.
+    open func start(from presentingViewController: UIViewController) { }
 
     /// Adds a sub flow controller to the existing one.
     ///
