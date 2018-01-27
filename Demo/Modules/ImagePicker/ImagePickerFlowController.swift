@@ -23,8 +23,8 @@ class ImagePickerFlowController: FlowController {
         super.init()
     }
 
-    override func start(from viewController: UIViewController) {
-        viewController.present(instantiateSourceChooser(from: viewController), animated: true, completion: nil)
+    override func start(from presentingViewController: UIViewController) {
+        presentingViewController.present(instantiateSourceChooser(from: presentingViewController), animated: true)
     }
 
     func instantiateSourceChooser(from viewController: UIViewController) -> UIAlertController {
@@ -50,7 +50,7 @@ class ImagePickerFlowController: FlowController {
         imagePicker.sourceType = .camera
 
         imagePicker.delegate = self
-        viewController.present(imagePicker, animated: true, completion: nil)
+        viewController.present(imagePicker, animated: true)
     }
 
     func startImagePicker(from viewController: UIViewController) {
@@ -58,7 +58,7 @@ class ImagePickerFlowController: FlowController {
         imagePicker.sourceType = .savedPhotosAlbum
 
         imagePicker.delegate = self
-        viewController.present(imagePicker, animated: true, completion: nil)
+        viewController.present(imagePicker, animated: true)
     }
 }
 
@@ -69,7 +69,7 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
         }
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             resultCompletion(pickedImage)
             picker.dismiss(animated: true) {
