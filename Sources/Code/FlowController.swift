@@ -24,17 +24,18 @@ open class FlowController: NSObject {
     /// - Parameters:
     ///   - subFlowController: The sub flow controller to be added.
     public func add(subFlowController: FlowController) {
-        // clean up
+        // Clean up
         self.subFlowController?.removeFromSuperFlowController()
         subFlowController.removeFromSuperFlowController()
 
-        // store new
+        // Store new
         self.subFlowController = subFlowController
         subFlowController.superFlowController = self
     }
 
     /// Removes this flow controller from its super flow controller.
     public func removeFromSuperFlowController() {
+        subFlowController?.removeFromSuperFlowController()
         superFlowController?.subFlowController = nil
         superFlowController = nil
     }
