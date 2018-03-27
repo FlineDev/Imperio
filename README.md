@@ -95,15 +95,15 @@ import Imperio
 
 class TutorialFlowController: FlowController {
     private var navigationCtrl: UINavigationController?
-
-		override func start(from viewController: UIViewController) {
-						let page1ViewCtrl = Page1ViewController()
-		        navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
-		
-						// TODO: set up the flow delegate
-		
-		        viewController.present(navigationCtrl!, animated: true, completion: nil)
-		}
+    
+    override func start(from presentingViewController: UIViewController) {
+        let page1ViewCtrl = Page1ViewController()
+        navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
+        
+        // TODO: set up the flow delegate
+        
+        presentingViewController.present(navigationCtrl!, animated: true)
+    }
 }
 ```
 
@@ -140,7 +140,7 @@ func completeButtonPressed() {
 There's one special case for flow controllers: The initial screen flow to be started on app launch. As there's no view controller to be presented _from_ on app launch, we can't use the above `start(from:)` method which requires a view controller. Instead, if you're defining the initial flow controller, you need to make three small changes:
 
 1. Subclass `InitialFlowController` instead of `FlowController`.
-2. Override `start(from window: UIWindow)` instead of `start(from viewController: UIViewController)`.
+2. Override `start(from window: UIWindow)` instead of `start(from presentingViewController: UIViewController)`.
 3. Set the `rootViewController` of the `window` instead of presenting the first view controller.
 
 That's all difference there is. Here's an example of what the above example would look like with these changes:
@@ -206,7 +206,7 @@ extension TutorialFlowController: Page1FlowDelegate {
 Second step is to set the flow controller as the flow delegate of the view controller. For the initial view controller this needs to be done in the `start(from:)` method. So let's replace the TODO in there like this:
 
 ``` Swift
-override func start(from viewController: UIViewController) {
+override func start(from presentingViewController: UIViewController) {
     // ...
     
     page1ViewCtrl.flowDelegate = self
@@ -394,8 +394,8 @@ If you happen to come across types which already encapsulate some portion of the
 
 ``` Swift
 class ImagePickerFlowController: FlowController {
-    override func start(from viewController: UIViewController) {
-        viewController.present(instantiateSourceChooser(from: viewController), animated: true, completion: nil)
+    override func start(from presentingViewController: UIViewController) {
+        presentingViewController.present(instantiateSourceChooser(from: presentingViewController), animated: true)
     }
 
     func instantiateSourceChooser(from viewController: UIViewController) -> UIAlertController {
@@ -429,7 +429,7 @@ class ImagePickerFlowController: FlowController {
         imagePicker.sourceType = .camera
     
         imagePicker.delegate = self
-        viewController.present(imagePicker, animated: true, completion: nil)
+        viewController.present(imagePicker, animated: true)
     }
     
     func startImagePicker(from viewController: UIViewController) {
@@ -437,7 +437,7 @@ class ImagePickerFlowController: FlowController {
         imagePicker.sourceType = .savedPhotosAlbum
     
         imagePicker.delegate = self
-        viewController.present(imagePicker, animated: true, completion: nil)
+        viewController.present(imagePicker, animated: true)
     }
 }
 

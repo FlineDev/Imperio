@@ -16,25 +16,26 @@ open class FlowController: NSObject {
     /// Starts the flow from a given view controller.
     ///
     /// - Parameters:
-    ///   - viewController: The view controller to start the flow from.
-    open func start(from viewController: UIViewController) {}
+    ///   - presentingViewController: The view controller to start the flow from.
+    open func start(from presentingViewController: UIViewController) { }
 
     /// Adds a sub flow controller to the existing one.
     ///
     /// - Parameters:
     ///   - subFlowController: The sub flow controller to be added.
     public func add(subFlowController: FlowController) {
-        // clean up
+        // Clean up
         self.subFlowController?.removeFromSuperFlowController()
         subFlowController.removeFromSuperFlowController()
 
-        // store new
+        // Store new
         self.subFlowController = subFlowController
         subFlowController.superFlowController = self
     }
 
     /// Removes this flow controller from its super flow controller.
     public func removeFromSuperFlowController() {
+        subFlowController?.removeFromSuperFlowController()
         superFlowController?.subFlowController = nil
         superFlowController = nil
     }

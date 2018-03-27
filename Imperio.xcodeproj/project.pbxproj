@@ -496,7 +496,6 @@
 				A14E0B1C1E1F9ECC00DFC788 /* Headers */,
 				A14E0B1D1E1F9ECC00DFC788 /* Resources */,
 				82C76D0C1E4222300027B35F /* SwiftLint */,
-				008D0D761FAB611400D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -534,7 +533,6 @@
 				A14E0B3B1E1F9EDD00DFC788 /* Headers */,
 				A14E0B3C1E1F9EDD00DFC788 /* Resources */,
 				008D0D791FAB61A700D8F2FA /* SwiftLint */,
-				008D0D771FAB614600D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -684,46 +682,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		008D0D761FAB611400D8F2FA /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		008D0D771FAB614600D8F2FA /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/tvOS/Bond.framework",
-				"$(SRCROOT)/Carthage/Build/tvOS/Differ.framework",
-				"$(SRCROOT)/Carthage/Build/tvOS/ReactiveKit.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		008D0D781FAB615A00D8F2FA /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
