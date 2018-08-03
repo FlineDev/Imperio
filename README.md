@@ -4,8 +4,8 @@ width=600 height=167>
 </p>
 
 <p align="center">
-  <a href="https://www.bitrise.io/app/2f9c88bb42720cb1">
-  <img src="https://www.bitrise.io/app/2f9c88bb42720cb1.svg?token=dZVzs771PljV_kKatagpJg&branch=stable"
+  <a href="https://app.bitrise.io/app/2f9c88bb42720cb1">
+  <img src="https://app.bitrise.io/app/2f9c88bb42720cb1/status.svg?token=dZVzs771PljV_kKatagpJg&branch=stable"
      alt="Build Status">
   </a>
   <a href="https://codebeat.co/projects/github-com-flinesoft-imperio">
