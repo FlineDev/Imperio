@@ -10,22 +10,7 @@
 		003771991FB34E1300DAB797 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */; };
 		0037719B1FB34E2300DAB797 /* FBSnapshotTestCase.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0037719F1FB34E9700DAB797 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */; };
-		003771A01FB3501900DAB797 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
-		003771A11FB3502500DAB797 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
-		003771A21FB3502800DAB797 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
-		003771A31FB3502C00DAB797 /* Bond.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		003771A41FB3502C00DAB797 /* Differ.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		003771A51FB3502C00DAB797 /* ReactiveKit.framework in Carthage */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		003771AC1FB3580800DAB797 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003771AB1FB3580800DAB797 /* Media.xcassets */; };
-		00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F751FAB638D00D8F2FA /* Bond.framework */; };
-		00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F761FAB638D00D8F2FA /* Differ.framework */; };
-		00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */; };
-		00580CE31FAB6A0200BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
-		00580CE41FAB6A0200BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
-		00580CE51FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
-		00580CE61FAB6A0200BA4382 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F711FAB638100D8F2FA /* Bond.framework */; };
-		00580CE71FAB6A0200BA4382 /* Differ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F721FAB638100D8F2FA /* Differ.framework */; };
-		00580CE81FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008D0F731FAB638100D8F2FA /* ReactiveKit.framework */; };
 		0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		0086C0CF1FAA70CC0089BBE1 /* Imperio.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0086C0D41FAA70F00089BBE1 /* ImagePickerFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0086C0D31FAA70F00089BBE1 /* ImagePickerFlowController.swift */; };
@@ -47,6 +32,8 @@
 		008D0D701FAB4C6B00D8F2FA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */; };
 		009267921FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
 		009267931FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
+		A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A6DEE2177C3920074A528 /* ObservableProperty.swift */; };
+		A10A6DF02177C3920074A528 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A6DEE2177C3920074A528 /* ObservableProperty.swift */; };
 		A14E0B291E1F9ECC00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
 		A14E0B471E1F9EDE00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */; };
 /* End PBXBuildFile section */
@@ -90,9 +77,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0037719B1FB34E2300DAB797 /* FBSnapshotTestCase.framework in Carthage */,
-				003771A31FB3502C00DAB797 /* Bond.framework in Carthage */,
-				003771A41FB3502C00DAB797 /* Differ.framework in Carthage */,
-				003771A51FB3502C00DAB797 /* ReactiveKit.framework in Carthage */,
 			);
 			name = Carthage;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,14 +118,7 @@
 		0086C0F31FAA82FB0089BBE1 /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 		0086C0F41FAA82FB0089BBE1 /* Page3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Page3ViewController.xib; sourceTree = "<group>"; };
 		008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		008D0D741FAB5E6500D8F2FA /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		008D0D751FAB60F600D8F2FA /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		008D0F711FAB638100D8F2FA /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
-		008D0F721FAB638100D8F2FA /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/iOS/Differ.framework; sourceTree = "<group>"; };
-		008D0F731FAB638100D8F2FA /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/iOS/ReactiveKit.framework; sourceTree = "<group>"; };
-		008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/tvOS/ReactiveKit.framework; sourceTree = "<group>"; };
-		008D0F751FAB638D00D8F2FA /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/tvOS/Bond.framework; sourceTree = "<group>"; };
-		008D0F761FAB638D00D8F2FA /* Differ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differ.framework; path = Carthage/Build/tvOS/Differ.framework; sourceTree = "<group>"; };
 		0092678D1FAA67B600C7602D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0092678F1FAA68F700C7602D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		009267911FAA699800C7602D /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
@@ -150,6 +127,7 @@
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		82C76D091E4215480027B35F /* Imperio.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Imperio.podspec; sourceTree = "<group>"; };
 		82C76D0A1E4221FD0027B35F /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		A10A6DEE2177C3920074A528 /* ObservableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProperty.swift; sourceTree = "<group>"; };
 		A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,10 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003771A21FB3502800DAB797 /* ReactiveKit.framework in Frameworks */,
 				003771991FB34E1300DAB797 /* FBSnapshotTestCase.framework in Frameworks */,
-				003771A11FB3502500DAB797 /* Differ.framework in Frameworks */,
-				003771A01FB3501900DAB797 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00580CE81FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */,
 				0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */,
-				00580CE71FAB6A0200BA4382 /* Differ.framework in Frameworks */,
-				00580CE61FAB6A0200BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00580CE41FAB6A0200BA4382 /* Differ.framework in Frameworks */,
-				00580CE51FAB6A0200BA4382 /* ReactiveKit.framework in Frameworks */,
-				00580CE31FAB6A0200BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,9 +170,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00580CE11FAB69FF00BA4382 /* Differ.framework in Frameworks */,
-				00580CE21FAB69FF00BA4382 /* ReactiveKit.framework in Frameworks */,
-				00580CE01FAB69FF00BA4382 /* Bond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,31 +283,9 @@
 		008D0F6E1FAB635800D8F2FA /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
-				008D0F6F1FAB636800D8F2FA /* iOS */,
-				008D0F701FAB636F00D8F2FA /* tvOS */,
 				003771971FB34DEF00DAB797 /* Tests */,
 			);
 			name = Carthage;
-			sourceTree = "<group>";
-		};
-		008D0F6F1FAB636800D8F2FA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				008D0F711FAB638100D8F2FA /* Bond.framework */,
-				008D0F721FAB638100D8F2FA /* Differ.framework */,
-				008D0F731FAB638100D8F2FA /* ReactiveKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		008D0F701FAB636F00D8F2FA /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				008D0F751FAB638D00D8F2FA /* Bond.framework */,
-				008D0F761FAB638D00D8F2FA /* Differ.framework */,
-				008D0F741FAB638D00D8F2FA /* ReactiveKit.framework */,
-			);
-			name = tvOS;
 			sourceTree = "<group>";
 		};
 		0092678A1FAA67B600C7602D /* Sources */ = {
@@ -383,6 +327,7 @@
 			children = (
 				009267911FAA699800C7602D /* FlowController.swift */,
 				0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */,
+				A10A6DEE2177C3920074A528 /* ObservableProperty.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -416,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				82C76D071E4215110027B35F /* .swiftlint.yml */,
-				008D0D741FAB5E6500D8F2FA /* Cartfile */,
 				003771871FB348D200DAB797 /* Cartfile.private */,
 				008D0D751FAB60F600D8F2FA /* Cartfile.resolved */,
 				82C76D091E4215480027B35F /* Imperio.podspec */,
@@ -475,7 +419,6 @@
 				0086C0AD1FAA6F920089BBE1 /* Resources */,
 				0086C0D21FAA70CD0089BBE1 /* Embed Frameworks */,
 				008D0F771FAB65F200D8F2FA /* SwiftLint */,
-				008D0D781FAB615A00D8F2FA /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -573,20 +516,20 @@
 				TargetAttributes = {
 					0037718B1FB34D8700DAB797 = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0086C0AE1FAA6F920089BBE1;
 					};
 					0086C0AE1FAA6F920089BBE1 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = DB7EUU9D79;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B1E1E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DB7EUU9D79;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 					A14E0B271E1F9ECC00DFC788 = {
@@ -682,26 +625,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		008D0D781FAB615A00D8F2FA /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differ.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bond.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differ.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ReactiveKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		008D0D791FAB61A700D8F2FA /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -775,6 +698,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */,
 				0086C0E91FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
 				009267921FAA699800C7602D /* FlowController.swift in Sources */,
 			);
@@ -791,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10A6DF02177C3920074A528 /* ObservableProperty.swift in Sources */,
 				0086C0EA1FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
 				009267931FAA699800C7602D /* FlowController.swift in Sources */,
 			);
@@ -861,7 +786,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
 			};
@@ -887,7 +811,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
 			};
@@ -1011,7 +934,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1064,7 +987,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;

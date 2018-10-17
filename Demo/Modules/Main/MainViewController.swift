@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
 
         view.backgroundColor = viewModel?.backgroundColor
 
-        _ = viewModel?.pickedImage.observeNext { [unowned self] pickedImage in
+        viewModel?.pickedImage.didSet(weak: self) { (self, pickedImage) in
             self.pickedImageView.image = pickedImage
         }
     }

@@ -6,8 +6,8 @@
 //  Copyright © 2017 Flinesoft. All rights reserved.
 //
 
-import Bond
 import FBSnapshotTestCase
+import Imperio
 @testable import Imperio_Demo
 import UIKit
 
@@ -19,13 +19,13 @@ class MainViewControllerTests: FBSnapshotTestCase {
 
     func testWhiteBackgroundWithEmptyImage() {
         let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
-        mainViewController?.viewModel = MainViewModel(backgroundColor: .white, pickedImage: Observable(nil))
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .white, pickedImage: ObservableProperty(nil))
         FBSnapshotVerifyView(mainViewController!.view)
     }
 
     func testRedBackgroundWithHogwartsImage() {
         let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
-        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: Observable(#imageLiteral(resourceName: "hogwarts")))
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: ObservableProperty(#imageLiteral(resourceName: "hogwarts")))
         FBSnapshotVerifyView(mainViewController!.view)
     }
 }

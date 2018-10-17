@@ -6,7 +6,6 @@
 //  Copyright © 2017 Flinesoft. All rights reserved.
 //
 
-import Bond
 import Imperio
 import UIKit
 
@@ -16,7 +15,7 @@ class MainFlowController: InitialFlowController {
     override func start(from window: UIWindow) {
         mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
         mainViewController?.flowDelegate = self
-        mainViewController?.viewModel = MainViewModel(backgroundColor: .black, pickedImage: Observable(nil))
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .black, pickedImage: ObservableProperty(nil))
         window.rootViewController = mainViewController
     }
 }
@@ -30,7 +29,7 @@ extension MainFlowController: MainFlowDelegate {
 
     func imagePickerStartButtonPressed() {
         let imagePickerFlowCtrl = ImagePickerFlowController { [unowned self] pickedImage in
-            self.mainViewController?.viewModel?.pickedImage.value = pickedImage
+            self.mainViewController?.viewModel?.pickedImage.set(pickedImage)
         }
 
         add(subFlowController: imagePickerFlowCtrl)

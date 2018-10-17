@@ -69,8 +69,8 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
         }
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let pickedImage = info[.originalImage] as? UIImage {
             resultCompletion(pickedImage)
             picker.dismiss(animated: true) {
                 self.removeFromSuperFlowController()
