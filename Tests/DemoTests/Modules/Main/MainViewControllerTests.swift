@@ -25,7 +25,8 @@ class MainViewControllerTests: FBSnapshotTestCase {
 
     func testRedBackgroundWithHogwartsImage() {
         let mainViewCtrl = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
-        mainViewCtrl?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: ObservableProperty(#imageLiteral(resourceName: "hogwarts")))
+        let pickedImage = UIImage(named: "hogwarts", in: Bundle(for: MainViewControllerTests.self), compatibleWith: nil)!
+        mainViewCtrl?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: ObservableProperty(pickedImage))
         FBSnapshotVerifyView(mainViewCtrl!.view)
     }
 }

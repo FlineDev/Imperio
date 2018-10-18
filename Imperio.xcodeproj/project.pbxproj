@@ -55,6 +55,20 @@
 			remoteGlobalIDString = A14E0B1E1E1F9ECC00DFC788;
 			remoteInfo = "Imperio-iOS";
 		};
+		82E305372178A557003BD01C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0086C0AE1FAA6F920089BBE1;
+			remoteInfo = "Imperio Demo";
+		};
+		82E305392178A55A003BD01C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0086C0AE1FAA6F920089BBE1;
+			remoteInfo = "Imperio Demo";
+		};
 		A14E0B2A1E1F9ECC00DFC788 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A14E0B161E1F9ECC00DFC788 /* Project object */;
@@ -476,6 +490,7 @@
 			);
 			dependencies = (
 				A14E0B2B1E1F9ECC00DFC788 /* PBXTargetDependency */,
+				82E305382178A557003BD01C /* PBXTargetDependency */,
 			);
 			name = "Imperio iOS Tests";
 			productName = ImperioTests;
@@ -514,6 +529,7 @@
 			);
 			dependencies = (
 				A14E0B491E1F9EDE00DFC788 /* PBXTargetDependency */,
+				82E3053A2178A55A003BD01C /* PBXTargetDependency */,
 			);
 			name = "Imperio tvOS Tests";
 			productName = "Imperio-tvOSTests";
@@ -551,6 +567,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DB7EUU9D79;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 0086C0AE1FAA6F920089BBE1;
 					};
 					A14E0B3D1E1F9EDD00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -561,6 +578,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DB7EUU9D79;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 0086C0AE1FAA6F920089BBE1;
 					};
 				};
 			};
@@ -794,6 +812,16 @@
 			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio iOS */;
 			targetProxy = 0086C0D01FAA70CC0089BBE1 /* PBXContainerItemProxy */;
 		};
+		82E305382178A557003BD01C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0086C0AE1FAA6F920089BBE1 /* Imperio Demo */;
+			targetProxy = 82E305372178A557003BD01C /* PBXContainerItemProxy */;
+		};
+		82E3053A2178A55A003BD01C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0086C0AE1FAA6F920089BBE1 /* Imperio Demo */;
+			targetProxy = 82E305392178A55A003BD01C /* PBXContainerItemProxy */;
+		};
 		A14E0B2B1E1F9ECC00DFC788 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio iOS */;
@@ -834,13 +862,13 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Debug;
 		};
@@ -860,12 +888,12 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-Demo-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio-Demo.app/Imperio-Demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Release;
 		};
@@ -1111,6 +1139,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Debug;
 		};
@@ -1123,6 +1152,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Release;
 		};
@@ -1187,7 +1217,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Debug;
 		};
@@ -1201,7 +1231,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 10.1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Release;
 		};
