@@ -4,8 +4,8 @@ width=600 height=167>
 </p>
 
 <p align="center">
-  <a href="https://www.bitrise.io/app/2f9c88bb42720cb1">
-  <img src="https://www.bitrise.io/app/2f9c88bb42720cb1.svg?token=dZVzs771PljV_kKatagpJg&branch=stable"
+  <a href="https://app.bitrise.io/app/b2ccbd0bd00feffd">
+  <img src="https://app.bitrise.io/app/b2ccbd0bd00feffd/status.svg?token=mpeSdr3KWt40nfKtW134wg&branch=stable"
      alt="Build Status">
   </a>
   <a href="https://codebeat.co/projects/github-com-flinesoft-imperio">
@@ -13,11 +13,11 @@ width=600 height=167>
      alt="codebeat badge">
   </a>
   <a href="https://github.com/Flinesoft/Imperio/releases">
-  <img src="https://img.shields.io/badge/Version-2.0.0-blue.svg"
-     alt="Version: 2.0.0">
+  <img src="https://img.shields.io/badge/Version-3.0.0-blue.svg"
+     alt="Version: 3.0.0">
   </a>
-  <img src="https://img.shields.io/badge/Swift-4.0-FFAC45.svg"
-     alt="Swift: 4.0">
+  <img src="https://img.shields.io/badge/Swift-4.2-FFAC45.svg"
+     alt="Swift: 4.2">
   <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-FF69B4.svg"
      alt="Platforms: iOS | tvOS">
   <a href="https://github.com/Flinesoft/Imperio/blob/stable/LICENSE.md">
@@ -37,36 +37,14 @@ width=600 height=167>
 
 # Imperio
 
-The goal of this library is to **keep view controllers lean & make them easily testable** by getting screen flow and other responsibilities out of them. Instead flow controllers are used to handle screen flow and trigger changes in the view, which the view controller handles. Pattern wise this approach combines ideas from MVC, MVP, MVVM and VIPER.
+The goal of this library is to **keep view controllers lean & make them easily testable** by getting screen flow and other responsibilities out of them. Instead flow controllers are used to handle screen flow and trigger changes in the view, which the view controller handles. Pattern wise this approach combines ideas from MVC, MVP, MVVM, VIPER & [Lotus](https://matteomanferdini.com/ios-architecture-lotus-mvc-pattern).
 
 
 ## Installation
 
-### Carthage
+Installing via [Carthage](https://github.com/Carthage/Carthage#carthage) & [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) are both supported.
 
-Place the following line to your Cartfile:
-
-``` Swift
-github "Flinesoft/Imperio" ~> 2.0
-```
-
-Now run `carthage update`. Then drag & drop the `Imperio.framework` in the Carthage/Build folder to your project. Do the same with the dependencies `Bond.framework`, `Differ.framework` and `ReactKit.framework`. Now you can `import Imperio` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed instructions.
-
-### CocoaPods
-
-Add the line `pod 'Imperio'` to your target in your `Podfile` and make sure to include `use_frameworks!`
-at the top. The result might look similar to this:
-
-``` Ruby
-platform :ios, '8.0'
-use_frameworks!
-
-target 'MyAppTarget' do
-  pod 'Imperio', '~> 2.0'
-end
-```
-
-Now close your project and run `pod install` from the command line. Then open the `.xcworkspace` from within your project folder. Now you can `import Imperio` in each class you want to use its features. Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructions.
+Support for SPM is currently not possible as this framework uses UIKit.
 
 ## Usage
 
@@ -283,29 +261,43 @@ class ImagePickerFlowController: FlowController {
 }
 ```
 
+Since the `ResultClosure` parameter is @escaping, you would usually use a `[weak self]` or `[unowned self]` when calling the initializer and then map to something like `strongSelf` to prevent retain cycles & memory leaks. Imperio has a better way to deal with this situation, simply change your code to this:
+
+``` Swift
+class ImagePickerFlowController: FlowController {
+    let resultCompletion: SafeResultClosure<UIImage>
+
+    init(resultCompletion: SafeResultClosure<UIImage>) {
+        self.resultCompletion = resultCompletion
+        super.init()
+    }
+    
+    // ...
+}
+```
+
 The usage side then would look like this:
 
 ``` Swift
 func imagePickerStartButtonPressed() {
-    let imagePickerFlowCtrl = ImagePickerFlowController { [unowned self] pickedImage in
-        // do something with the result
+    let resultCompletion = SafeResultClosure<UIImage>(weak: self) { (self, pickedImage) in
+	       // do something with the result
     }
 
+    let imagePickerFlowCtrl = ImagePickerFlowController(resultCompletion: resultCompletion)
     add(subFlowController: imagePickerFlowCtrl)
     imagePickerFlowCtrl.start(from: mainViewController!)
 }
 ```
 
-Please don't forget the `[unowned self]` when using `@escaping` closures to prevent memory leaks.
+The `SafeResultClosure` is a wrapper which you pass a strong reference of `self` to and get a strong reference of `self` back from as the first parameter. The closure will only be called if `self` is not `nil`. This way you can prevent writing `[weak self]` or `[unowned self]` in the closure parameters list so – you get safety by default.
 
-### Why does Imperio has Bond (and others) listed as its dependencies?
-
-Technically you can use Imperio without Bond. Having this said, we highly recommend using Bond the way explained in the answer of the next question. So read on for the complete answer. The other dependencies – namely ReactiveKit and Differ – are sub dependencies of Bond.
+`SafeResultClosure` is part of Imperio and is an implementation of the Delegated pattern described [here](https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6).
 
 ### How can I pass data between a flow controller and its view controllers?
 
 There are two different cases here:
-- passing data **into** a view controllers
+- passing data **into** view controllers
 - passing data **back** to the flow controller
 
 **For passing data into view controllers** we recommend using structs that represent the view state. We call them `ViewModel`s. Here's a simple view model:
@@ -313,11 +305,11 @@ There are two different cases here:
 ```
 struct MainViewModel {
     let backgroundColor: UIColor
-    var pickedImage: Observable<UIImage?>
+    var pickedImage: ObservableProperty<UIImage?>
 }
 ```
 
-Note that for properties that don't change we are simply using a let and the type directly. For properties that might change over time we are using the `Observable` wrapper. It's part of the dependency "Bond" and allows the view controller to subscribe to any changes of the property and react accordingly. Just put your view model into your view controller like so:
+Note that for properties that don't change we are simply using a let and the type directly. For properties that might change over time we are using the `ObservableProperty` wrapper. It's part of Imperio and allows the view controller to subscribe to any changes of the property and react accordingly. Just put your view model into your view controller like so:
 
 ``` Swift
 class MainViewController: UIViewController {
@@ -337,16 +329,18 @@ override func viewDidLoad() {
 
     view.backgroundColor = viewModel?.backgroundColor
 
-    _ = viewModel?.pickedImage.observeNext { [unowned self] pickedImage in
+    viewModel?.pickedImage.didSet(weak: self) { (self, pickedImage) in
         self.pickedImageView.image = pickedImage
     }
 }
 ```
 
-Again, don't forget the `[unowned self]` on `observeNext`. Whenever you want to change the `pickedImage` property, simply change the `value` property of the `Observable` like so:
+The strong `self` which is passed into the `didSet()` is safely returned back as a strong `self` as the parameter of the closure. (It's converted to a weak self automatically by Imperio internally.)
+
+Whenever you want to change the `pickedImage` property, simply use the `setValue()` method of the `ObservableProperty` like so:
 
 ``` Swift
-mainViewController.viewModel.pickerImage.value = #imageLiteral(resourceName: "hogwarts")
+mainViewController.viewModel.pickerImage.setValue(pickedImage)
 ```
 
 As for the second case – **passing data back to the flow controller** – simply add parameters to your flow delegate methods. For example:
@@ -382,7 +376,7 @@ class MainViewControllerTests: FBSnapshotTestCase {
 
     func testRedBackgroundWithHogwartsImage() {
         let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
-        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: Observable(#imageLiteral(resourceName: "hogwarts")))
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: ObservableProperty(#imageLiteral(resourceName: "hogwarts")))
         FBSnapshotVerifyView(mainViewController!.view)
     }
 }
@@ -450,7 +444,7 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            resultCompletion(pickedImage)
+            resultCompletion.reportResult(result: pickedImage)
             picker.dismiss(animated: true) {
                 self.removeFromSuperFlowController()
             }
@@ -459,14 +453,36 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
 }
 ```
 
+The `reportResult()` method is part of `SafeResultClosure` and must be used to report the result once it is available.
+
 We are dealing with the image picker source types and its delegates methods directly in the flow controller. It is not needed to create extra types to get them out of the flow controller. The `UIImagePickerController` is already a well tested view controller, we just need to comply to its interface. The same is true for `UITabBarController`, `UINavigationController` and `UISplitViewController`.
 
+### How do I (further) prevent a "Massive View/Flow Controller" problem?
+
+Letting your ViewControllers only deal with view logic by moving the flow control to FlowControllers is an important first step. But you might find yourself in a situation, where much of the code which was previously part of your ViewControllers now just moved to your FlowController or where your ViewController is still massive due to complex UI handling.
+
+To prevent these issues, we can apply an idea from the [Lotus](https://matteomanferdini.com/ios-architecture-lotus-mvc-pattern/#section2) pattern: **ModelControllers**.
+
+ModelControllers can take the responsibility of bringing the data to the view controllers off the FlowControllers. There are two kinds of ModelControllers: Shared and View-specific ones.
+
+Typical responsibilities for **shared ModelControllers** are:
+
+- managing network requests (API, Logger, Analytics)
+- accessing storage systems (Files, Core Data, UserDefaults)
+- reading sensor data (GPS, gyroscope, accelerometer)
+
+Typical responsibilities for **specific ModelControllers** are:
+
+- implementing UITableViewDataSource & UICollectionViewDataSource
+- state machines for complex view controller logic
+
+Shared ModelControllers are typically globally reachable and could use the [Singleton pattern](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/). Both your ViewControllers and FlowControllers could therefore use them. View-specific ModelControllers are typically only needed for more complex ViewControllers and are created by them as well as hold a strong reference to them.
+
+So, use ModelControllers wherever you might need them to prevent the Massive Flow/View Controller problem.
 
 ## Contributing
 
-Contributions are welcome. Please just open an Issue on GitHub to discuss a point or request a feature or send a Pull Request with your suggestion.
-
-Please also try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)).
+See the file [CONTRIBUTING.md](https://github.com/JamitLabs/MungoHealer/blob/stable/CONTRIBUTING.md).
 
 
 ## License

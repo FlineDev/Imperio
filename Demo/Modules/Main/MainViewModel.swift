@@ -6,11 +6,10 @@
 //  Copyright © 2017 Flinesoft. All rights reserved.
 //
 
-import Bond
 import Imperio
 import UIKit
 
 struct MainViewModel {
     let backgroundColor: UIColor
-    var pickedImage: Observable<UIImage?>
+    var pickedImage: ObservableProperty<UIImage?>
 }

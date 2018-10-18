@@ -1,10 +1,4 @@
-//
-//  FlowController.swift
-//  Imperio
-//
-//  Created by Cihat Gündüz on 01.11.17.
 //  Copyright © 2017 Flinesoft. All rights reserved.
-//
 
 import UIKit
 
@@ -17,7 +11,7 @@ open class FlowController: NSObject {
     ///
     /// - Parameters:
     ///   - presentingViewController: The view controller to start the flow from.
-    open func start(from presentingViewController: UIViewController) { }
+    open func start(from presentingViewController: UIViewController) { /* for overriding purposes only */ }
 
     /// Adds a sub flow controller to the existing one.
     ///

@@ -14,11 +14,9 @@ import UIKit
 // Therefore there is no need to create additional types like view controllers or view models to handle this flow.
 
 class ImagePickerFlowController: FlowController {
-    typealias ResultClosure = (UIImage) -> Void
+    let resultCompletion: SafeResultClosure<UIImage>
 
-    let resultCompletion: ResultClosure
-
-    init(resultCompletion: @escaping ResultClosure) {
+    init(resultCompletion: SafeResultClosure<UIImage>) {
         self.resultCompletion = resultCompletion
         super.init()
     }
@@ -69,9 +67,9 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
         }
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            resultCompletion(pickedImage)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let pickedImage = info[.originalImage] as? UIImage {
+            resultCompletion.reportResult(result: pickedImage)
             picker.dismiss(animated: true) {
                 self.removeFromSuperFlowController()
             }
