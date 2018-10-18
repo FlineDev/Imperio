@@ -73,13 +73,13 @@ import Imperio
 
 class TutorialFlowController: FlowController {
     private var navigationCtrl: UINavigationController?
-    
+
     override func start(from presentingViewController: UIViewController) {
         let page1ViewCtrl = Page1ViewController()
         navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
-        
+
         // TODO: set up the flow delegate
-        
+
         presentingViewController.present(navigationCtrl!, animated: true)
     }
 }
@@ -128,13 +128,13 @@ import Imperio
 
 class TutorialFlowController: InitialFlowController {
     private var navigationCtrl: UINavigationController?
-    
+
     override func start(from window: UIWindow) {
         let page1ViewCtrl = Page1ViewController()
         navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
-        
+
         // TODO: set up the flow delegate
-        
+
         window.rootViewController = navigationCtrl
     }
 }
@@ -186,7 +186,7 @@ Second step is to set the flow controller as the flow delegate of the view contr
 ``` Swift
 override func start(from presentingViewController: UIViewController) {
     // ...
-    
+
     page1ViewCtrl.flowDelegate = self
 
     // ...
@@ -197,7 +197,8 @@ That's it. Everything is set up and should work now. The flow controller manages
 
 ## FAQ
 
-### How do I start the initial flow controller from my AppDelegate?
+<details>
+<summary>How do I start the initial flow controller from my AppDelegate?</summary>
 
 Here's an example how this might look like:
 
@@ -225,7 +226,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 Note that you need to call `makeKeyAndVisible()` on the window. Otherwise you might just see a black screen. Also make sure you are subclassing `InitialFlowController` instead of `FlowController`. Refer to the [`InitialFlowController`](#initialflowcontroller) section above on how to do this.
 
-### How can I pass data between flow controllers?
+</details>
+
+<details>
+<summary>How can I pass data between flow controllers?</summary>
 
 There are two different cases here:
 - passing data **into** a flow controller
@@ -256,7 +260,7 @@ class ImagePickerFlowController: FlowController {
         self.resultCompletion = resultCompletion
         super.init()
     }
-    
+
     // ...
 }
 ```
@@ -271,7 +275,7 @@ class ImagePickerFlowController: FlowController {
         self.resultCompletion = resultCompletion
         super.init()
     }
-    
+
     // ...
 }
 ```
@@ -294,7 +298,10 @@ The `SafeResultClosure` is a wrapper which you pass a strong reference of `self`
 
 `SafeResultClosure` is part of Imperio and is an implementation of the Delegated pattern described [here](https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6).
 
-### How can I pass data between a flow controller and its view controllers?
+</details>
+
+<details>
+<summary>How can I pass data between a flow controller and its view controllers?</summary>
 
 There are two different cases here:
 - passing data **into** view controllers
@@ -352,7 +359,10 @@ protocol AddressListFlowDelegate: class {
 }
 ```
 
-### Now that my view controllers are lean, how do I test them?
+</details>
+
+<details>
+<summary>Now that my view controllers are lean, how do I test them?</summary>
 
 If you followed our suggestion and created a view model that defines the view state of your view controller, then here's how:
 
@@ -382,7 +392,10 @@ class MainViewControllerTests: FBSnapshotTestCase {
 }
 ```
 
-### How do I deal with container view controllers like UINavigationController or UITabBarController?
+</details>
+
+<details>
+<summary>How do I deal with container view controllers like UINavigationController or UITabBarController?</summary>
 
 If you happen to come across types which already encapsulate some portion of the screen flow, don't try to force-fit them into the structure suggested here. Also don't create view controllers as wrappers just to get handling their delegates out of the flow controller. It is absolutely valid to deviate from the way of passing data or the separation of responsibilities in some circumstances. For example, this is valid:
 
@@ -421,15 +434,15 @@ class ImagePickerFlowController: FlowController {
     func startCamera(from viewController: UIViewController) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .camera
-    
+
         imagePicker.delegate = self
         viewController.present(imagePicker, animated: true)
     }
-    
+
     func startImagePicker(from viewController: UIViewController) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .savedPhotosAlbum
-    
+
         imagePicker.delegate = self
         viewController.present(imagePicker, animated: true)
     }
@@ -457,7 +470,10 @@ The `reportResult()` method is part of `SafeResultClosure` and must be used to r
 
 We are dealing with the image picker source types and its delegates methods directly in the flow controller. It is not needed to create extra types to get them out of the flow controller. The `UIImagePickerController` is already a well tested view controller, we just need to comply to its interface. The same is true for `UITabBarController`, `UINavigationController` and `UISplitViewController`.
 
-### How do I (further) prevent a "Massive View/Flow Controller" problem?
+</details>
+
+<details>
+<summary>How do I (further) prevent a "Massive View/Flow Controller" problem?</summary>
 
 Letting your ViewControllers only deal with view logic by moving the flow control to FlowControllers is an important first step. But you might find yourself in a situation, where much of the code which was previously part of your ViewControllers now just moved to your FlowController or where your ViewController is still massive due to complex UI handling.
 
@@ -479,6 +495,8 @@ Typical responsibilities for **specific ModelControllers** are:
 Shared ModelControllers are typically globally reachable and could use the [Singleton pattern](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/). Both your ViewControllers and FlowControllers could therefore use them. View-specific ModelControllers are typically only needed for more complex ViewControllers and are created by them as well as hold a strong reference to them.
 
 So, use ModelControllers wherever you might need them to prevent the Massive Flow/View Controller problem.
+
+</details>
 
 ## Contributing
 
