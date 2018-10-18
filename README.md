@@ -442,12 +442,32 @@ The `reportResult()` method is part of `SafeResultClosure` and must be used to r
 
 We are dealing with the image picker source types and its delegates methods directly in the flow controller. It is not needed to create extra types to get them out of the flow controller. The `UIImagePickerController` is already a well tested view controller, we just need to comply to its interface. The same is true for `UITabBarController`, `UINavigationController` and `UISplitViewController`.
 
+### How do I (further) prevent a "Massive View/Flow Controller" problem?
+
+Letting your ViewControllers only deal with view logic by moving the flow control to FlowControllers is an important first step. But you might find yourself in a situation, where much of the code which was previously part of your ViewControllers now just moved to your FlowController or where your ViewController is still massive due to complex UI handling.
+
+To prevent these issues, we can apply an idea from the [Lotus](https://matteomanferdini.com/ios-architecture-lotus-mvc-pattern/#section2) pattern: **ModelControllers**.
+
+ModelControllers can take the responsibility of bringing the data to the view controllers off the FlowControllers. There are two kinds of ModelControllers: Shared and View-specific ones.
+
+Typical responsibilities for **shared ModelControllers** are:
+
+- managing network requests (API, Logger, Analytics)
+- accessing storage systems (Files, Core Data, UserDefaults)
+- reading sensor data (GPS, gyroscope, accelerometer)
+
+Typical responsibilities for **specific ModelControllers** are:
+
+- implementing UITableViewDataSource & UICollectionViewDataSource
+- state machines for complex view controller logic
+
+Shared ModelControllers are typically globally reachable and could use the [Singleton pattern](https://cocoacasts.com/what-is-a-singleton-and-how-to-create-one-in-swift/). Both your ViewControllers and FlowControllers could therefore use them. View-specific ModelControllers are typically only needed for more complex ViewControllers and are created by them as well as hold a strong reference to them.
+
+So, use ModelControllers wherever you might need them to prevent the Massive Flow/View Controller problem.
 
 ## Contributing
 
-Contributions are welcome. Please just open an Issue on GitHub to discuss a point or request a feature or send a Pull Request with your suggestion.
-
-Please also try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)).
+See the file [CONTRIBUTING.md](https://github.com/JamitLabs/MungoHealer/blob/stable/CONTRIBUTING.md).
 
 
 ## License
