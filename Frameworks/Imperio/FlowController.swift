@@ -1,10 +1,4 @@
-//
-//  FlowController.swift
-//  Imperio
-//
-//  Created by Cihat Gündüz on 01.11.17.
 //  Copyright © 2017 Flinesoft. All rights reserved.
-//
 
 import UIKit
 

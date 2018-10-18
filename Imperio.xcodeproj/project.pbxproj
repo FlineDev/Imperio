@@ -32,6 +32,8 @@
 		008D0D701FAB4C6B00D8F2FA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D0D6F1FAB4C6B00D8F2FA /* MainViewModel.swift */; };
 		009267921FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
 		009267931FAA699800C7602D /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009267911FAA699800C7602D /* FlowController.swift */; };
+		82E3053521788657003BD01C /* SafeResultClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3053421788657003BD01C /* SafeResultClosure.swift */; };
+		82E3053621788657003BD01C /* SafeResultClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3053421788657003BD01C /* SafeResultClosure.swift */; };
 		A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A6DEE2177C3920074A528 /* ObservableProperty.swift */; };
 		A10A6DF02177C3920074A528 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A6DEE2177C3920074A528 /* ObservableProperty.swift */; };
 		A14E0B291E1F9ECC00DFC788 /* Imperio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */; };
@@ -128,6 +130,7 @@
 		82C76D091E4215480027B35F /* Imperio.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Imperio.podspec; sourceTree = "<group>"; };
 		82C76D0A1E4221FD0027B35F /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		82E3052E21787B66003BD01C /* .projlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .projlint.yml; sourceTree = "<group>"; };
+		82E3053421788657003BD01C /* SafeResultClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeResultClosure.swift; sourceTree = "<group>"; };
 		A10A6DEE2177C3920074A528 /* ObservableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProperty.swift; sourceTree = "<group>"; };
 		A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B281E1F9ECC00DFC788 /* Imperio iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,6 +333,7 @@
 				009267911FAA699800C7602D /* FlowController.swift */,
 				0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */,
 				A10A6DEE2177C3920074A528 /* ObservableProperty.swift */,
+				82E3053421788657003BD01C /* SafeResultClosure.swift */,
 			);
 			path = Imperio;
 			sourceTree = "<group>";
@@ -745,6 +749,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E3053521788657003BD01C /* SafeResultClosure.swift in Sources */,
 				A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */,
 				0086C0E91FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
 				009267921FAA699800C7602D /* FlowController.swift in Sources */,
@@ -762,6 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E3053621788657003BD01C /* SafeResultClosure.swift in Sources */,
 				A10A6DF02177C3920074A528 /* ObservableProperty.swift in Sources */,
 				0086C0EA1FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
 				009267931FAA699800C7602D /* FlowController.swift in Sources */,

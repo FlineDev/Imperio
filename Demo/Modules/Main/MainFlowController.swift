@@ -28,10 +28,11 @@ extension MainFlowController: MainFlowDelegate {
     }
 
     func imagePickerStartButtonPressed() {
-        let imagePickerFlowCtrl = ImagePickerFlowController { [unowned self] pickedImage in
+        let resultCompletion = SafeResultClosure<UIImage>(weak: self) { (self, pickedImage) in
             self.mainViewController?.viewModel?.pickedImage.set(pickedImage)
         }
 
+        let imagePickerFlowCtrl = ImagePickerFlowController(resultCompletion: resultCompletion)
         add(subFlowController: imagePickerFlowCtrl)
         imagePickerFlowCtrl.start(from: mainViewController!)
     }

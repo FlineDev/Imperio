@@ -1,10 +1,4 @@
-//
-//  InitialFlowController.swift
-//  Imperio
-//
 //  Created by Cihat Gündüz on 17.10.18.
-//  Copyright © 2018 Flinesoft. All rights reserved.
-//
 
 import Foundation
 

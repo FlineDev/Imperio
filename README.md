@@ -265,25 +265,24 @@ The usage side then would look like this:
 
 ``` Swift
 func imagePickerStartButtonPressed() {
-    let imagePickerFlowCtrl = ImagePickerFlowController { [unowned self] pickedImage in
-        // do something with the result
+    let resultCompletion = SafeResultClosure<UIImage>(self) { (self, pickedImage) in
+	       // do something with the result
     }
 
+    let imagePickerFlowCtrl = ImagePickerFlowController(resultCompletion: resultCompletion)
     add(subFlowController: imagePickerFlowCtrl)
     imagePickerFlowCtrl.start(from: mainViewController!)
 }
 ```
 
-Please don't forget the `[unowned self]` when using `@escaping` closures to prevent memory leaks.
+The `SafeResultClosure` is a wrapper which you pass a strong reference of `self` to and get a strong reference of `self` back from as the first parameter. The closure will only be called if `self` is not `nil`. This way you can prevent writing `[weak self]` or `[unowned self]` in the closure parameters list so – you get safety by default.
 
-### Why does Imperio has Bond (and others) listed as its dependencies?
-
-Technically you can use Imperio without Bond. Having this said, we highly recommend using Bond the way explained in the answer of the next question. So read on for the complete answer. The other dependencies – namely ReactiveKit and Differ – are sub dependencies of Bond.
+`SafeResultClosure` is part of Imperio and is an implementation of the Delegated pattern described [here](https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6).
 
 ### How can I pass data between a flow controller and its view controllers?
 
 There are two different cases here:
-- passing data **into** a view controllers
+- passing data **into** view controllers
 - passing data **back** to the flow controller
 
 **For passing data into view controllers** we recommend using structs that represent the view state. We call them `ViewModel`s. Here's a simple view model:
@@ -291,11 +290,11 @@ There are two different cases here:
 ```
 struct MainViewModel {
     let backgroundColor: UIColor
-    var pickedImage: Observable<UIImage?>
+    var pickedImage: ObservableProperty<UIImage?>
 }
 ```
 
-Note that for properties that don't change we are simply using a let and the type directly. For properties that might change over time we are using the `Observable` wrapper. It's part of the dependency "Bond" and allows the view controller to subscribe to any changes of the property and react accordingly. Just put your view model into your view controller like so:
+Note that for properties that don't change we are simply using a let and the type directly. For properties that might change over time we are using the `ObservableProperty` wrapper. It's part of Imperio and allows the view controller to subscribe to any changes of the property and react accordingly. Just put your view model into your view controller like so:
 
 ``` Swift
 class MainViewController: UIViewController {
@@ -315,16 +314,18 @@ override func viewDidLoad() {
 
     view.backgroundColor = viewModel?.backgroundColor
 
-    _ = viewModel?.pickedImage.observeNext { [unowned self] pickedImage in
+    _ = viewModel?.pickedImage.didSet(self) { (self, pickedImage) in
         self.pickedImageView.image = pickedImage
     }
 }
 ```
 
-Again, don't forget the `[unowned self]` on `observeNext`. Whenever you want to change the `pickedImage` property, simply change the `value` property of the `Observable` like so:
+The strong `self` which is passed into the `didSet()` is safely returned back as a strong `self` as the parameter of the closure. (It's converted to a weak self automatically by Imperio internally.)
+
+Whenever you want to change the `pickedImage` property, simply use the `setValue()` method of the `ObservablePropertly` like so:
 
 ``` Swift
-mainViewController.viewModel.pickerImage.value = #imageLiteral(resourceName: "hogwarts")
+mainViewController.viewModel.pickerImage.setValue(pickedImage)
 ```
 
 As for the second case – **passing data back to the flow controller** – simply add parameters to your flow delegate methods. For example:
@@ -360,7 +361,7 @@ class MainViewControllerTests: FBSnapshotTestCase {
 
     func testRedBackgroundWithHogwartsImage() {
         let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
-        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: Observable(#imageLiteral(resourceName: "hogwarts")))
+        mainViewController?.viewModel = MainViewModel(backgroundColor: .red, pickedImage: ObservableProperty(#imageLiteral(resourceName: "hogwarts")))
         FBSnapshotVerifyView(mainViewController!.view)
     }
 }
@@ -428,7 +429,7 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            resultCompletion(pickedImage)
+            resultCompletion.reportResult(result: pickedImage)
             picker.dismiss(animated: true) {
                 self.removeFromSuperFlowController()
             }
@@ -436,6 +437,8 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
     }
 }
 ```
+
+The `reportResult()` method is part of `SafeResultClosure` and must be used to report the result once it is available.
 
 We are dealing with the image picker source types and its delegates methods directly in the flow controller. It is not needed to create extra types to get them out of the flow controller. The `UIImagePickerController` is already a well tested view controller, we just need to comply to its interface. The same is true for `UITabBarController`, `UINavigationController` and `UISplitViewController`.
 
