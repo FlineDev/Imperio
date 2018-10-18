@@ -96,11 +96,11 @@
 
 /* Begin PBXFileReference section */
 		003771871FB348D200DAB797 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
-		0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-Demo Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0037718C1FB34D8700DAB797 /* Imperio Demo Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio Demo Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		003771981FB34E1200DAB797 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		0037719E1FB34E9700DAB797 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		003771AB1FB3580800DAB797 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Imperio-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0086C0AF1FAA6F920089BBE1 /* Imperio Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Imperio Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0086C0C51FAA70550089BBE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0086C0C71FAA70550089BBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0086C0C91FAA70550089BBE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,11 +127,12 @@
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		82C76D091E4215480027B35F /* Imperio.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Imperio.podspec; sourceTree = "<group>"; };
 		82C76D0A1E4221FD0027B35F /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		82E3052E21787B66003BD01C /* .projlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .projlint.yml; sourceTree = "<group>"; };
 		A10A6DEE2177C3920074A528 /* ObservableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProperty.swift; sourceTree = "<group>"; };
 		A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14E0B281E1F9ECC00DFC788 /* Imperio iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14E0B461E1F9EDE00DFC788 /* Imperio-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14E0B461E1F9EDE00DFC788 /* Imperio tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,13 +185,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		003771961FB34DBF00DAB797 /* Demo */ = {
+		003771961FB34DBF00DAB797 /* DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				0037719C1FB34E4600DAB797 /* Modules */,
 				003771AB1FB3580800DAB797 /* Media.xcassets */,
+				0037719C1FB34E4600DAB797 /* Modules */,
 			);
-			path = Demo;
+			path = DemoTests;
 			sourceTree = "<group>";
 		};
 		003771971FB34DEF00DAB797 /* Tests */ = {
@@ -220,9 +221,9 @@
 		0086C0C31FAA70550089BBE1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				0086C0C51FAA70550089BBE1 /* Assets.xcassets */,
 				0086C0CA1FAA70550089BBE1 /* AppDelegate.swift */,
 				0086C0C61FAA70550089BBE1 /* LaunchScreen.storyboard */,
-				0086C0C51FAA70550089BBE1 /* Assets.xcassets */,
 				0086C0C41FAA70550089BBE1 /* Modules */,
 				0086C0C81FAA70550089BBE1 /* SupportingFiles */,
 			);
@@ -288,19 +289,11 @@
 			name = Carthage;
 			sourceTree = "<group>";
 		};
-		0092678A1FAA67B600C7602D /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				009267901FAA697E00C7602D /* Code */,
-				0092678E1FAA68F700C7602D /* SupportingFiles */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		0092678B1FAA67B600C7602D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				003771961FB34DBF00DAB797 /* Demo */,
+				82E3053321787DD9003BD01C /* ImperioTests */,
+				003771961FB34DBF00DAB797 /* DemoTests */,
 				0092678C1FAA67B600C7602D /* SupportingFiles */,
 			);
 			path = Tests;
@@ -322,22 +315,38 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		009267901FAA697E00C7602D /* Code */ = {
+		82E3053121787CFB003BD01C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82E3053221787D02003BD01C /* Imperio */,
+				0092678E1FAA68F700C7602D /* SupportingFiles */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		82E3053221787D02003BD01C /* Imperio */ = {
 			isa = PBXGroup;
 			children = (
 				009267911FAA699800C7602D /* FlowController.swift */,
 				0086C0E81FAA7C770089BBE1 /* InitialFlowController.swift */,
 				A10A6DEE2177C3920074A528 /* ObservableProperty.swift */,
 			);
-			path = Code;
+			path = Imperio;
+			sourceTree = "<group>";
+		};
+		82E3053321787DD9003BD01C /* ImperioTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImperioTests;
 			sourceTree = "<group>";
 		};
 		A14E0B151E1F9ECC00DFC788 = {
 			isa = PBXGroup;
 			children = (
-				A14E0B8E1E1F9FD400DFC788 /* Root Files */,
+				82E3053121787CFB003BD01C /* Frameworks */,
+				A14E0B8E1E1F9FD400DFC788 /* RootFiles */,
 				0086C0C31FAA70550089BBE1 /* Demo */,
-				0092678A1FAA67B600C7602D /* Sources */,
 				0092678B1FAA67B600C7602D /* Tests */,
 				A14E0B201E1F9ECC00DFC788 /* Products */,
 				008D0F6E1FAB635800D8F2FA /* Carthage */,
@@ -348,18 +357,19 @@
 			isa = PBXGroup;
 			children = (
 				A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */,
-				A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */,
+				A14E0B281E1F9ECC00DFC788 /* Imperio iOS Tests.xctest */,
 				A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */,
-				A14E0B461E1F9EDE00DFC788 /* Imperio-tvOS Tests.xctest */,
-				0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */,
-				0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */,
+				A14E0B461E1F9EDE00DFC788 /* Imperio tvOS Tests.xctest */,
+				0086C0AF1FAA6F920089BBE1 /* Imperio Demo.app */,
+				0037718C1FB34D8700DAB797 /* Imperio Demo Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A14E0B8E1E1F9FD400DFC788 /* Root Files */ = {
+		A14E0B8E1E1F9FD400DFC788 /* RootFiles */ = {
 			isa = PBXGroup;
 			children = (
+				82E3052E21787B66003BD01C /* .projlint.yml */,
 				82C76D071E4215110027B35F /* .swiftlint.yml */,
 				003771871FB348D200DAB797 /* Cartfile.private */,
 				008D0D751FAB60F600D8F2FA /* Cartfile.resolved */,
@@ -368,7 +378,7 @@
 				82C76D081E4215240027B35F /* Package.swift */,
 				82C76D061E4214C60027B35F /* README.md */,
 			);
-			name = "Root Files";
+			name = RootFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,9 +401,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0037718B1FB34D8700DAB797 /* Imperio-Demo Tests */ = {
+		0037718B1FB34D8700DAB797 /* Imperio Demo Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio-Demo Tests" */;
+			buildConfigurationList = 003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio Demo Tests" */;
 			buildPhases = (
 				003771881FB34D8700DAB797 /* Sources */,
 				003771891FB34D8700DAB797 /* Frameworks */,
@@ -405,14 +415,14 @@
 			dependencies = (
 				003771921FB34D8700DAB797 /* PBXTargetDependency */,
 			);
-			name = "Imperio-Demo Tests";
+			name = "Imperio Demo Tests";
 			productName = "Imperio-Demo Tests";
-			productReference = 0037718C1FB34D8700DAB797 /* Imperio-Demo Tests.xctest */;
+			productReference = 0037718C1FB34D8700DAB797 /* Imperio Demo Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */ = {
+		0086C0AE1FAA6F920089BBE1 /* Imperio Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio-Demo" */;
+			buildConfigurationList = 0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio Demo" */;
 			buildPhases = (
 				0086C0AB1FAA6F920089BBE1 /* Sources */,
 				0086C0AC1FAA6F920089BBE1 /* Frameworks */,
@@ -425,33 +435,34 @@
 			dependencies = (
 				0086C0D11FAA70CC0089BBE1 /* PBXTargetDependency */,
 			);
-			name = "Imperio-Demo";
+			name = "Imperio Demo";
 			productName = "Imperio-Demo";
-			productReference = 0086C0AF1FAA6F920089BBE1 /* Imperio-Demo.app */;
+			productReference = 0086C0AF1FAA6F920089BBE1 /* Imperio Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */ = {
+		A14E0B1E1E1F9ECC00DFC788 /* Imperio iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14E0B331E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS" */;
+			buildConfigurationList = A14E0B331E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio iOS" */;
 			buildPhases = (
 				A14E0B1A1E1F9ECC00DFC788 /* Sources */,
 				A14E0B1B1E1F9ECC00DFC788 /* Frameworks */,
 				A14E0B1C1E1F9ECC00DFC788 /* Headers */,
 				A14E0B1D1E1F9ECC00DFC788 /* Resources */,
 				82C76D0C1E4222300027B35F /* SwiftLint */,
+				82E3052F21787C9D003BD01C /* ProjLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Imperio-iOS";
+			name = "Imperio iOS";
 			productName = Imperio;
 			productReference = A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A14E0B271E1F9ECC00DFC788 /* Imperio-iOS Tests */ = {
+		A14E0B271E1F9ECC00DFC788 /* Imperio iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14E0B361E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS Tests" */;
+			buildConfigurationList = A14E0B361E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio iOS Tests" */;
 			buildPhases = (
 				A14E0B241E1F9ECC00DFC788 /* Sources */,
 				A14E0B251E1F9ECC00DFC788 /* Frameworks */,
@@ -462,33 +473,34 @@
 			dependencies = (
 				A14E0B2B1E1F9ECC00DFC788 /* PBXTargetDependency */,
 			);
-			name = "Imperio-iOS Tests";
+			name = "Imperio iOS Tests";
 			productName = ImperioTests;
-			productReference = A14E0B281E1F9ECC00DFC788 /* Imperio-iOS Tests.xctest */;
+			productReference = A14E0B281E1F9ECC00DFC788 /* Imperio iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A14E0B3D1E1F9EDD00DFC788 /* Imperio-tvOS */ = {
+		A14E0B3D1E1F9EDD00DFC788 /* Imperio tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14E0B4F1E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS" */;
+			buildConfigurationList = A14E0B4F1E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio tvOS" */;
 			buildPhases = (
 				A14E0B391E1F9EDD00DFC788 /* Sources */,
 				A14E0B3A1E1F9EDD00DFC788 /* Frameworks */,
 				A14E0B3B1E1F9EDD00DFC788 /* Headers */,
 				A14E0B3C1E1F9EDD00DFC788 /* Resources */,
 				008D0D791FAB61A700D8F2FA /* SwiftLint */,
+				82E3053021787CA5003BD01C /* ProjLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Imperio-tvOS";
+			name = "Imperio tvOS";
 			productName = "Imperio-tvOS";
 			productReference = A14E0B3E1E1F9EDD00DFC788 /* Imperio.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A14E0B451E1F9EDE00DFC788 /* Imperio-tvOS Tests */ = {
+		A14E0B451E1F9EDE00DFC788 /* Imperio tvOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14E0B521E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS Tests" */;
+			buildConfigurationList = A14E0B521E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio tvOS Tests" */;
 			buildPhases = (
 				A14E0B421E1F9EDE00DFC788 /* Sources */,
 				A14E0B431E1F9EDE00DFC788 /* Frameworks */,
@@ -499,9 +511,9 @@
 			dependencies = (
 				A14E0B491E1F9EDE00DFC788 /* PBXTargetDependency */,
 			);
-			name = "Imperio-tvOS Tests";
+			name = "Imperio tvOS Tests";
 			productName = "Imperio-tvOSTests";
-			productReference = A14E0B461E1F9EDE00DFC788 /* Imperio-tvOS Tests.xctest */;
+			productReference = A14E0B461E1F9EDE00DFC788 /* Imperio tvOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -511,7 +523,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Flinesoft;
 				TargetAttributes = {
 					0037718B1FB34D8700DAB797 = {
@@ -562,12 +574,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */,
-				0037718B1FB34D8700DAB797 /* Imperio-Demo Tests */,
-				A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */,
-				A14E0B271E1F9ECC00DFC788 /* Imperio-iOS Tests */,
-				A14E0B3D1E1F9EDD00DFC788 /* Imperio-tvOS */,
-				A14E0B451E1F9EDE00DFC788 /* Imperio-tvOS Tests */,
+				0086C0AE1FAA6F920089BBE1 /* Imperio Demo */,
+				0037718B1FB34D8700DAB797 /* Imperio Demo Tests */,
+				A14E0B1E1E1F9ECC00DFC788 /* Imperio iOS */,
+				A14E0B271E1F9ECC00DFC788 /* Imperio iOS Tests */,
+				A14E0B3D1E1F9EDD00DFC788 /* Imperio tvOS */,
+				A14E0B451E1F9EDE00DFC788 /* Imperio tvOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -637,7 +649,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi\n";
 		};
 		008D0F771FAB65F200D8F2FA /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -651,7 +663,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		82C76D0C1E4222300027B35F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -665,7 +677,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        swiftlint\n    else\n        echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\n    fi\nfi\n";
+		};
+		82E3052F21787C9D003BD01C /* ProjLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = ProjLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
+		};
+		82E3053021787CA5003BD01C /* ProjLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = ProjLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -733,22 +781,22 @@
 /* Begin PBXTargetDependency section */
 		003771921FB34D8700DAB797 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0086C0AE1FAA6F920089BBE1 /* Imperio-Demo */;
+			target = 0086C0AE1FAA6F920089BBE1 /* Imperio Demo */;
 			targetProxy = 003771911FB34D8700DAB797 /* PBXContainerItemProxy */;
 		};
 		0086C0D11FAA70CC0089BBE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */;
+			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio iOS */;
 			targetProxy = 0086C0D01FAA70CC0089BBE1 /* PBXContainerItemProxy */;
 		};
 		A14E0B2B1E1F9ECC00DFC788 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio-iOS */;
+			target = A14E0B1E1E1F9ECC00DFC788 /* Imperio iOS */;
 			targetProxy = A14E0B2A1E1F9ECC00DFC788 /* PBXContainerItemProxy */;
 		};
 		A14E0B491E1F9EDE00DFC788 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14E0B3D1E1F9EDD00DFC788 /* Imperio-tvOS */;
+			target = A14E0B3D1E1F9EDD00DFC788 /* Imperio tvOS */;
 			targetProxy = A14E0B481E1F9EDE00DFC788 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -894,6 +942,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -901,6 +950,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -955,6 +1005,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -962,6 +1013,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1011,7 +1063,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
@@ -1036,7 +1088,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
@@ -1083,7 +1135,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
@@ -1109,7 +1161,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.Imperio;
@@ -1151,7 +1203,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio-Demo Tests" */ = {
+		003771931FB34D8700DAB797 /* Build configuration list for PBXNativeTarget "Imperio Demo Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003771941FB34D8700DAB797 /* Debug */,
@@ -1160,7 +1212,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio-Demo" */ = {
+		0086C0BE1FAA6F920089BBE1 /* Build configuration list for PBXNativeTarget "Imperio Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0086C0BF1FAA6F920089BBE1 /* Debug */,
@@ -1178,7 +1230,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14E0B331E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS" */ = {
+		A14E0B331E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14E0B341E1F9ECC00DFC788 /* Debug */,
@@ -1187,7 +1239,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14E0B361E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-iOS Tests" */ = {
+		A14E0B361E1F9ECC00DFC788 /* Build configuration list for PBXNativeTarget "Imperio iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14E0B371E1F9ECC00DFC788 /* Debug */,
@@ -1196,7 +1248,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14E0B4F1E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS" */ = {
+		A14E0B4F1E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14E0B501E1F9EDE00DFC788 /* Debug */,
@@ -1205,7 +1257,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14E0B521E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio-tvOS Tests" */ = {
+		A14E0B521E1F9EDE00DFC788 /* Build configuration list for PBXNativeTarget "Imperio tvOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14E0B531E1F9EDE00DFC788 /* Debug */,

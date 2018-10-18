@@ -13,7 +13,8 @@ public class ObservableProperty<ValueType> {
     // MARK: - Stored Instance Properties
     private var didSetClosures: [(ValueType) -> Void] = []
 
-    private(set) public var value: ValueType {
+    /// The value encapsulated within the observable property wrapper.
+    public private(set) var value: ValueType {
         didSet {
             didSetClosures.forEach { $0(value) }
         }

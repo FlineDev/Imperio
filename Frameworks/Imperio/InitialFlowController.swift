@@ -14,5 +14,5 @@ open class InitialFlowController: FlowController {
     ///
     /// - Paramters:
     ///   - window: The window to present the flow from.
-    open func start(from window: UIWindow) {}
+    open func start(from window: UIWindow) { /* needs to be overridden */ }
 }

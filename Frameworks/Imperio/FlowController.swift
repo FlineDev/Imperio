@@ -17,7 +17,7 @@ open class FlowController: NSObject {
     ///
     /// - Parameters:
     ///   - presentingViewController: The view controller to start the flow from.
-    open func start(from presentingViewController: UIViewController) { }
+    open func start(from presentingViewController: UIViewController) { /* for overriding purposes only */ }
 
     /// Adds a sub flow controller to the existing one.
     ///
