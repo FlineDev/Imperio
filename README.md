@@ -4,8 +4,8 @@ width=600 height=167>
 </p>
 
 <p align="center">
-  <a href="https://app.bitrise.io/app/2f9c88bb42720cb1">
-  <img src="https://app.bitrise.io/app/2f9c88bb42720cb1/status.svg?token=dZVzs771PljV_kKatagpJg&branch=stable"
+  <a href="https://app.bitrise.io/app/b2ccbd0bd00feffd">
+  <img src="https://app.bitrise.io/app/b2ccbd0bd00feffd/status.svg?token=mpeSdr3KWt40nfKtW134wg&branch=stable"
      alt="Build Status">
   </a>
   <a href="https://codebeat.co/projects/github-com-flinesoft-imperio">
@@ -13,11 +13,11 @@ width=600 height=167>
      alt="codebeat badge">
   </a>
   <a href="https://github.com/Flinesoft/Imperio/releases">
-  <img src="https://img.shields.io/badge/Version-2.0.1-blue.svg"
-     alt="Version: 2.0.1">
+  <img src="https://img.shields.io/badge/Version-3.0.0-blue.svg"
+     alt="Version: 3.0.0">
   </a>
-  <img src="https://img.shields.io/badge/Swift-4.0-FFAC45.svg"
-     alt="Swift: 4.0">
+  <img src="https://img.shields.io/badge/Swift-4.2-FFAC45.svg"
+     alt="Swift: 4.2">
   <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS-FF69B4.svg"
      alt="Platforms: iOS | tvOS">
   <a href="https://github.com/Flinesoft/Imperio/blob/stable/LICENSE.md">
@@ -37,36 +37,14 @@ width=600 height=167>
 
 # Imperio
 
-The goal of this library is to **keep view controllers lean & make them easily testable** by getting screen flow and other responsibilities out of them. Instead flow controllers are used to handle screen flow and trigger changes in the view, which the view controller handles. Pattern wise this approach combines ideas from MVC, MVP, MVVM and VIPER.
+The goal of this library is to **keep view controllers lean & make them easily testable** by getting screen flow and other responsibilities out of them. Instead flow controllers are used to handle screen flow and trigger changes in the view, which the view controller handles. Pattern wise this approach combines ideas from MVC, MVP, MVVM, VIPER & [Lotus](https://matteomanferdini.com/ios-architecture-lotus-mvc-pattern).
 
 
 ## Installation
 
-### Carthage
+Installing via [Carthage](https://github.com/Carthage/Carthage#carthage) & [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) are both supported.
 
-Place the following line to your Cartfile:
-
-``` Swift
-github "Flinesoft/Imperio" ~> 2.0
-```
-
-Now run `carthage update`. Then drag & drop the `Imperio.framework` in the Carthage/Build folder to your project. Do the same with the dependencies `Bond.framework`, `Differ.framework` and `ReactKit.framework`. Now you can `import Imperio` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed instructions.
-
-### CocoaPods
-
-Add the line `pod 'Imperio'` to your target in your `Podfile` and make sure to include `use_frameworks!`
-at the top. The result might look similar to this:
-
-``` Ruby
-platform :ios, '8.0'
-use_frameworks!
-
-target 'MyAppTarget' do
-  pod 'Imperio', '~> 2.0'
-end
-```
-
-Now close your project and run `pod install` from the command line. Then open the `.xcworkspace` from within your project folder. Now you can `import Imperio` in each class you want to use its features. Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructions.
+Support for SPM is currently not possible as this framework uses UIKit.
 
 ## Usage
 
