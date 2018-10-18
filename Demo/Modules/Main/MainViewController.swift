@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = viewModel?.backgroundColor
-
         viewModel?.pickedImage.didSet(weak: self) { (self, pickedImage) in
             self.pickedImageView.image = pickedImage
         }

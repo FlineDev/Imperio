@@ -261,11 +261,26 @@ class ImagePickerFlowController: FlowController {
 }
 ```
 
+Since the `ResultClosure` parameter is @escaping, you would usually use a `[weak self]` or `[unowned self]` when calling the initializer and then map to something like `strongSelf` to prevent retain cycles & memory leaks. Imperio has a better way to deal with this situation, simply change your code to this:
+
+``` Swift
+class ImagePickerFlowController: FlowController {
+    let resultCompletion: SafeResultClosure<UIImage>
+
+    init(resultCompletion: SafeResultClosure<UIImage>) {
+        self.resultCompletion = resultCompletion
+        super.init()
+    }
+    
+    // ...
+}
+```
+
 The usage side then would look like this:
 
 ``` Swift
 func imagePickerStartButtonPressed() {
-    let resultCompletion = SafeResultClosure<UIImage>(self) { (self, pickedImage) in
+    let resultCompletion = SafeResultClosure<UIImage>(weak: self) { (self, pickedImage) in
 	       // do something with the result
     }
 
@@ -314,7 +329,7 @@ override func viewDidLoad() {
 
     view.backgroundColor = viewModel?.backgroundColor
 
-    _ = viewModel?.pickedImage.didSet(self) { (self, pickedImage) in
+    viewModel?.pickedImage.didSet(weak: self) { (self, pickedImage) in
         self.pickedImageView.image = pickedImage
     }
 }
@@ -322,7 +337,7 @@ override func viewDidLoad() {
 
 The strong `self` which is passed into the `didSet()` is safely returned back as a strong `self` as the parameter of the closure. (It's converted to a weak self automatically by Imperio internally.)
 
-Whenever you want to change the `pickedImage` property, simply use the `setValue()` method of the `ObservablePropertly` like so:
+Whenever you want to change the `pickedImage` property, simply use the `setValue()` method of the `ObservableProperty` like so:
 
 ``` Swift
 mainViewController.viewModel.pickerImage.setValue(pickedImage)
