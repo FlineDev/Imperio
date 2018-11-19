@@ -4,7 +4,7 @@ import UIKit
 
 /// A class to be subclassed by flow controllers.
 open class FlowController: NSObject {
-    var subFlowController: FlowController?
+    var subFlowControllers: [FlowController] = []
     weak var superFlowController: FlowController?
 
     /// Starts the flow from a given view controller.
@@ -18,19 +18,14 @@ open class FlowController: NSObject {
     /// - Parameters:
     ///   - subFlowController: The sub flow controller to be added.
     public func add(subFlowController: FlowController) {
-        // Clean up
-        self.subFlowController?.removeFromSuperFlowController()
-        subFlowController.removeFromSuperFlowController()
-
-        // Store new
-        self.subFlowController = subFlowController
+        subFlowControllers.append(subFlowController)
         subFlowController.superFlowController = self
     }
 
     /// Removes this flow controller from its super flow controller.
     public func removeFromSuperFlowController() {
-        subFlowController?.removeFromSuperFlowController()
-        superFlowController?.subFlowController = nil
+        subFlowControllers.forEach { $0.removeFromSuperFlowController() }
+        superFlowController!.subFlowControllers.removeAll { $0 == self }
         superFlowController = nil
     }
 }
