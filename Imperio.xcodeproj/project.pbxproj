@@ -43,6 +43,8 @@
 		826F873021D4F3CD00427433 /* FlowHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872F21D4F3CD00427433 /* FlowHierarchy.swift */; };
 		826F873121D4F3CD00427433 /* FlowHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872F21D4F3CD00427433 /* FlowHierarchy.swift */; };
 		826F873321D500BF00427433 /* Portus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260B72821CCE17F0015BF14 /* Portus.framework */; };
+		826F873621D5019F00427433 /* FlowHierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F873521D5019F00427433 /* FlowHierarchyTests.swift */; };
+		826F873721D5019F00427433 /* FlowHierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F873521D5019F00427433 /* FlowHierarchyTests.swift */; };
 		82E3053521788657003BD01C /* SafeResultClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3053421788657003BD01C /* SafeResultClosure.swift */; };
 		82E3053621788657003BD01C /* SafeResultClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3053421788657003BD01C /* SafeResultClosure.swift */; };
 		A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A6DEE2177C3920074A528 /* ObservableProperty.swift */; };
@@ -156,6 +158,7 @@
 		826F872921D4D29D00427433 /* RoutableInitialFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableInitialFlowController.swift; sourceTree = "<group>"; };
 		826F872C21D4D56F00427433 /* SubFlowControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFlowControllable.swift; sourceTree = "<group>"; };
 		826F872F21D4F3CD00427433 /* FlowHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowHierarchy.swift; sourceTree = "<group>"; };
+		826F873521D5019F00427433 /* FlowHierarchyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowHierarchyTests.swift; sourceTree = "<group>"; };
 		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 		82E3053321787DD9003BD01C /* ImperioTests */ = {
 			isa = PBXGroup;
 			children = (
+				826F873521D5019F00427433 /* FlowHierarchyTests.swift */,
 			);
 			path = ImperioTests;
 			sourceTree = "<group>";
@@ -639,6 +643,7 @@
 					A14E0B271E1F9ECC00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DB7EUU9D79;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0086C0AE1FAA6F920089BBE1;
 					};
@@ -650,6 +655,7 @@
 					A14E0B451E1F9EDE00DFC788 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = DB7EUU9D79;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0086C0AE1FAA6F920089BBE1;
 					};
@@ -875,6 +881,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826F873621D5019F00427433 /* FlowHierarchyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +904,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826F873721D5019F00427433 /* FlowHierarchyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1235,11 +1243,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Debug;
@@ -1248,11 +1259,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.ImperioTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Release;
@@ -1314,12 +1327,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Debug;
@@ -1328,12 +1344,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.Imperio-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Imperio Demo.app/Imperio Demo";
 			};
 			name = Release;

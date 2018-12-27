@@ -18,8 +18,8 @@ final class FlowHierarchy {
 
     static let shared = FlowHierarchy()
 
-    private var rootNode: Node?
-    private var lastAddedNode: Node?
+    var rootNode: Node?
+    var lastAddedNode: Node?
 
     func add(subFlowController: SubFlowControllable, to parentFlowController: SubFlowControllable) {
         if rootNode == nil {
@@ -39,6 +39,10 @@ final class FlowHierarchy {
             node.parent?.children.removeAll { $0 === node }
 
             lastAddedNode = node.parent
+
+            if rootNode === node {
+                rootNode = nil
+            }
         }
     }
 
@@ -53,6 +57,10 @@ final class FlowHierarchy {
 
     private func find(flowController: SubFlowControllable, in subNodes: [Node]) -> Node? {
         for node in subNodes {
+            if node.flowController === flowController {
+                return node
+            }
+
             if let foundNode = find(flowController: flowController, in: node.children) {
                 return foundNode
             }
