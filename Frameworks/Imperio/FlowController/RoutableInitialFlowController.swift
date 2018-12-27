@@ -1,0 +1,37 @@
+// Created by Cihat Gündüz on 27.12.18.
+
+import Portus
+import UIKit
+
+/// A class to be subclassed by the routable flow controller which is opened first from the app delegate.
+open class RoutableInitialFlowController: NSObject, SubFlowControllable {
+    var subFlowControllers: [SubFlowControllable] = []
+    weak var superFlowController: SubFlowControllable?
+
+    /// Creates a flow controller object using data in info object.
+    ///
+    /// - Parameters:
+    ///   - info: The object including all data required to initialize a flow controller of this type.
+    open class func make(info: Any?) -> Self {
+        fatalError("Must be overridden by subclasses.")
+    }
+
+    /// Starts a flow controller as initial flow from the given window.
+    ///
+    /// - Parameters:
+    ///   - window: The window to present the flow from.
+    ///   - animated: Specifies if the starting process should be animated.
+    ///   - completion: The closure to call when start completed, passing the current visible view controller.
+    open func start(from window: UIWindow, animated: Bool, completion: @escaping (UIViewController) -> Void) { /* override-only */ }
+}
+
+extension RoutableInitialFlowController: PortKeyEnterable {
+    public static func enter(from presentingViewController: UIViewController, info: Any?, animated: Bool, completion: @escaping (UIViewController) -> Void) {
+        make(info: info).start(from: UIApplication.shared.keyWindow!, animated: animated, completion: completion)
+    }
+
+    public func leave(animated: Bool, completion: @escaping () -> Void) {
+        // no-op – the new initial flow controller is responsible for transitioning from one root view controller to other
+        completion()
+    }
+}

@@ -12,7 +12,6 @@ opt_in_rules:
 - empty_xctest_method
 - explicit_init
 - explicit_type_interface
-- extension_access_modifier
 - fallthrough
 - fatal_error_message
 - file_header
@@ -56,7 +55,6 @@ opt_in_rules:
 - switch_case_on_newline
 - trailing_closure
 - type_contents_order
-- unavailable_function
 - unneeded_parentheses_in_closure_argument
 - untyped_error_in_catch
 - vertical_parameter_alignment_on_call
