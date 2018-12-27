@@ -85,11 +85,7 @@ explicit_type_interface:
     - local
 
 file_header:
-  required_pattern: |
-                    \/\/
-                    \/\/  Created by [^\(\)\d\n]+ on \S{6,10}\.
-                    \/\/  Copyright © \d{4} Flinesoft\. All rights reserved\.
-                    \/\/
+  required_pattern: \/\/ Created by [^\(\)\d\n]+ on \S{6,10}\.
 
 file_name:
   suffix_pattern: "Extensions?|\\+.*"
@@ -150,7 +146,7 @@ custom_rules:
     severity: warning
   closure_params_parantheses:
     included: ".*.swift"
-    regex: '\{\s*\([^):]+\)\s*in'
+    regex: '\{\s*\((?!self,)[^):]+\)\s*in'
     name: "Unnecessary Closure Params Parantheses"
     message: "Don't use parantheses around non-typed parameters in a closure."
     severity: warning

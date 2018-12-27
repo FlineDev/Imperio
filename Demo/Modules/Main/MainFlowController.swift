@@ -9,10 +9,11 @@
 import Imperio
 import UIKit
 
+
 class MainFlowController: InitialFlowController {
     var mainViewController: MainViewController?
 
-    override func start(from window: UIWindow) {
+    func start(from window: UIWindow) {
         mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? MainViewController
         mainViewController?.flowDelegate = self
         mainViewController?.viewModel = MainViewModel(backgroundColor: .black, pickedImage: ObservableProperty(nil))

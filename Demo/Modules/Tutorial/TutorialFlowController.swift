@@ -15,7 +15,7 @@ import UIKit
 class TutorialFlowController: FlowController {
     var navigationCtrl: UINavigationController?
 
-    override func start(from presentingViewController: UIViewController) {
+    func start(from presentingViewController: UIViewController) {
         let page1ViewCtrl = Page1ViewController()
         navigationCtrl = UINavigationController(rootViewController: page1ViewCtrl)
 

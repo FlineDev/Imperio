@@ -2,10 +2,7 @@
 
 import Foundation
 
-protocol SubFlowControllable: class {
-    var subFlowControllers: [SubFlowControllable] { get set }
-    var superFlowController: SubFlowControllable? { get set }
-
+public protocol SubFlowControllable: class {
     /// Adds a sub flow controller to the existing one.
     ///
     /// - Parameters:
@@ -22,14 +19,11 @@ extension SubFlowControllable {
     /// - Parameters:
     ///   - subFlowController: The sub flow controller to be added.
     public func add(subFlowController: SubFlowControllable) {
-        subFlowControllers.append(subFlowController)
-        subFlowController.superFlowController = self
+        FlowHierarchy.shared.add(subFlowController: subFlowController, to: self)
     }
 
     /// Removes this flow controller from its super flow controller.
     public func removeFromSuperFlowController() {
-        subFlowControllers.forEach { $0.removeFromSuperFlowController() }
-        superFlowController!.subFlowControllers.removeAll { $0 === self }
-        superFlowController = nil
+        FlowHierarchy.shared.remove(subFlowController: self)
     }
 }

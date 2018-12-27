@@ -1,10 +1,4 @@
-//
-//  MainViewControllerTests.swift
-//  Imperio
-//
-//  Created by Cihat Gündüz on 08.11.17.
-//  Copyright © 2017 Flinesoft. All rights reserved.
-//
+// Created by Cihat Gündüz on 08.11.17.
 
 import FBSnapshotTestCase
 import Imperio

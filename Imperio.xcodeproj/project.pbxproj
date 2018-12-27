@@ -40,6 +40,9 @@
 		826F872B21D4D29D00427433 /* RoutableInitialFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872921D4D29D00427433 /* RoutableInitialFlowController.swift */; };
 		826F872D21D4D56F00427433 /* SubFlowControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872C21D4D56F00427433 /* SubFlowControllable.swift */; };
 		826F872E21D4D56F00427433 /* SubFlowControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872C21D4D56F00427433 /* SubFlowControllable.swift */; };
+		826F873021D4F3CD00427433 /* FlowHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872F21D4F3CD00427433 /* FlowHierarchy.swift */; };
+		826F873121D4F3CD00427433 /* FlowHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F872F21D4F3CD00427433 /* FlowHierarchy.swift */; };
+		826F873321D500BF00427433 /* Portus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260B72821CCE17F0015BF14 /* Portus.framework */; };
 		82E3053521788657003BD01C /* SafeResultClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3053421788657003BD01C /* SafeResultClosure.swift */; };
 		82E3053621788657003BD01C /* SafeResultClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3053421788657003BD01C /* SafeResultClosure.swift */; };
 		A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A6DEE2177C3920074A528 /* ObservableProperty.swift */; };
@@ -152,6 +155,7 @@
 		826F872621D4D24F00427433 /* RoutableFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableFlowController.swift; sourceTree = "<group>"; };
 		826F872921D4D29D00427433 /* RoutableInitialFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableInitialFlowController.swift; sourceTree = "<group>"; };
 		826F872C21D4D56F00427433 /* SubFlowControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubFlowControllable.swift; sourceTree = "<group>"; };
+		826F872F21D4F3CD00427433 /* FlowHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowHierarchy.swift; sourceTree = "<group>"; };
 		82C76D061E4214C60027B35F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0086C0CE1FAA70CC0089BBE1 /* Imperio.framework in Frameworks */,
+				826F873321D500BF00427433 /* Portus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +364,7 @@
 				826F872621D4D24F00427433 /* RoutableFlowController.swift */,
 				826F872921D4D29D00427433 /* RoutableInitialFlowController.swift */,
 				826F872C21D4D56F00427433 /* SubFlowControllable.swift */,
+				826F872F21D4F3CD00427433 /* FlowHierarchy.swift */,
 			);
 			path = FlowController;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 				0086C0AD1FAA6F920089BBE1 /* Resources */,
 				0086C0D21FAA70CD0089BBE1 /* Embed Frameworks */,
 				008D0F771FAB65F200D8F2FA /* SwiftLint */,
+				826F873421D500D700427433 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -752,6 +759,26 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		826F873421D500D700427433 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Portus.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Portus.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		82C76D0C1E4222300027B35F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -838,6 +865,7 @@
 				826F872721D4D24F00427433 /* RoutableFlowController.swift in Sources */,
 				A10A6DEF2177C3920074A528 /* ObservableProperty.swift in Sources */,
 				0086C0E91FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
+				826F873021D4F3CD00427433 /* FlowHierarchy.swift in Sources */,
 				826F872A21D4D29D00427433 /* RoutableInitialFlowController.swift in Sources */,
 				009267921FAA699800C7602D /* FlowController.swift in Sources */,
 			);
@@ -859,6 +887,7 @@
 				826F872821D4D24F00427433 /* RoutableFlowController.swift in Sources */,
 				A10A6DF02177C3920074A528 /* ObservableProperty.swift in Sources */,
 				0086C0EA1FAA7C770089BBE1 /* InitialFlowController.swift in Sources */,
+				826F873121D4F3CD00427433 /* FlowHierarchy.swift in Sources */,
 				826F872B21D4D29D00427433 /* RoutableInitialFlowController.swift in Sources */,
 				009267931FAA699800C7602D /* FlowController.swift in Sources */,
 			);
@@ -1241,6 +1270,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1267,6 +1297,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

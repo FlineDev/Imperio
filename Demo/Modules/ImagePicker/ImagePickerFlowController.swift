@@ -13,7 +13,7 @@ import UIKit
 // The reason for this is that UIImagePickerController and UIAlertController both already encapsulate the logic for rendering, animating etc.
 // Therefore there is no need to create additional types like view controllers or view models to handle this flow.
 
-class ImagePickerFlowController: FlowController {
+class ImagePickerFlowController: NSObject, FlowController {
     let resultCompletion: SafeResultClosure<UIImage>
 
     init(resultCompletion: SafeResultClosure<UIImage>) {
@@ -21,7 +21,7 @@ class ImagePickerFlowController: FlowController {
         super.init()
     }
 
-    override func start(from presentingViewController: UIViewController) {
+    func start(from presentingViewController: UIViewController) {
         presentingViewController.present(instantiateSourceChooser(from: presentingViewController), animated: true)
     }
 

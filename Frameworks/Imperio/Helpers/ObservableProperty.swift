@@ -1,4 +1,4 @@
-//  Created by Cihat Gündüz on 17.10.18.
+// Created by Cihat Gündüz on 17.10.18.
 
 import Foundation
 
