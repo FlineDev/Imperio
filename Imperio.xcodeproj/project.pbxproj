@@ -142,9 +142,11 @@
 		82C76D071E4215110027B35F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		82C76D081E4215240027B35F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		82C76D091E4215480027B35F /* Imperio.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Imperio.podspec; sourceTree = "<group>"; };
-		82C76D0A1E4221FD0027B35F /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		82C76D0A1E4221FD0027B35F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		82E3052E21787B66003BD01C /* .projlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .projlint.yml; sourceTree = "<group>"; };
 		82E3053421788657003BD01C /* SafeResultClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeResultClosure.swift; sourceTree = "<group>"; };
+		82E3053B2178BCCB003BD01C /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		82E3053C2178BCCB003BD01C /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		A10A6DEE2177C3920074A528 /* ObservableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProperty.swift; sourceTree = "<group>"; };
 		A14E0B1F1E1F9ECC00DFC788 /* Imperio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Imperio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14E0B281E1F9ECC00DFC788 /* Imperio iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Imperio iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,8 +393,10 @@
 				82C76D071E4215110027B35F /* .swiftlint.yml */,
 				003771871FB348D200DAB797 /* Cartfile.private */,
 				008D0D751FAB60F600D8F2FA /* Cartfile.resolved */,
+				82E3053B2178BCCB003BD01C /* CODE_OF_CONDUCT.md */,
+				82E3053C2178BCCB003BD01C /* CONTRIBUTING.md */,
 				82C76D091E4215480027B35F /* Imperio.podspec */,
-				82C76D0A1E4221FD0027B35F /* LICENSE.md */,
+				82C76D0A1E4221FD0027B35F /* LICENSE */,
 				82C76D081E4215240027B35F /* Package.swift */,
 				82C76D061E4214C60027B35F /* README.md */,
 			);

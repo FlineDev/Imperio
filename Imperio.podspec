@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Imperio"
-  s.version      = "3.0.0"
+  s.version      = "3.0.1"
   s.summary      = "Keep the screen flow logic out of your view controllers & make them testable."
 
   s.description  = <<-DESC
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/Flinesoft/Imperio"
-  s.license      = { :type => "MIT", :file => "LICENSE.md" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Cihat Gündüz" => "cocoapods@cihatguenduez.de" }
   s.social_media_url   = "https://twitter.com/Dschee"
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
 
   s.source       = { :git => "https://github.com/Flinesoft/Imperio.git", :tag => "#{s.version}" }
-  s.source_files = "Sources", "Sources/**/*.swift"
+  s.source_files = "Frameworks/Imperio/**/*.swift"
   s.framework    = "UIKit"
 
   s.swift_version = "4.2"
