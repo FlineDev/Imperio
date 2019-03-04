@@ -13,8 +13,8 @@ width=600 height=167>
      alt="codebeat badge">
   </a>
   <a href="https://github.com/Flinesoft/Imperio/releases">
-  <img src="https://img.shields.io/badge/Version-3.0.1-blue.svg"
-     alt="Version: 3.0.1">
+  <img src="https://img.shields.io/badge/Version-3.0.2-blue.svg"
+     alt="Version: 3.0.2">
   </a>
   <img src="https://img.shields.io/badge/Swift-4.2-FFAC45.svg"
      alt="Swift: 4.2">
