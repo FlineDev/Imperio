@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Imperio"
-  s.version      = "3.0.0"
+  s.version      = "3.0.1"
   s.summary      = "Keep the screen flow logic out of your view controllers & make them testable."
 
   s.description  = <<-DESC
