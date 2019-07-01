@@ -9,4 +9,9 @@ open class InitialFlowController: FlowController {
     /// - Paramters:
     ///   - window: The window to present the flow from.
     open func start(from window: UIWindow) { /* needs to be overridden */ }
+
+    @available(*, unavailable, message: "InitialFlowController can only be started from a UIWindow!")
+    override open func start(from presentingViewController: UIViewController) {
+        fatalError("InitialFlowController can only be started from a UIWindow!")
+    }
 }

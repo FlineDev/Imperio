@@ -23,7 +23,7 @@ class MainFlowController: InitialFlowController {
 extension MainFlowController: MainFlowDelegate {
     func tutorialStartButtonPressed() {
         let tutorialFlowCtrl = TutorialFlowController()
-        add(subFlowController: tutorialFlowCtrl)
+        addChild(tutorialFlowCtrl)
         tutorialFlowCtrl.start(from: mainViewController!)
     }
 
@@ -33,7 +33,7 @@ extension MainFlowController: MainFlowDelegate {
         }
 
         let imagePickerFlowCtrl = ImagePickerFlowController(resultCompletion: resultCompletion)
-        add(subFlowController: imagePickerFlowCtrl)
+        addChild(imagePickerFlowCtrl)
         imagePickerFlowCtrl.start(from: mainViewController!)
     }
 }

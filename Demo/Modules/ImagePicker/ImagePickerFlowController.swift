@@ -37,7 +37,7 @@ class ImagePickerFlowController: FlowController {
         })
 
         alertCtrl.addAction(UIAlertAction(title: "Cancel", style: .cancel) { [unowned self] _ in
-            self.removeFromSuperFlowController()
+            self.removeFromParent()
         })
 
         return alertCtrl
@@ -63,7 +63,7 @@ class ImagePickerFlowController: FlowController {
 extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true) {
-            self.removeFromSuperFlowController()
+            self.removeFromParent()
         }
     }
 
@@ -71,7 +71,7 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
         if let pickedImage = info[.originalImage] as? UIImage {
             resultCompletion.reportResult(result: pickedImage)
             picker.dismiss(animated: true) {
-                self.removeFromSuperFlowController()
+                self.removeFromParent()
             }
         }
     }
