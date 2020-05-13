@@ -52,7 +52,7 @@ extension TutorialFlowController: Page2FlowDelegate {
 extension TutorialFlowController: Page3FlowDelegate {
     func completeButtonPressed() {
         navigationCtrl?.dismiss(animated: true) {
-            self.removeFromSuperFlowController()
+            self.removeFromParent()
         }
     }
 }

@@ -79,7 +79,7 @@ class TutorialFlowController: FlowController {
 
 ### The `start(from:)` method
 
-Each coordinator subclass needs to override at least the `start` method which opens the initial view controller of the screen flow. For example:
+Each flow controller subclass needs to override at least the `start` method which opens the initial view controller of the screen flow. For example:
 
 ``` Swift
 import Imperio
@@ -111,7 +111,7 @@ Now, whenever you might want to start your screen flow from within another flow 
 ``` Swift
 func tutorialStartButtonPressed() {
     let tutorialFlowCtrl = TutorialFlowController()
-    add(subFlowController: tutorialFlowCtrl)
+    addChild(tutorialFlowCtrl)
     tutorialFlowCtrl.start(from: someViewController!)
 }
 ```
@@ -121,7 +121,7 @@ Please note that this works pretty much like adding a subview to a `UIView` with
 ``` Swift
 func completeButtonPressed() {
     navigationCtrl?.dismiss(animated: true) {
-        self.removeFromSuperFlowController()
+        self.removeFromParent()
     }
 }
 ```
@@ -302,7 +302,7 @@ func imagePickerStartButtonPressed() {
     }
 
     let imagePickerFlowCtrl = ImagePickerFlowController(resultCompletion: resultCompletion)
-    add(subFlowController: imagePickerFlowCtrl)
+    addChild(imagePickerFlowCtrl)
     imagePickerFlowCtrl.start(from: mainViewController!)
 }
 ```
@@ -430,7 +430,7 @@ class ImagePickerFlowController: FlowController {
         })
 
         alertCtrl.addAction(UIAlertAction(title: "Cancel", style: .cancel) { [unowned self] _ in
-            self.removeFromSuperFlowController()
+            self.removeFromParent()
         })
 
         return alertCtrl
@@ -464,7 +464,7 @@ class ImagePickerFlowController: FlowController {
 extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true) {
-            self.removeFromSuperFlowController()
+            self.removeFromParent()
         }
     }
 
@@ -472,7 +472,7 @@ extension ImagePickerFlowController: UIImagePickerControllerDelegate, UINavigati
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             resultCompletion.reportResult(result: pickedImage)
             picker.dismiss(animated: true) {
-                self.removeFromSuperFlowController()
+                self.removeFromParent()
             }
         }
     }
